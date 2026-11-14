@@ -8,7 +8,7 @@
       heroDesc:'触って、試して、気づいていく。数学がちょっと好きになる、無料の学習ゲームを集めました。',heroExplore:'ゲームを見つける',heroHow:'はじめての方へ',heroTrust:'登録不要・無料・スマホでもPCでも',
       miniLabel:'ちょこっと体験',miniPrompt:'矢印を押して、数字を動かそう',miniReset:'もう一度',miniCorrect:'ぴったり！',miniPosition:'いまの位置',heroVisualNote:'正解は、遊びの中にある。',
       statFree:'いつでも無料',statFreeDesc:'好きな時間に、好きな場所で',statMath:'数学を手で動かす',statMathDesc:'正解だけではなく、その理由まで',statProgress:'遊びながら一歩ずつ',statProgressDesc:'ステージで少しずつレベルアップ',
-      appKicker:'EXPLORE THE LAB',appTitle:'今日は何で遊ぶ？',appSubtitle:'気になる単元から、好きなゲームを選んでみよう。',appCount:'{n}個のアプリ',searchLabel:'アプリを検索',searchPlaceholder:'単元・アプリ名で検索',filterAll:'すべて',gradeJ1:'中学1年',gradeJ2:'中学2年',gradeJ3:'中学3年',gradeHigh:'高校数学',
+      appKicker:'EXPLORE THE LAB',appTitle:'今日は何で遊ぶ？',appSubtitle:'気になる単元から、好きなゲームを選んでみよう。',appCount:'{n}個のアプリ',highTopicHeading:'高校数学は単元から選ぶ',highTopicHint:'学年ではなく、学びたい単元から探せます。',emptyHighTitle:'この単元のアプリは準備中！',emptyHighDesc:'別の単元も見てみてね。新しいゲームを順次追加します。',searchLabel:'アプリを検索',searchPlaceholder:'単元・アプリ名で検索',filterAll:'すべて',gradeJ1:'中学1年',gradeJ2:'中学2年',gradeJ3:'中学3年',gradeHigh:'高校数学',
       play:'遊んでみる',source:'コード',comingSoon:'近日公開',emptyTitle:'まだ見つからないみたい。',emptyDesc:'キーワードや学年を変えてみてね。',resetFilters:'すべてを見る',catalogFootnote:'掲載するゲームは順次追加しています。一部のゲームは試作版です。',
       howKicker:'HOW TO PLAY',howTitle:'むずかしい準備は、<br><em>いりません。</em>',howDesc:'気になったアプリを開くだけ。思いどおりに動かしながら、数学のしくみを見つけてみよう。',step1Title:'気になるゲームを選ぶ',step1Body:'学年や単元から探して、好きなものを開こう。',step2Title:'さわって、試してみる',step2Body:'はじめてならチュートリアルから。何度間違えても大丈夫。',step3Title:'「わかった！」を見つける',step3Body:'結果を確かめて、もう一度。学びが少しずつ深まるよ。',
       aboutKicker:'ABOUT MANATY LAB',aboutTitle:'数学に、<br><span>遊び心を。</span>',aboutBody:'MANATY LABは、数学をもっと身近に感じるための個人制作の学習アプリプロジェクトです。現役の数学教員の視点をもとに、「おもしろい」と「なるほど」を両立するゲームを少しずつ公開しています。',aboutLink:'ゲームを探してみる',
@@ -20,7 +20,7 @@
       heroDesc:'Touch, experiment, and discover. Find free math games that make learning surprisingly fun.',heroExplore:'Explore games',heroHow:'New here?',heroTrust:'Free to play · No account · Phone or desktop',
       miniLabel:'TRY IT OUT',miniPrompt:'Use the arrows to move the number',miniReset:'Reset',miniCorrect:'You got it!',miniPosition:'Position',heroVisualNote:'Discover answers through play.',
       statFree:'Always free',statFreeDesc:'Learn anytime, anywhere',statMath:'Hands-on math',statMathDesc:'Explore the why, not just the answer',statProgress:'One step at a time',statProgressDesc:'Grow your skills with each level',
-      appKicker:'EXPLORE THE LAB',appTitle:'What will you play today?',appSubtitle:'Pick an interesting topic and jump into a game.',appCount:'{n} games',searchLabel:'Search games',searchPlaceholder:'Search by game or topic',filterAll:'All',gradeJ1:'Grade 7',gradeJ2:'Grade 8',gradeJ3:'Grade 9',gradeHigh:'High school',
+      appKicker:'EXPLORE THE LAB',appTitle:'What will you play today?',appSubtitle:'Pick an interesting topic and jump into a game.',appCount:'{n} games',highTopicHeading:'Explore high-school topics',highTopicHint:'Pick a math topic, not a school year.',emptyHighTitle:'Games for this topic are on the way!',emptyHighDesc:'Try another topic while we make more games.',searchLabel:'Search games',searchPlaceholder:'Search by game or topic',filterAll:'All',gradeJ1:'Grade 7',gradeJ2:'Grade 8',gradeJ3:'Grade 9',gradeHigh:'High school',
       play:'Play now',source:'Code',comingSoon:'Coming soon',emptyTitle:'No games found yet.',emptyDesc:'Try another topic or grade.',resetFilters:'Show all',catalogFootnote:'More games are being added. Some are early versions.',
       howKicker:'HOW TO PLAY',howTitle:'No complicated<br><em>setup needed.</em>',howDesc:'Choose a game, open it, and start experimenting. Discover mathematical ideas by doing.',step1Title:'Choose a game',step1Body:'Find something you like by grade or topic.',step2Title:'Try things out',step2Body:'New to the game? Start with a tutorial. Mistakes are part of learning.',step3Title:'Find your “Aha!”',step3Body:'Check your results and try again. Each round helps you understand more.',
       aboutKicker:'ABOUT MANATY LAB',aboutTitle:'A little more<br><span>play in math.</span>',aboutBody:'MANATY LAB is an independent collection of educational math apps. Built from the perspective of an active math teacher, each game aims to bring together fun and genuine understanding.',aboutLink:'Discover the games',
@@ -32,15 +32,16 @@
       heroDesc:'动手操作、反复尝试、主动发现。这里有让数学变得更有趣的免费学习游戏。',heroExplore:'探索数学游戏',heroHow:'第一次来？',heroTrust:'免费体验 · 无需注册 · 手机电脑皆可',
       miniLabel:'先来试一试',miniPrompt:'点击箭头，移动数轴上的位置',miniReset:'重来',miniCorrect:'答对了！',miniPosition:'当前位置',heroVisualNote:'在游戏中找到答案。',
       statFree:'永久免费',statFreeDesc:'随时随地都能学习',statMath:'动手探索数学',statMathDesc:'不只找答案，更要理解原因',statProgress:'边玩边进步',statProgressDesc:'通过关卡不断提升',
-      appKicker:'EXPLORE THE LAB',appTitle:'今天玩哪个？',appSubtitle:'挑选感兴趣的数学主题，马上开始吧！',appCount:'{n} 个游戏',searchLabel:'搜索游戏',searchPlaceholder:'按游戏或数学主题搜索',filterAll:'全部',gradeJ1:'初一',gradeJ2:'初二',gradeJ3:'初三',gradeHigh:'高中数学',
+      appKicker:'EXPLORE THE LAB',appTitle:'今天玩哪个？',appSubtitle:'挑选感兴趣的数学主题，马上开始吧！',appCount:'{n} 个游戏',highTopicHeading:'按高中数学单元筛选',highTopicHint:'按数学内容查找，不必按年级区分。',emptyHighTitle:'这个单元的游戏正在准备中！',emptyHighDesc:'可以先试试其他单元，更多游戏即将推出。',searchLabel:'搜索游戏',searchPlaceholder:'按游戏或数学主题搜索',filterAll:'全部',gradeJ1:'初一',gradeJ2:'初二',gradeJ3:'初三',gradeHigh:'高中数学',
       play:'开始游戏',source:'代码',comingSoon:'即将推出',emptyTitle:'暂时没有找到游戏。',emptyDesc:'试试其他关键词或年级。',resetFilters:'查看全部',catalogFootnote:'更多游戏陆续上线，部分游戏仍为测试版本。',
       howKicker:'HOW TO PLAY',howTitle:'无需复杂准备，<br><em>马上开始！</em>',howDesc:'选择感兴趣的游戏，打开后亲手操作，在尝试中发现数学规律。',step1Title:'选择一个游戏',step1Body:'通过年级或主题寻找喜欢的内容。',step2Title:'动手试一试',step2Body:'第一次体验可以从教程开始，出错也没关系。',step3Title:'发现“原来如此！”',step3Body:'检查结果，再试一次，逐渐理解数学。',
       aboutKicker:'ABOUT MANATY LAB',aboutTitle:'让数学多一点<br><span>游戏的乐趣。</span>',aboutBody:'MANATY LAB 是独立制作的数学学习应用项目。我们以一线数学教师的教学经验为基础，陆续推出既有趣又能帮助理解数学概念的小游戏。',aboutLink:'探索游戏',
       connectKicker:'STAY CURIOUS',connectTitle:'新玩法，新作品。',connectSubtitle:'我们计划通过 YouTube 介绍玩法，并在 X 发布新应用动态。',youtubeDesc:'通过视频学习游戏玩法和背后的数学原理。',xDesc:'了解最新作品与制作过程。',comingSoonSocial:'筹备中',visitChannel:'访问频道 ↗',visitX:'访问 X ↗',footerMessage:'在游戏中发现数学的“原来如此！”',footerNote:'本网站为独立运营的学习平台，并非学校官方网站。',backToTop:'返回顶部 ↑'
     }
   };
+  const HIGH_TOPICS=[{"id":"all","label":{"ja":"すべての単元","en":"All topics","zh":"全部单元"}},{"id":"numbers-and-algebra","label":{"ja":"数と式","en":"Numbers & algebra","zh":"数与式"}},{"id":"geometry-measurement","label":{"ja":"図形と計量","en":"Geometry & measurement","zh":"图形与测量"}},{"id":"quadratic-functions","label":{"ja":"2次関数","en":"Quadratic functions","zh":"二次函数"}},{"id":"combinatorics-probability","label":{"ja":"場合の数と確率","en":"Counting & probability","zh":"计数与概率"}},{"id":"trigonometric-functions","label":{"ja":"三角関数","en":"Trigonometric functions","zh":"三角函数"}},{"id":"exponential-logarithmic","label":{"ja":"指数関数・対数関数","en":"Exponential & logarithmic functions","zh":"指数函数与对数函数"}},{"id":"sequences","label":{"ja":"数列","en":"Sequences","zh":"数列"}},{"id":"vectors","label":{"ja":"ベクトル","en":"Vectors","zh":"向量"}},{"id":"calculus","label":{"ja":"微分法・積分法","en":"Differentiation & integration","zh":"微分与积分"}}];
   const grades=['all','j1','j2','j3','high'];
-  const state={lang:'ja',grade:'all',query:'',apps:[],position:-2};
+  const state={lang:'ja',grade:'all',highTopic:'all',query:'',apps:[],position:-2};
   const SOCIAL={youtube:'',x:''}; // Add official public URLs only after accounts are created.
   const text=(key,values={})=>{const s=phrases[state.lang]?.[key]??phrases.ja[key]??key;return String(s).replace(/\{(\w+)\}/g,(_,k)=>values[k]??'')};
   function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
@@ -63,6 +64,17 @@
   function renderFilters(){
     const box=$('filters');box.replaceChildren();
     for(const grade of grades){const b=document.createElement('button');b.className='filter-button';b.type='button';b.textContent=text(grade==='all'?'filterAll':grade==='high'?'gradeHigh':`grade${grade.toUpperCase()}`);b.setAttribute('aria-pressed',String(state.grade===grade));b.addEventListener('click',()=>{state.grade=grade;renderFilters();renderApps();});box.append(b);}
+    renderHighTopics();
+  }
+  function renderHighTopics(){
+    const panel=$('highTopicPanel');panel.hidden=state.grade!=='high';
+    if(panel.hidden)return;
+    const buttons=$('highTopicButtons');buttons.replaceChildren();
+    for(const topic of HIGH_TOPICS){
+      const btn=document.createElement('button');btn.type='button';btn.className='high-topic-button';
+      btn.textContent=local(topic.label);btn.setAttribute('aria-pressed',String(state.highTopic===topic.id));
+      btn.addEventListener('click',()=>{state.highTopic=topic.id;renderHighTopics();renderApps();});buttons.append(btn);
+    }
   }
   function artSvg(type){
     const base='viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"';
@@ -77,10 +89,15 @@
   function renderApps(){
     const q=state.query.trim().toLocaleLowerCase();const list=state.apps.filter(app=>{
       if(state.grade!=='all'&&app.grade!==state.grade)return false;
+      if(state.grade==='high'&&state.highTopic!=='all'&&app.highTopic!==state.highTopic)return false;
       if(!q)return true;
-      return [app.title,...Object.values(app.description||{}),...Object.values(app.topic||{})].join(' ').toLocaleLowerCase().includes(q);
+      const topic=HIGH_TOPICS.find(t=>t.id===app.highTopic);
+      return [app.title,...Object.values(app.description||{}),...Object.values(app.topic||{}),...Object.values(topic?.label||{})].join(' ').toLocaleLowerCase().includes(q);
     });
     const grid=$('appGrid');grid.replaceChildren();$('emptyState').hidden=list.length!==0;
+    const emptyHigh=state.grade==='high'&&state.highTopic!=='all'&&!q;
+    $('emptyState').querySelector('b').textContent=text(emptyHigh?'emptyHighTitle':'emptyTitle');
+    $('emptyState').querySelector('p').textContent=text(emptyHigh?'emptyHighDesc':'emptyDesc');
     for(const app of list){
       const el=document.createElement('article');el.className='app-card';
       const gradeText=text(app.grade==='high'?'gradeHigh':'grade'+app.grade.toUpperCase());
@@ -114,7 +131,7 @@
   function installEvents(){
     document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
     $('searchInput').addEventListener('input',e=>{state.query=e.target.value;renderApps();});
-    $('resetFilters').addEventListener('click',()=>{state.query='';state.grade='all';$('searchInput').value='';renderFilters();renderApps();});
+    $('resetFilters').addEventListener('click',()=>{state.query='';state.grade='all';state.highTopic='all';$('searchInput').value='';renderFilters();renderApps();});
     $('miniLeft').addEventListener('click',()=>{state.position=Math.max(-5,state.position-1);drawMini();});
     $('miniRight').addEventListener('click',()=>{state.position=Math.min(5,state.position+1);drawMini();});
     $('miniReset').addEventListener('click',()=>{state.position=-2;drawMini();});
