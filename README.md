@@ -74,3 +74,11 @@ python3 -m http.server 8000
 ```
 
 ブラウザで `http://localhost:8000/` を開く（ブラウザの `file://` では `apps.json` の読み込みが制限される場合があります）。
+
+
+## アプリ一覧の分類
+- 中学数学：`grade` は `j1`, `j2`, `j3` で学年別。
+- 高校数学：`grade` は `high`、`highTopic` に単元IDを記入する（学年では分類しない）。
+- 現在の高校単元ID：`numbers-and-algebra`、`geometry-measurement`、`quadratic-functions`、`combinatorics-probability`、`trigonometric-functions`、`exponential-logarithmic`、`sequences`、`vectors`、`calculus`。
+- 高校単元を増やすときは `app.js` の `HIGH_TOPICS` に日英中の表示名を加え、`apps.json` の該当アプリに `highTopic` を設定。
+- 未公開の単元を選んだときは「準備中」と表示する。未完成アプリを公開リンクにしない。
