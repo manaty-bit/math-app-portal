@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9f8f3">
+  <meta name="description" content="MANATY LAB — 遊びから生まれる、数学の「わかった！」。中学・高校数学を楽しく学べる無料の学習ゲームを公開しています。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MANATY LAB | Play. Learn. Discover.">
+  <meta property="og:description" content="遊びから生まれる、数学の「わかった！」無料で遊べる数学の学習アプリ。">
+  <meta property="og:locale" content="ja_JP">
+  <title>MANATY LAB — Play. Learn. Discover.</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#apps">アプリ一覧へスキップ</a>
+  <header class="site-header" id="top">
+    <div class="header-inner container">
+      <a class="wordmark" href="#top" aria-label="MANATY LAB Home">
+        <span class="wordmark-symbol" aria-hidden="true">M<span>·</span></span>
+        <span>MANATY <b>LAB</b></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#apps" data-i18n="navApps">アプリを探す</a>
+        <a href="#how" data-i18n="navHow">遊び方</a>
+        <a href="#about" data-i18n="navAbout">MANATY LABについて</a>
+      </nav>
+      <div class="header-tools">
+        <div class="languages" role="group" aria-label="Language">
+          <button type="button" data-lang="ja" aria-pressed="true">JP</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <a class="header-cta" href="#apps"><span data-i18n="headerPlay">遊んでみる</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-wrap container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span data-i18n="heroEyebrow">FREE MATH PLAYGROUND</span></span>
+        <h1 id="hero-title" data-i18n-html="heroTitle">遊びから生まれる、<br>数学の<span class="highlight">「わかった！」</span></h1>
+        <p class="hero-english">Play. <strong>Learn.</strong> Discover.</p>
+        <p class="hero-description" data-i18n="heroDesc">触って、試して、気づいていく。数学がちょっと好きになる、無料の学習ゲームを集めました。</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#apps"><span data-i18n="heroExplore">ゲームを見つける</span><span aria-hidden="true">↗</span></a>
+          <a class="button button-light" href="#how"><span data-i18n="heroHow">はじめての方へ</span><span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="trust-row"><span class="trust-mark" aria-hidden="true">✓</span><span data-i18n="heroTrust">登録不要・無料・スマホでもPCでも</span></div>
+      </div>
+
+      <div class="hero-visual" aria-label="Interactive number line playground">
+        <span class="visual-decor visual-decor-one" aria-hidden="true">✦</span>
+        <span class="visual-decor visual-decor-two" aria-hidden="true">＋</span>
+        <div class="play-label"><span class="play-label-dot"></span><span data-i18n="miniLabel">ちょこっと体験</span><span class="play-label-spark">↗</span></div>
+        <div class="hero-blob" aria-hidden="true"></div>
+        <div class="mini-stage">
+          <div class="mini-equation" aria-hidden="true"><span class="mini-equation-x">−2</span><span>＋</span><span>3</span><span>＝</span><span class="mini-result" id="miniResult">？</span></div>
+          <div class="mini-guides"><span data-i18n="miniPrompt">矢印を押して、数字を動かそう</span><span id="miniStatus" aria-live="polite">0</span></div>
+          <svg id="miniTrack" viewBox="0 0 470 148" role="img" aria-label="Number line from minus five to plus five">
+            <path d="M34 85 H436" stroke="#265c55" stroke-width="5" stroke-linecap="round"/>
+            <g id="miniTicks"></g><g id="miniRunner"></g>
+          </svg>
+          <div class="mini-controls">
+            <button type="button" id="miniLeft" aria-label="Move left one">←</button>
+            <button type="button" id="miniReset"><span data-i18n="miniReset">もう一度</span> ↺</button>
+            <button type="button" id="miniRight" aria-label="Move right one">→</button>
+          </div>
+        </div>
+        <div class="hero-note"><span class="smile" aria-hidden="true">☺</span><span data-i18n="heroVisualNote">正解は、遊びの中にある。</span></div>
+      </div>
+    </section>
+
+    <section class="tiny-stats container" aria-label="Site highlights">
+      <div><span class="stat-icon" aria-hidden="true">✳</span><b data-i18n="statFree">いつでも無料</b><small data-i18n="statFreeDesc">好きな時間に、好きな場所で</small></div>
+      <div><span class="stat-icon yellow" aria-hidden="true">◎</span><b data-i18n="statMath">数学を手で動かす</b><small data-i18n="statMathDesc">正解だけではなく、その理由まで</small></div>
+      <div><span class="stat-icon peach" aria-hidden="true">↗</span><b data-i18n="statProgress">遊びながら一歩ずつ</b><small data-i18n="statProgressDesc">ステージで少しずつレベルアップ</small></div>
+    </section>
+
+    <section class="catalog-section container" id="apps" aria-labelledby="apps-title">
+      <div class="section-heading">
+        <div><div class="section-kicker" data-i18n="appKicker">EXPLORE THE LAB</div><h2 id="apps-title" data-i18n="appTitle">今日は何で遊ぶ？</h2><p data-i18n="appSubtitle">気になる単元から、好きなゲームを選んでみよう。</p></div>
+        <div class="count-pill" id="appCount" aria-live="polite"></div>
+      </div>
+      <div class="catalog-toolbar">
+        <div class="filters" id="filters" role="group" aria-label="Grade filter"></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only" data-i18n="searchLabel">アプリを検索</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="単元・アプリ名で検索" autocomplete="off"></label>
+      </div>
+      <div class="app-grid" id="appGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden><div class="empty-emoji">⌕</div><b data-i18n="emptyTitle">まだ見つからないみたい。</b><p data-i18n="emptyDesc">キーワードや学年を変えてみてね。</p><button type="button" id="resetFilters" class="button button-light" data-i18n="resetFilters">すべてを見る</button></div>
+      <p class="catalog-footnote" data-i18n="catalogFootnote">掲載するゲームは順次追加しています。一部のゲームは試作版です。</p>
+    </section>
+
+    <section class="how-section" id="how" aria-labelledby="how-title">
+      <div class="container how-layout">
+        <div class="how-intro"><div class="section-kicker" data-i18n="howKicker">HOW TO PLAY</div><h2 id="how-title" data-i18n-html="howTitle">むずかしい準備は、<br><em>いりません。</em></h2><p data-i18n="howDesc">気になったアプリを開くだけ。思いどおりに動かしながら、数学のしくみを見つけてみよう。</p><div class="how-doodle" aria-hidden="true"><span>＋</span><span>−</span><span>？</span></div></div>
+        <div class="how-steps">
+          <article><span class="step-num">01</span><div><h3 data-i18n="step1Title">気になるゲームを選ぶ</h3><p data-i18n="step1Body">学年や単元から探して、好きなものを開こう。</p></div><span class="step-symbol" aria-hidden="true">▦</span></article>
+          <article><span class="step-num">02</span><div><h3 data-i18n="step2Title">さわって、試してみる</h3><p data-i18n="step2Body">はじめてならチュートリアルから。何度間違えても大丈夫。</p></div><span class="step-symbol" aria-hidden="true">✧</span></article>
+          <article><span class="step-num">03</span><div><h3 data-i18n="step3Title">「わかった！」を見つける</h3><p data-i18n="step3Body">結果を確かめて、もう一度。学びが少しずつ深まるよ。</p></div><span class="step-symbol" aria-hidden="true">✳</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section container" id="about">
+      <div class="about-panel">
+        <div><div class="section-kicker" data-i18n="aboutKicker">ABOUT MANATY LAB</div><h2 data-i18n-html="aboutTitle">数学に、<br><span>遊び心を。</span></h2><p data-i18n="aboutBody">MANATY LABは、数学をもっと身近に感じるための個人制作の学習アプリプロジェクトです。現役の数学教員の視点をもとに、「おもしろい」と「なるほど」を両立するゲームを少しずつ公開しています。</p><a href="#apps" class="text-link"><span data-i18n="aboutLink">ゲームを探してみる</span> <span aria-hidden="true">↗</span></a></div>
+        <div class="about-orbit" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit-center">M<span>·</span></div><span class="orbit-text orbit-text-a">PLAY</span><span class="orbit-text orbit-text-b">LEARN</span><span class="orbit-text orbit-text-c">DISCOVER</span></div>
+      </div>
+    </section>
+
+    <section class="connect-section container" id="connect">
+      <div class="section-heading narrow"><div><div class="section-kicker" data-i18n="connectKicker">STAY CURIOUS</div><h2 data-i18n="connectTitle">遊び方も、新作も。</h2><p data-i18n="connectSubtitle">YouTubeで使い方を、Xで新しいアプリのお知らせを発信していく予定です。</p></div></div>
+      <div class="connect-grid">
+        <article class="connect-card youtube"><div class="connect-icon">▶</div><div><h3>YouTube</h3><p data-i18n="youtubeDesc">ゲームの使い方や、数学の「なるほど！」を動画で紹介していきます。</p><span class="soon-tag" id="youtubeTag" data-i18n="comingSoon">準備中</span><a class="connect-link" id="youtubeLink" hidden target="_blank" rel="noopener noreferrer" data-i18n="visitChannel">チャンネルを見る ↗</a></div></article>
+        <article class="connect-card social"><div class="connect-icon">𝕏</div><div><h3>X / Twitter</h3><p data-i18n="xDesc">新作アプリや、制作の裏側を気軽にお知らせしていきます。</p><span class="soon-tag" id="xTag" data-i18n="comingSoon">準備中</span><a class="connect-link" id="xLink" hidden target="_blank" rel="noopener noreferrer" data-i18n="visitX">Xを見る ↗</a></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><div><a class="footer-brand" href="#top">MANATY LAB</a><p>Play. Learn. Discover.</p></div><div><p data-i18n="footerMessage">遊びから生まれる、数学の「わかった！」</p><small data-i18n="footerNote">個人運営の学習アプリサイトです。学校の公式サイトではありません。</small></div><a href="#top" class="to-top" data-i18n="backToTop">ページの先頭へ ↑</a></div></footer>
+</body>
+</html>
