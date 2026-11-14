@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "note": "Only list games already available in public repositories. Do not link private math-app-factory work before teacher approval.",
   "apps": [
     {
@@ -12,8 +12,16 @@
       "sourceUrl": "https://github.com/manaty-bit/test1/tree/main/mole-mvp",
       "accent": "mint",
       "illustration": "mole",
-      "description": {"ja":"モグラと一緒に合同の証明へ。条件を見抜いて、証明を進めよう。","en":"Race through triangle-congruence proofs with a friendly mole.","zh":"和可爱的鼹鼠一起挑战三角形全等证明。"},
-      "topic": {"ja":"三角形の合同・証明","en":"Triangle congruence & proof","zh":"三角形全等与证明"}
+      "description": {
+        "ja": "モグラと一緒に合同の証明へ。条件を見抜いて、証明を進めよう。",
+        "en": "Race through triangle-congruence proofs with a friendly mole.",
+        "zh": "和可爱的鼹鼠一起挑战三角形全等证明。"
+      },
+      "topic": {
+        "ja": "三角形の合同・証明",
+        "en": "Triangle congruence & proof",
+        "zh": "三角形全等与证明"
+      }
     },
     {
       "id": "detective",
@@ -25,8 +33,16 @@
       "sourceUrl": "https://github.com/manaty-bit/test1/tree/main/shomei-tanteidan",
       "accent": "violet",
       "illustration": "detective",
-      "description": {"ja":"図形に隠された謎を解け！ 証明の手がかりを集めよう。","en":"Solve geometric mysteries and discover clues for each proof.","zh":"破解图形谜题，寻找数学证明的线索。"},
-      "topic": {"ja":"図形の証明","en":"Geometry proofs","zh":"几何证明"}
+      "description": {
+        "ja": "図形に隠された謎を解け！ 証明の手がかりを集めよう。",
+        "en": "Solve geometric mysteries and discover clues for each proof.",
+        "zh": "破解图形谜题，寻找数学证明的线索。"
+      },
+      "topic": {
+        "ja": "図形の証明",
+        "en": "Geometry proofs",
+        "zh": "几何证明"
+      }
     },
     {
       "id": "proof-builder",
@@ -38,8 +54,16 @@
       "sourceUrl": "https://github.com/manaty-bit/shoumei-builder",
       "accent": "peach",
       "illustration": "blocks",
-      "description": {"ja":"証明を組み立て、まちがいを修復。最後は白紙から挑戦しよう。","en":"Build proofs, repair mistakes, then try writing your own.","zh":"构建数学证明、纠正错误，最后尝试独立书写。"},
-      "topic": {"ja":"整数の性質と証明","en":"Proofs with integers","zh":"整数性质与证明"}
+      "description": {
+        "ja": "証明を組み立て、まちがいを修復。最後は白紙から挑戦しよう。",
+        "en": "Build proofs, repair mistakes, then try writing your own.",
+        "zh": "构建数学证明、纠正错误，最后尝试独立书写。"
+      },
+      "topic": {
+        "ja": "整数の性質と証明",
+        "en": "Proofs with integers",
+        "zh": "整数性质与证明"
+      }
     },
     {
       "id": "trig-bloom",
@@ -51,8 +75,17 @@
       "sourceUrl": "https://github.com/manaty-bit/trig-bloom",
       "accent": "sky",
       "illustration": "trig",
-      "description": {"ja":"sin・cos・tanの特別角をテンポよくマスター！ 日英切替にも対応。","en":"Master special-angle sine, cosine, and tangent with fast practice.","zh":"通过趣味练习掌握特殊角的正弦、余弦和正切。"},
-      "topic": {"ja":"三角比・三角関数","en":"Trigonometric values","zh":"三角函数"}
+      "description": {
+        "ja": "sin・cos・tanの特別角をテンポよくマスター！ 日英切替にも対応。",
+        "en": "Master special-angle sine, cosine, and tangent with fast practice.",
+        "zh": "通过趣味练习掌握特殊角的正弦、余弦和正切。"
+      },
+      "topic": {
+        "ja": "三角関数",
+        "en": "Trigonometric functions",
+        "zh": "三角函数"
+      },
+      "highTopic": "trigonometric-functions"
     },
     {
       "id": "log-lab",
@@ -64,8 +97,17 @@
       "sourceUrl": "https://github.com/manaty-bit/test1/tree/main/log-lab",
       "accent": "yellow",
       "illustration": "log",
-      "description": {"ja":"指数・対数のルールを練習。グラフでも性質をつかもう。","en":"Explore exponents, logarithms, and their graphs.","zh":"探索指数、对数及其函数图像。"},
-      "topic": {"ja":"指数・対数","en":"Exponents & logarithms","zh":"指数与对数"}
+      "description": {
+        "ja": "指数・対数のルールを練習。グラフでも性質をつかもう。",
+        "en": "Explore exponents, logarithms, and their graphs.",
+        "zh": "探索指数、对数及其函数图像。"
+      },
+      "topic": {
+        "ja": "指数関数・対数関数",
+        "en": "Exponential & logarithmic functions",
+        "zh": "指数函数与对数函数"
+      },
+      "highTopic": "exponential-logarithmic"
     },
     {
       "id": "number-line-dash",
@@ -77,8 +119,16 @@
       "sourceUrl": null,
       "accent": "mint",
       "illustration": "numberline",
-      "description": {"ja":"正と負の数を走って学ぶ。ステージ0から練習できるよ。","en":"Learn positive and negative numbers through a number-line adventure.","zh":"通过数轴小游戏理解正数与负数。"},
-      "topic": {"ja":"正の数・負の数","en":"Positive & negative numbers","zh":"正数与负数"}
+      "description": {
+        "ja": "正と負の数を走って学ぶ。ステージ0から練習できるよ。",
+        "en": "Learn positive and negative numbers through a number-line adventure.",
+        "zh": "通过数轴小游戏理解正数与负数。"
+      },
+      "topic": {
+        "ja": "正の数・負の数",
+        "en": "Positive & negative numbers",
+        "zh": "正数与负数"
+      }
     }
   ]
 }
