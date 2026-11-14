@@ -21,3 +21,23 @@
 @media (max-width:650px){html{scroll-padding-top:70px}.container{width:min(100% - 28px,1200px)}.header-inner{min-height:65px;gap:10px}.wordmark{font-size:16px}.wordmark-symbol{width:34px;height:34px;font-size:21px}.languages button{font-size:10px;padding:5px 7px;min-height:31px}.header-cta{display:none}.hero-wrap{display:flex;flex-direction:column;gap:15px;padding-block:34px 24px}.hero-copy{padding:2px 5px 0;width:100%}.eyebrow{font-size:10px}.hero-copy h1{font-size:clamp(34px,8.5vw,49px);margin:15px 0 8px}.hero-english{font-size:22px}.hero-description{margin:12px 0 18px!important;max-width:none;font-size:13px!important;line-height:1.75}.hero-actions{gap:8px}.button{min-height:46px;font-size:12px;padding:12px 13px;gap:10px}.trust-row{margin-top:19px}.hero-visual{width:100%;height:342px;border-radius:24px}.play-label{top:17px;left:22px}.visual-decor-one{top:12px;right:20px}.hero-note{bottom:10px;right:22px;font-size:11px}.mini-stage{max-width:370px}.mini-equation{font-size:27px}.mini-guides{font-size:11px}.mini-stage svg{max-height:110px}.tiny-stats{grid-template-columns:1fr;gap:0;margin-bottom:72px}.tiny-stats>div{padding:13px 18px;min-height:67px}.tiny-stats>div+div{border-left:0;border-top:1px solid var(--border)}.stat-icon{width:38px;height:38px;font-size:20px}.tiny-stats b{font-size:13px}.tiny-stats small{font-size:11px}.section-heading{align-items:center;gap:10px;margin-bottom:20px}.section-heading h2{font-size:30px}.section-heading p{font-size:13px}.count-pill{font-size:10px;padding:8px 10px}.catalog-section{padding-bottom:80px}.catalog-toolbar{display:block;margin-bottom:18px}.filters{gap:7px;margin-bottom:12px}.filter-button{font-size:12px;min-height:39px;padding:9px 14px}.search-box{width:100%}.app-grid{grid-template-columns:1fr;gap:16px}.app-card{border-radius:21px}.app-art{height:206px}.app-content{padding:18px 19px}.app-content>p{min-height:0}.how-section{padding:65px 0}.how-layout{grid-template-columns:1fr;gap:22px}.how-intro h2{font-size:34px}.how-intro>p{font-size:13px;margin-top:12px}.how-doodle{display:none}.how-steps article{padding:17px 15px;gap:12px}.step-num{font-size:20px}.how-steps h3{font-size:15px}.how-steps p{font-size:12px}.step-symbol{font-size:24px}.about-section{padding-block:71px}.about-panel{padding:32px 28px;border-radius:25px;grid-template-columns:1fr;min-height:0}.about-panel h2{font-size:41px}.about-panel p{font-size:13px}.about-orbit{min-height:215px}.orbit-1{width:200px;height:200px}.orbit-2{width:135px;height:135px}.orbit-center{width:77px;height:77px;font-size:51px}.orbit-center span{font-size:55px}.orbit-text{font-size:10px}.connect-section{padding-bottom:75px}.connect-grid{grid-template-columns:1fr;gap:13px}.connect-card{padding:21px;min-height:0}.connect-icon{width:52px;height:52px;font-size:24px}.connect-card h3{font-size:18px}.footer-inner{display:grid;gap:12px;padding:27px 0}.to-top{justify-self:start}}
 @media(max-width:360px){.wordmark{font-size:14px}.languages button{font-size:9px;padding:4px 6px}.hero-copy h1{font-size:32px}.hero-visual{height:310px}.mini-stage{padding:15px 12px}.mini-equation{font-size:25px}.app-art{height:183px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* High school is organized by mathematical topic, not school year. */
+.high-topic-panel{margin:-7px 0 23px;padding:19px 22px 20px;border:1px solid #cfe3d8;border-radius:19px;background:#eff8f2}
+.high-topic-panel[hidden]{display:none!important}
+.high-topic-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:13px}
+.high-topic-head span{font-size:16px;color:#194d45;font-weight:950}
+.high-topic-head small{font-size:12px;color:#486f66;font-weight:700}
+.high-topic-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.high-topic-button{border:1px solid #c5dcd0;background:#fff;padding:10px 15px;border-radius:999px;color:#214c45;font-size:13px;font-weight:850;min-height:44px;line-height:1.35;transition:background-color .15s,border-color .15s}
+.high-topic-button:hover{border-color:#6ba995;background:#e4f4e9}
+.high-topic-button[aria-pressed=true]{background:#1d574a;border-color:#1d574a;color:#fff}
+.high-topic-button:focus-visible{outline:3px solid #eb995c;outline-offset:2px}
+@media(max-width:650px){
+.high-topic-panel{margin:0 0 16px;padding:15px 14px;border-radius:16px}
+.high-topic-head{gap:5px;margin-bottom:12px}
+.high-topic-head span{font-size:15px}
+.high-topic-head small{font-size:11px;line-height:1.45}
+.high-topic-buttons{gap:7px}
+.high-topic-button{font-size:12px;min-height:43px;padding:9px 12px}
+}
