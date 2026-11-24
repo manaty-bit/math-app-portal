@@ -792,6 +792,72 @@
         }
       ],
       "variants": []
+    },
+    {
+      "id": "balance-rescue",
+      "title": "てんびんレスキュー",
+      "status": "available",
+      "url": "https://manaty-bit.github.io/math-app-portal/apps/balance-rescue/",
+      "sourceUrl": "https://github.com/manaty-bit/math-app-portal/tree/main/apps/balance-rescue",
+      "description": {
+        "ja": "てんびんの釣り合いを保ちながら、両辺に同じ操作をして一次方程式を解こう。",
+        "en": "Keep the scale balanced and solve linear equations by doing the same thing to both sides.",
+        "zh": "保持天平平衡，对等式两边进行相同的运算，解一元一次方程。"
+      },
+      "grades": [
+        "j1"
+      ],
+      "units": [
+        "j1-linear-equations"
+      ],
+      "purposes": [
+        "intro",
+        "basics",
+        "practice",
+        "timed"
+      ],
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "thumbnail": {
+        "accent": "peach",
+        "illustration": "balance"
+      },
+      "keywords": {
+        "ja": "天秤 てんびん Balance Rescue",
+        "en": "Balance Rescue equation scale",
+        "zh": "天平解方程 Balance Rescue"
+      },
+      "details": {
+        "learning": {
+          "ja": "両辺に同じ操作をして等式を保ち、途中式をたどって解を求める。小数・分数・かっこを含む式も扱う。",
+          "en": "Preserve equality by applying the same operation to both sides. Follow each step, including equations with decimals, fractions and parentheses.",
+          "zh": "对两边进行相同的运算以保持等式成立，逐步求解含小数、分数和括号的方程。"
+        },
+        "game": {
+          "ja": "クイズ版とカードを落とす落ちゲー版。導入、6つの学習ステージ、60秒チャレンジがある。",
+          "en": "Choose quiz or falling-card mode. Play a tutorial, six learning stages, and a 60-second challenge.",
+          "zh": "可选择问答或落牌模式，体验入门教程、六个学习关卡和60秒挑战。"
+        },
+        "classroom": {
+          "ja": "てんびんで選んだ操作を紙に途中式として書き、両辺に同じ操作をする理由を説明してから解を代入して確かめる。",
+          "en": "Write each scale move as a step on paper, explain why it applies to both sides, and check the answer by substitution.",
+          "zh": "把天平上的每一步写成等式，说明为什么两边要做相同的运算，再代入检验。"
+        },
+        "devices": {
+          "ja": "PC・スマートフォン画面（Chromiumで検証）",
+          "en": "Desktop and phone-sized screens (tested in Chromium)",
+          "zh": "电脑和手机尺寸（已用 Chromium 测试）"
+        },
+        "certificate": true,
+        "nameInput": true
+      },
+      "publishedAt": null,
+      "updatedAt": null,
+      "version": "1.0.0",
+      "history": [],
+      "variants": []
     }
   ]
 }

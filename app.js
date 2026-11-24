@@ -74,6 +74,15 @@
     if(type==='detective')return `<svg ${base}><circle cx="278" cy="95" r="114" fill="#d1c4ed"/><path d="M66 174 172 42 291 174Z" fill="#f8f3ff" stroke="#60518d" stroke-width="6"/><path d="M172 42V174" stroke="#b0a2d5" stroke-width="4" stroke-dasharray="7 7"/><circle cx="172" cy="42" r="7" fill="#ffab79"/><circle cx="66" cy="174" r="7" fill="#ffab79"/><circle cx="291" cy="174" r="7" fill="#ffab79"/><circle cx="284" cy="121" r="50" fill="#fafaff" stroke="#6a5890" stroke-width="12"/><path d="m319 157 49 49" stroke="#6a5890" stroke-width="17" stroke-linecap="round"/><text x="280" y="133" text-anchor="middle" font-family="system-ui" font-weight="950" font-size="45" fill="#e4936f">?</text></svg>`;
     if(type==='blocks')return `<svg ${base}><circle cx="292" cy="94" r="105" fill="#ffd3c1"/><g stroke="#b9624c" stroke-width="4" stroke-linejoin="round"><rect x="66" y="119" width="88" height="65" rx="12" fill="#ffad86"/><rect x="157" y="119" width="88" height="65" rx="12" fill="#fdd8ac"/><rect x="249" y="119" width="88" height="65" rx="12" fill="#ffe6db"/><rect x="112" y="47" width="88" height="65" rx="12" fill="#fff3dc"/><rect x="204" y="47" width="88" height="65" rx="12" fill="#ffc3ad"/></g><g text-anchor="middle" font-family="system-ui" font-weight="950" font-size="35" fill="#9a5946"><text x="110" y="163">a</text><text x="201" y="163">+</text><text x="293" y="163">b</text><text x="155" y="91">=</text><text x="247" y="91">?</text></g><path d="m346 34 9 -18 m13 28 14 -3" stroke="#f29a71" stroke-width="6" stroke-linecap="round"/></svg>`;
     if(type==='trig')return `<svg ${base}><circle cx="260" cy="109" r="99" fill="#c8e5f6"/><circle cx="212" cy="112" r="74" fill="none" stroke="#2c7196" stroke-width="5"/><path d="M49 112H369M212 19V206" stroke="#518eac" stroke-width="3"/><path d="M212 112 271.2 67.6" stroke="#ef986b" stroke-width="8" stroke-linecap="round"/><path d="M212 112 H271.2 V67.6" stroke="#fff" stroke-width="5" fill="none"/><circle cx="271.2" cy="67.6" r="9" fill="#f28c60"/><path d="M237 112 A25 25 0 0 0 232 97" fill="none" stroke="#faaf78" stroke-width="4"/><text x="281" y="99" font-family="system-ui" font-weight="950" font-size="24" fill="#266c91">sin</text><text x="222" y="142" font-family="system-ui" font-weight="950" font-size="24" fill="#266c91">cos</text></svg>`;
+    if(type==='balance')return `<svg ${base}>
+      <circle cx="275" cy="104" r="97" fill="#ffd3c1"/>
+      <path d="M200 42V172M155 175H245M94 62H306M94 62L58 131H130ZM306 62L270 131H342Z" fill="none" stroke="#995746" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M51 131H137Q129 151 94 151T51 131ZM263 131H349Q341 151 306 151T263 131Z" fill="#f6a783" stroke="#995746" stroke-width="4"/>
+      <circle cx="200" cy="62" r="10" fill="#f6a783" stroke="#995746" stroke-width="4"/>
+      <g text-anchor="middle" font-family="system-ui" font-size="22" font-weight="900" fill="#844936">
+        <text x="94" y="122">x + 2</text><text x="306" y="122">6</text>
+      </g>
+    </svg>`;
     if(type==='log'){
       const curve=Array.from({length:40},(_,i)=>{
         const x=.25+i*.15;
