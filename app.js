@@ -137,6 +137,353 @@
       unknown:'尚未确认', yes:'有', no:'无', langJa:'日语', langEn:'英语', langZh:'简体中文', reference:'来源', left:'向左移动一步', right:'向右移动一步', miniInstruction:'从 −2 向右走 3 步，会到哪里？'
     }
   };
+
+  // Public planning data; not a list of released applications. Release truth is apps.json.
+  const roadmap = [
+  [
+    "j1-positive-negative",
+    "number-line-dash",
+    "NUMBER LINE DASH",
+    "数直線ダッシュ",
+    "数轴冲刺",
+    "数直線を動かす",
+    "Move on a number line",
+    "操作数轴",
+    "number"
+  ],
+  [
+    "j1-letters-expressions",
+    "pattern-factory",
+    "PATTERN FACTORY",
+    "パターンファクトリー",
+    "规律工厂",
+    "数量から式をつくる",
+    "Build expressions from patterns",
+    "从规律构建代数式",
+    "number"
+  ],
+  [
+    "j1-linear-equations",
+    "balance-rescue",
+    "BALANCE RESCUE",
+    "てんびんレスキュー",
+    "天平救援",
+    "等式を保って操作する",
+    "Keep equations balanced",
+    "保持等式平衡",
+    "number"
+  ],
+  [
+    "j1-proportion",
+    "ratio-engine",
+    "RATIO ENGINE",
+    "比例エンジン",
+    "比例引擎",
+    "一定の比・積を発見する",
+    "Discover constant ratios and products",
+    "发现不变的比与积",
+    "function"
+  ],
+  [
+    "j1-plane-geometry",
+    "compass-quest",
+    "COMPASS QUEST",
+    "コンパスクエスト",
+    "圆规探险",
+    "定規とコンパスで作図する",
+    "Construct with ruler and compass",
+    "用尺规作图",
+    "geometry"
+  ],
+  [
+    "j1-solid-geometry",
+    "solid-forge",
+    "SOLID FORGE",
+    "立体クラフト",
+    "立体工坊",
+    "立体を回転・展開する",
+    "Rotate and unfold solids",
+    "旋转与展开立体",
+    "geometry"
+  ],
+  [
+    "j1-data-analysis",
+    "data-detective",
+    "DATA DETECTIVE",
+    "データ探偵",
+    "数据侦探",
+    "分布から根拠を見つける",
+    "Find evidence in distributions",
+    "从分布寻找证据",
+    "data"
+  ],
+  [
+    "j2-algebra",
+    "expression-remix",
+    "EXPRESSION REMIX",
+    "数式リミックス",
+    "代数式重组",
+    "項を組み替える",
+    "Rearrange algebraic terms",
+    "重组代数项",
+    "number"
+  ],
+  [
+    "j2-simultaneous-equations",
+    "twin-cipher",
+    "TWIN CIPHER",
+    "ツインサイファー",
+    "双重密码",
+    "二つの条件を同時に解く",
+    "Solve two conditions together",
+    "同时求解两个条件",
+    "number"
+  ],
+  [
+    "j2-linear-functions",
+    "line-pilot",
+    "LINE PILOT",
+    "ラインパイロット",
+    "直线飞行员",
+    "傾きと切片を操る",
+    "Control slope and intercept",
+    "调整斜率与截距",
+    "function"
+  ],
+  [
+    "j2-congruence",
+    "triangle-lock",
+    "TRIANGLE LOCK",
+    "トライアングルロック",
+    "三角形锁定",
+    "合同の条件を発見する",
+    "Discover congruence conditions",
+    "发现全等条件",
+    "geometry"
+  ],
+  [
+    "j2-triangles-quadrilaterals",
+    "shape-dna",
+    "SHAPE DNA",
+    "図形DNA研究所",
+    "图形DNA研究所",
+    "条件・性質・反例を調べる",
+    "Explore properties and counterexamples",
+    "探索性质与反例",
+    "geometry"
+  ],
+  [
+    "j2-probability",
+    "chance-lab",
+    "CHANCE LAB",
+    "チャンスラボ",
+    "概率实验室",
+    "確率を実験する",
+    "Experiment with probability",
+    "进行概率实验",
+    "data"
+  ],
+  [
+    "j2-boxplots",
+    "box-plot-battle",
+    "BOX PLOT BATTLE",
+    "箱ひげバトル",
+    "箱线图对决",
+    "分布を比較して判断する",
+    "Compare distributions",
+    "比较分布并判断",
+    "data"
+  ],
+  [
+    "j3-polynomials",
+    "algebra-forge",
+    "ALGEBRA FORGE",
+    "代数鍛冶工房",
+    "代数工坊",
+    "展開と因数分解を往復する",
+    "Explore expansion and factoring",
+    "探索展开与因式分解",
+    "number"
+  ],
+  [
+    "j3-square-roots",
+    "root-explorer",
+    "ROOT EXPLORER",
+    "ルートエクスプローラー",
+    "平方根探索者",
+    "面積から長さを発見する",
+    "Discover lengths from areas",
+    "从面积发现长度",
+    "number"
+  ],
+  [
+    "j3-quadratic-equations",
+    "quadratic-key",
+    "QUADRATIC KEY",
+    "二次方程式の鍵",
+    "二次方程钥匙",
+    "平方の形から解を取り出す",
+    "Unlock solutions by completing squares",
+    "通过配方求解",
+    "number"
+  ],
+  [
+    "j3-quadratic-functions",
+    "parabola-pilot",
+    "PARABOLA PILOT",
+    "パラボラパイロット",
+    "抛物线飞行员",
+    "二乗に比例する変化を予測する",
+    "Predict square-law changes",
+    "预测平方关系的变化",
+    "function"
+  ],
+  [
+    "j3-similarity",
+    "scale-world",
+    "SCALE WORLD",
+    "スケールワールド",
+    "比例世界",
+    "拡大・縮小で測量する",
+    "Measure through similarity",
+    "利用相似进行测量",
+    "geometry"
+  ],
+  [
+    "j3-circle",
+    "circle-signal",
+    "CIRCLE SIGNAL",
+    "サークルシグナル",
+    "圆周信号",
+    "動点から円周角を発見する",
+    "Discover inscribed angles",
+    "探索圆周角",
+    "geometry"
+  ],
+  [
+    "j3-pythagoras",
+    "pythagoras-bridge",
+    "PYTHAGORAS BRIDGE",
+    "ピタゴラスブリッジ",
+    "勾股之桥",
+    "面積から距離を求める",
+    "Find distances through areas",
+    "通过面积求距离",
+    "geometry"
+  ],
+  [
+    "j3-sampling",
+    "sample-safari",
+    "SAMPLE SAFARI",
+    "サンプルサファリ",
+    "抽样探险",
+    "標本から全体を推定する",
+    "Estimate populations from samples",
+    "从样本推断总体",
+    "data"
+  ]
+];
+  const roadmapCopy = {
+  "ja": {
+    "roadNav": "全22単元の計画",
+    "roadTitle": "中学数学、全22単元へ。",
+    "roadSub": "数式は組み替え、図形は動かし、関数は変化を操り、データは実験して判断する。単元ごとの数学的な遊びを開発しています。",
+    "roadNotice": "企画名・内容は変更されることがあります。教材がある単元でも、単元全体を網羅しているとは限りません。",
+    "roadCount": "教材あり {covered} / {total} 単元",
+    "roadAll": "公開教材",
+    "roadUnits": "中学数学の開発対象",
+    "roadPlan": "企画中",
+    "roadDev": "開発中",
+    "roadRelated": "関連教材あり",
+    "roadOpen": "教材を見る",
+    "roadPublished": "公開済み",
+    "roadCTA": "全22単元のロードマップ",
+    "roadIntro": "数学を解くゲームから、数学を使って遊ぶゲームへ。",
+    "roadVision": "数学が苦手な生徒には最初の「わかった！」を。得意な生徒には次の「なぜだろう？」を。",
+    "roadMethod": "見る → まねする → 予想する → 数学にする → 自分で解く",
+    "roadGrade": "学年を選択",
+    "number": "数と式",
+    "geometry": "図形",
+    "function": "関数",
+    "data": "データの活用"
+  },
+  "en": {
+    "roadNav": "22-topic roadmap",
+    "roadTitle": "A journey through all 22 topics.",
+    "roadSub": "Rearrange expressions, move shapes, control functions, and investigate data. Each topic gets its own mathematical play experience.",
+    "roadNotice": "Project names and features may change. Having a published resource does not mean the entire topic is covered.",
+    "roadCount": "Resources in {covered} / {total} topics",
+    "roadAll": "Published resources",
+    "roadUnits": "Junior-high topics planned",
+    "roadPlan": "Planned",
+    "roadDev": "In development",
+    "roadRelated": "Related resources",
+    "roadOpen": "View resources",
+    "roadPublished": "Published",
+    "roadCTA": "Explore the 22-topic roadmap",
+    "roadIntro": "From games about solving math to games about using math.",
+    "roadVision": "A first aha moment for learners who struggle; a new why for learners who excel.",
+    "roadMethod": "Observe → imitate → predict → express → solve independently",
+    "roadGrade": "Choose a grade",
+    "number": "Numbers & algebra",
+    "geometry": "Geometry",
+    "function": "Functions",
+    "data": "Data & probability"
+  },
+  "zh": {
+    "roadNav": "22单元路线图",
+    "roadTitle": "探索初中数学全部22个单元。",
+    "roadSub": "重组算式、移动图形、控制函数变化、实验并分析数据。为每个单元打造独特的数学游戏体验。",
+    "roadNotice": "企划名称和内容可能调整。已有教材并不意味着覆盖整个单元。",
+    "roadCount": "已有教材的单元 {covered} / {total}",
+    "roadAll": "已发布教材",
+    "roadUnits": "初中数学开发单元",
+    "roadPlan": "企划中",
+    "roadDev": "开发中",
+    "roadRelated": "有相关教材",
+    "roadOpen": "查看教材",
+    "roadPublished": "已发布",
+    "roadCTA": "查看22单元路线图",
+    "roadIntro": "从解数学题的游戏，走向运用数学的游戏。",
+    "roadVision": "让学习有困难的学生获得第一次顿悟，让擅长数学的学生发现下一个为什么。",
+    "roadMethod": "观察 → 模仿 → 预测 → 数学表达 → 独立解决",
+    "roadGrade": "选择年级",
+    "number": "数与式",
+    "geometry": "图形",
+    "function": "函数",
+    "data": "数据与概率"
+  }
+};
+  for(const lang of Object.keys(roadmapCopy)) Object.assign(messages[lang],roadmapCopy[lang]);
+  let roadGrade='j1';
+  function renderRoadmap(){
+    const ready=state.status==='ready';
+    const published=state.apps.filter(app=>app.status==='available');
+    const unitsFor=g=>roadmap.filter(row=>row[0].startsWith(g+'-'));
+    const related=id=>published.filter(app=>app.units.includes(id));
+    const covered=roadmap.filter(row=>related(row[0]).length).length;
+    $('heroStats').innerHTML=`<div><strong>${ready?published.length:'—'}</strong><span>${esc(text('roadAll'))}</span></div><div><strong>${roadmap.length}</strong><span>${esc(text('roadUnits'))}</span></div>`;
+    $('roadSummary').textContent=ready?text('roadCount',{covered,total:roadmap.length}):text(state.status==='error'?'fetchError':'loading');
+    $('roadTabs').innerHTML=['j1','j2','j3'].map(g=>`<button type="button" data-road-grade="${g}" aria-pressed="${roadGrade===g}"><strong>${esc(gradeLabel(g))}</strong><small>${ready?unitsFor(g).filter(row=>related(row[0]).length).length:'—'} / ${unitsFor(g).length}</small></button>`).join('');
+    $('roadGrid').innerHTML=unitsFor(roadGrade).map(row=>{
+      const [unit,id,en,ja,zh,dja,den,dzh,domain]=row, title={ja,en,zh}[state.lang], desc={ja:dja,en:den,zh:dzh}[state.lang];
+      const matches=related(unit), exact=matches.find(app=>app.id===id||[en,ja,zh].includes(app.title));
+      const status=exact?'live':unit==='j1-linear-equations'?'build':'plan';
+      const unitLabel=local(state.units.get(unit)?.label)||({ja,en,zh}[state.lang]);
+      return `<article class="road-item" data-road-unit="${esc(unit)}" data-domain="${domain}"><div class="road-item-top"><span class="road-domain">${esc(text(domain))}</span><span class="road-state"><i class="road-dot ${status}"></i>${esc(text(status==='live'?'roadPublished':status==='build'?'roadDev':'roadPlan'))}</span></div><h3>${esc(unitLabel)}</h3><div class="road-name">${esc(title)}${state.lang==='ja'&&en!==title?`<small>${esc(en)}</small>`:''}</div><p>${esc(desc)}</p>${matches.length?`<button type="button" class="road-open" data-road-open="${esc(unit)}">${esc(text(exact?'roadOpen':'roadRelated'))} · ${matches.length} ↗</button>`:'<span class="road-spacer" aria-hidden="true"></span>'}</article>`;
+    }).join('');
+  }
+  function showRoadUnit(unit){
+    if(state.status!=='ready'||!state.units.has(unit))return;
+    resetFilters();
+    $('grade').value=state.units.get(unit).grade;
+    renderFilters();
+    $('unit').value=unit;
+    $('onlyPublished').checked=true;
+    renderCatalog();
+    $('apps').focus({preventScroll:true});
+    $('apps-title').scrollIntoView({block:'start'});
+  }
   const grades = ['j1','j2','j3','high'];
   const socialUrls = {youtube:null,x:null};
   const languageLabels = {ja:'langJa',en:'langEn',zh:'langZh'};
@@ -186,6 +533,7 @@
       if (href) link.href = href;
     }
     drawMini();
+    renderRoadmap();
   }
   function replaceOptions(select, options) {
     const previous = select.value;
@@ -264,7 +612,7 @@
   function renderNews() {
     const events = state.apps.filter(app => app.status === 'available').flatMap(app => [
       {app, date:app.publishedAt, label:'newRelease'},
-      {app, date:app.updatedAt, label:'updated'}
+      {app, date:app.updatedAt!==app.publishedAt?app.updatedAt:null, label:'updated'}
     ]).filter(event => event.date).sort((a,b) => b.date.localeCompare(a.date)).slice(0,3);
     $('newsList').innerHTML = events.length ? events.map(({app,date,label}) =>
       `<button type="button" class="news-card" data-detail="${esc(app.id)}"><span><time datetime="${esc(date)}">${esc(dateLabel(date))}</time> · <span class="news-label">${esc(text(label))}</span></span><strong>${esc(app.title)}</strong></button>`
@@ -291,6 +639,7 @@
   }
   async function loadCatalog() {
     state.status = 'loading';
+    renderRoadmap();
     renderNews();
     renderCatalog();
     try {
@@ -311,12 +660,14 @@
       state.purposes = purposeMap;
       state.apps = indexed;
       state.status = 'ready';
+      renderRoadmap();
       renderFilters();
       renderNews();
       renderCatalog();
     } catch (error) {
       console.error('Unable to load the catalog:',error);
       state.status = 'error';
+      renderRoadmap();
       renderNews();
       renderCatalog();
     }
@@ -398,6 +749,10 @@
       step(event.key === 'ArrowLeft' ? -1 : 1);
     });
     document.addEventListener('click',event => {
+      const gradeButton=event.target.closest('[data-road-grade]');
+      if(gradeButton){roadGrade=gradeButton.dataset.roadGrade;renderRoadmap();document.querySelector('[data-road-grade="'+roadGrade+'"]').focus({preventScroll:true});return;}
+      const unitButton=event.target.closest('[data-road-open]');
+      if(unitButton){showRoadUnit(unitButton.dataset.roadOpen);return;}
       const button = event.target.closest('[data-detail],[data-favorite]');
       if (!button) return;
       const app = state.apps.find(app => app.id === (button.dataset.detail ?? button.dataset.favorite));

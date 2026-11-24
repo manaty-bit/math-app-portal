@@ -13,6 +13,19 @@ const {chromium}=require('playwright');
     await page.locator('[data-lang="'+lang+'"]').click();
     await page.locator('#appGrid .app-card').first().waitFor();
     await fit();
+    assert.equal(await page.locator('#heroStats strong').last().textContent(),'22');
+    for(const [grade,count] of [['j1',7],['j2',7],['j3',8]]){
+     await page.locator('[data-road-grade="'+grade+'"]').click();
+     assert.equal(await page.locator('#roadGrid .road-item').count(),count);
+     await fit();
+    }
+    await page.locator('[data-road-grade="j1"]').click();
+    await page.locator('[data-road-open="j1-positive-negative"]').click();
+    assert.equal(await page.locator('#unit').inputValue(),'j1-positive-negative');
+    assert.ok(await page.locator('#appGrid [data-app="number-line-dash"]').isVisible());
+    await page.locator('#resetFilters').click();
+    assert.ok(await page.locator('#book .book-banner').isVisible());
+    assert.equal(await page.locator('#roadGrid [data-road-unit="j1-linear-equations"] .road-open').count(),0);
     const link=page.locator('footer [data-i18n="termsLink"]');
     assert.equal(await link.textContent(),label);
     assert.equal(await link.getAttribute('href'),'./terms.html');

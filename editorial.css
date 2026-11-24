@@ -89,3 +89,39 @@ dialog,.detail-grid div { border-radius:3px; }
   .app-grid { gap:1.15rem; }
   .app-art { height:10rem; }
 }
+
+/* Curriculum roadmap / v4 — planning is separate from the playable library. */
+.hero-stats{display:flex;gap:1.5rem;margin:1rem 0 .7rem;flex-wrap:wrap}
+.hero-stats>div{display:flex;align-items:baseline;gap:.55rem}
+.hero-stats strong{font-size:2rem;line-height:1;font-variant-numeric:tabular-nums;color:var(--green);font-weight:850}
+.hero-stats span{font-size:.8rem;color:var(--muted)}
+.roadmap-section{margin-block:3rem 2rem;padding-block:2rem;border-top:1px solid var(--line)}
+.roadmap-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:1.4rem;margin-bottom:1.3rem}
+.roadmap-heading h2{font-size:clamp(1.8rem,3.5vw,2.9rem);letter-spacing:-.04em;margin:.35rem 0 .65rem;line-height:1.2}
+.roadmap-heading p{font-size:.96rem;max-width:65ch;color:var(--muted);line-height:1.8}
+.roadmap-summary{font-size:.9rem;font-weight:750;color:var(--green);padding:.7rem 1rem;border:1px solid var(--line);flex-shrink:0;max-width:100%}
+.roadmap-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin-bottom:.85rem}
+.roadmap-tabs button{background:transparent;border:1px solid var(--line);border-radius:3px;display:flex;align-items:center;justify-content:space-between;gap:.4rem;text-align:left;min-height:3.3rem;padding:.65rem .9rem;color:var(--ink)}
+.roadmap-tabs button[aria-pressed=true]{background:#245b4b;color:white;border-color:#245b4b}
+.roadmap-tabs strong{font-size:1rem}.roadmap-tabs small{font-size:.8rem;font-variant-numeric:tabular-nums}
+.roadmap-legend{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem .65rem;font-size:.78rem;color:var(--muted);margin:.65rem 0 1rem}
+.road-dot{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:#adb9b1;flex:none}
+.road-dot.live{background:#237b56}.road-dot.build{background:#ad671f}.road-dot.plan{background:#a1aca6}
+.roadmap-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.road-item{display:flex;flex-direction:column;gap:.4rem;background:white;border:1px solid var(--line);border-top:4px solid #92b6a1;border-radius:3px;padding:1rem;min-width:0}
+.road-item[data-domain=geometry]{border-top-color:#b98671}.road-item[data-domain=function]{border-top-color:#6f9fb1}.road-item[data-domain=data]{border-top-color:#bca15d}
+.road-item-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.4rem;font-size:.73rem;color:var(--muted)}
+.road-state{display:inline-flex;align-items:center;gap:.3rem;font-weight:700}
+.road-item h3{font-size:1.08rem;line-height:1.4;margin:.15rem 0}
+.road-name{font-weight:800;color:var(--green);font-size:.93rem;overflow-wrap:anywhere;line-height:1.45}
+.road-name small{display:block;font-size:.67rem;letter-spacing:.04em;color:var(--muted);margin-top:.15rem;font-weight:600}
+.road-item p{font-size:.86rem;color:var(--muted);line-height:1.6;margin:.25rem 0 .45rem;flex:1}
+.road-open{background:#e6eee4;border:0;border-radius:3px;text-align:left;font-size:.8rem;font-weight:750;color:#245b4b;min-height:2.5rem;padding:.45rem .6rem}
+.road-open:hover{text-decoration:underline}.road-spacer{min-height:2.5rem}
+.roadmap-note{margin-top:.85rem;font-size:.78rem;color:var(--muted);line-height:1.7}
+.vision-section{background:#245b4b;color:#fff;padding:clamp(1.25rem,3vw,2.4rem);margin-bottom:2.2rem;border-radius:3px}
+.vision-section .section-kicker{color:#bfe1d2}.vision-section h2{font-size:clamp(1.35rem,2.7vw,2.1rem);margin:.45rem 0 .7rem;line-height:1.35}.vision-section p{line-height:1.8;font-size:.95rem}.vision-method{border-top:1px solid #6d9988;margin-top:1rem;padding-top:.85rem;font-weight:750;color:#e3f2ea}
+@media(max-width:65rem){.roadmap-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:55rem){.roadmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap-heading{flex-direction:column;gap:.6rem}.roadmap-summary{flex-shrink:1}.roadmap-tabs button{flex-direction:column;align-items:flex-start}.roadmap-section{margin-block:2rem 1.2rem}}
+@media(max-width:41rem){.roadmap-grid{gap:.5rem}.road-item{padding:.7rem;gap:.3rem}.road-item h3{font-size:1rem}.road-name{font-size:.87rem}.road-item p{font-size:.8rem}.roadmap-tabs button{padding:.55rem .6rem}.roadmap-tabs strong{font-size:.9rem}.roadmap-tabs small{font-size:.76rem}.hero-stats{gap:.9rem}.hero-stats strong{font-size:1.65rem}.hero-stats span{font-size:.73rem}}
+@media(max-width:350px){.roadmap-grid{grid-template-columns:1fr}}
