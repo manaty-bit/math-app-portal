@@ -24,6 +24,7 @@
       </a>
       <nav class="desktop-nav" data-label="navigation">
         <a href="#apps" data-i18n="navApps">アプリを探す</a>
+        <a href="#roadmap" data-i18n="roadNav">全22単元の計画</a>
         <a href="#how" data-i18n="teachers">先生方へ</a>
         <a href="#book" data-i18n="bookNav">著書のご案内</a>
       </nav>
@@ -47,9 +48,9 @@
         <p class="hero-description" data-i18n="heroDesc">現役数学教員がつくる、無料の学習教材。授業の導入から日々の復習まで、数学の「わかった！」を教室に。</p>
         <div class="hero-actions">
           <a class="button button-dark" href="#apps"><span data-i18n="heroExplore">ゲームを見つける</span></a>
-          <a class="button button-light" href="#how"><span data-i18n="teachers">先生方へ</span></a>
+          <a class="button button-light" href="#roadmap"><span data-i18n="roadCTA">全22単元のロードマップ</span></a>
         </div>
-        <div class="trust-row"><span class="trust-mark" aria-hidden="true">✓</span><span data-i18n="heroTrust">登録不要・無料・スマホでもPCでも</span></div>
+        <div class="hero-stats" id="heroStats" aria-live="polite"></div><div class="trust-row"><span class="trust-mark" aria-hidden="true">✓</span><span data-i18n="heroTrust">登録不要・無料・スマホでもPCでも</span></div>
       </div>
 
       <div class="hero-visual" data-label="miniLabel">
@@ -74,19 +75,13 @@
       </div>
     </section>
 
-    <section class="book-section container" id="book" aria-labelledby="bookTitle">
-      <a class="book-banner" href="https://www.maruzenjunkudo.co.jp/products/9784801110496" target="_blank" rel="noopener noreferrer">
-        <img id="bookBannerImage" src="./book-banner.png.png" alt="鈴木真人著『1冊でわかる 中学3年間の方程式』2026年12月25日発売予定" hidden>
-        <div class="book-copy"><div><span class="section-kicker" data-i18n="bookKicker">BOOK NEWS / 著書のご案内</span><h2 id="bookTitle">1冊でわかる 中学3年間の方程式</h2><p data-i18n="bookMeta">鈴木真人 著 · くろしお出版 · 2026年12月25日発売予定</p></div><span class="book-cta" data-i18n="bookAction">書籍の詳細 ↗</span></div>
-      </a>
-    </section>
 
     <section class="news-section container" aria-labelledby="newsTitle">
       <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
       <div id="newsList"></div>
     </section>
 
-    <section class="catalog-section container" id="apps" aria-labelledby="apps-title" tabindex="-1">
+    <section class="catalog-section container" id="apps" aria-labelledby="filterTitle" tabindex="-1">
       <h2 id="filterTitle" data-i18n="find">教材を探す</h2>
       <div class="grade-shortcuts" aria-label="Grade" data-label="byGrade"><button type="button" data-quick-grade="j1"><span aria-hidden="true">01</span><strong data-i18n="gradeJ1">中学1年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j2"><span aria-hidden="true">02</span><strong data-i18n="gradeJ2">中学2年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j3"><span aria-hidden="true">03</span><strong data-i18n="gradeJ3">中学3年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="high"><span aria-hidden="true">04</span><strong data-i18n="gradeHigh">高校数学</strong><span aria-hidden="true">↗</span></button></div>
       <form id="filters" aria-labelledby="filterTitle">
@@ -111,6 +106,20 @@
       <button type="button" id="retry" class="button button-dark" hidden data-i18n="retry">再試行</button>
       <div class="app-grid" id="appGrid"></div>
       <button type="button" id="more" class="button button-light more" hidden data-i18n="more">さらに表示</button>
+    </section>
+
+    <section class="roadmap-section container" id="roadmap" aria-labelledby="roadTitle">
+  <div class="roadmap-heading"><div><span class="section-kicker">THE MATH ROADMAP / 2026</span><h2 id="roadTitle" data-i18n="roadTitle">中学数学、全22単元へ。</h2><p data-i18n="roadSub"></p></div><div class="roadmap-summary" id="roadSummary" aria-live="polite"></div></div>
+  <div class="roadmap-tabs" id="roadTabs" role="group" data-label="roadGrade"></div>
+  <div class="roadmap-legend"><span class="road-dot live"></span><span data-i18n="roadPublished"></span><span class="road-dot build"></span><span data-i18n="roadDev"></span><span class="road-dot plan"></span><span data-i18n="roadPlan"></span></div>
+  <div class="roadmap-grid" id="roadGrid"></div><p class="roadmap-note" data-i18n="roadNotice"></p>
+</section>
+<section class="vision-section container"><span class="section-kicker">OUR LEARNING DESIGN</span><h2 data-i18n="roadIntro"></h2><p data-i18n="roadVision"></p><p class="vision-method" data-i18n="roadMethod"></p></section>
+    <section class="book-section container" id="book" aria-labelledby="bookTitle">
+      <a class="book-banner" href="https://www.maruzenjunkudo.co.jp/products/9784801110496" target="_blank" rel="noopener noreferrer">
+        <img id="bookBannerImage" src="./book-banner.png.png" alt="鈴木真人著『1冊でわかる 中学3年間の方程式』2026年12月25日発売予定" hidden>
+        <div class="book-copy"><div><span class="section-kicker" data-i18n="bookKicker">BOOK NEWS / 著書のご案内</span><h2 id="bookTitle">1冊でわかる 中学3年間の方程式</h2><p data-i18n="bookMeta">鈴木真人 著 · くろしお出版 · 2026年12月25日発売予定</p></div><span class="book-cta" data-i18n="bookAction">書籍の詳細 ↗</span></div>
+      </a>
     </section>
 
     <section class="teacher-section" id="how" aria-labelledby="teacherTitle">
