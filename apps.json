@@ -724,13 +724,13 @@
     {
       "id": "number-line-dash",
       "title": "数直線ダッシュ",
-      "status": "coming",
-      "url": null,
-      "sourceUrl": null,
+      "status": "available",
+      "url": "https://manaty-bit.github.io/number-line-dash/",
+      "sourceUrl": "https://github.com/manaty-bit/number-line-dash",
       "description": {
-        "ja": "正と負の数を数直線で学ぶ教材です。",
-        "en": "A number-line game for positive and negative numbers.",
-        "zh": "用数轴学习正数与负数的游戏。"
+        "ja": "数直線を動かし、正の数・負の数の加法と減法を移動の向きと大きさから理解しよう。",
+        "en": "Move along the number line to make sense of the direction and distance in signed addition and subtraction.",
+        "zh": "在数轴上移动，理解正数与负数加减法的方向和距离。"
       },
       "grades": [
         "j1"
@@ -740,9 +740,15 @@
       ],
       "purposes": [
         "intro",
-        "basics"
+        "basics",
+        "practice",
+        "interactive",
+        "timed"
       ],
-      "languages": [],
+      "languages": [
+        "ja",
+        "en"
+      ],
       "thumbnail": {
         "accent": "mint",
         "illustration": "numberline"
@@ -752,12 +758,39 @@
           "ja": "数直線上の位置と移動から、正負の数の加減を学ぶ。",
           "en": "Learn signed arithmetic through position and movement on a number line.",
           "zh": "通过数轴的位置与移动学习有理数加减。"
-        }
+        },
+        "classroom": {
+          "ja": "2＋(−3) と 2−(−3) の移動を比べ、引くと向きが逆になる理由を説明してから式に書く。",
+          "en": "Compare the moves for 2 + (−3) and 2 − (−3), explain why subtraction reverses the move, and write the calculation on paper.",
+          "zh": "比较 2＋(−3) 和 2−(−3) 在数轴上的移动，解释减法为什么反向，再在纸上写出算式。"
+        },
+        "game": {
+          "ja": "チュートリアル、4つの学習ステージ、60秒チャレンジ。",
+          "en": "Tutorial, four learning stages and a 60-second challenge.",
+          "zh": "入门教程、四个学习关卡和60秒挑战。"
+        },
+        "devices": {
+          "ja": "PC・スマートフォン（Chromiumで検証）",
+          "en": "Desktop and phone-sized screens (tested in Chromium)",
+          "zh": "电脑与手机尺寸（已用Chromium测试）"
+        },
+        "certificate": true,
+        "nameInput": true
       },
-      "publishedAt": null,
-      "updatedAt": null,
-      "version": null,
-      "history": [],
+      "publishedAt": "2026-11-24",
+      "updatedAt": "2026-11-24",
+      "version": "4.1.0",
+      "history": [
+        {
+          "date": "2026-11-24",
+          "summary": {
+            "ja": "初回公開。数直線による加法・減法の練習、4つのルールの図解、60秒チャレンジ、学習賞状に対応。",
+            "en": "Initial release with signed arithmetic practice, four illustrated rules, a 60-second challenge and learning certificates.",
+            "zh": "首次发布：正负数加减练习、四条规则图解、60秒挑战与学习证书。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/number-line-dash/commit/9bbe727610f29f9934dd174d6c5f65398632843d"
+        }
+      ],
       "variants": []
     }
   ]
