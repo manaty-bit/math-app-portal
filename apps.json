@@ -519,6 +519,7 @@
         "j2"
       ],
       "units": [
+        "j1-letters-expressions",
         "j2-algebra"
       ],
       "purposes": [
@@ -545,9 +546,9 @@
           "zh": "通过选择组装证明，或找出并修正错误步骤。"
         },
         "classroom": {
-          "ja": "アプリで選んだ根拠を説明してから、紙に証明を書いてみる。",
-          "en": "Have students explain the reasons they selected before writing the proof on paper.",
-          "zh": "让学生先解释选出的理由，再在纸上书写证明。"
+          "ja": "中1では基礎問題で偶数を 2n と表す理由を説明する。中2では式変形の根拠を選び、誤った行を修正した後、証明を紙に書く。",
+          "en": "In Grade 7, use a basic problem to explain why an even integer can be written as 2n. In Grade 8, have students choose reasons for algebraic steps, correct a faulty step, and then write the proof on paper.",
+          "zh": "初一用基础题说明为什么偶数可以写成 2n。初二先选择式子变形的依据，修正错误步骤，再在纸上写出证明。"
         },
         "stage": {
           "ja": "文字式の基礎を学んだ後の証明入門から発展",
