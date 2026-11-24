@@ -11,6 +11,7 @@
   <meta property="og:locale" content="ja_JP">
   <title>MANATY LAB — Play. Learn. Discover.</title>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./editorial.css">
   <script defer src="./app.js"></script>
 </head>
 <body>
@@ -24,13 +25,13 @@
       <nav class="desktop-nav" data-label="navigation">
         <a href="#apps" data-i18n="navApps">アプリを探す</a>
         <a href="#how" data-i18n="teachers">先生方へ</a>
-        <a href="#about" data-i18n="navAbout">MANATY LABについて</a>
+        <a href="#book" data-i18n="bookNav">著書のご案内</a>
       </nav>
       <div class="header-tools">
         <div class="languages" role="group" data-label="language">
-          <button type="button" data-lang="ja" aria-pressed="true">JP</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
-          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+          <button type="button" data-lang="ja" aria-pressed="true" lang="ja">日本語</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en">English</button>
+          <button type="button" data-lang="zh" aria-pressed="false" lang="zh-CN">简体中文</button>
         </div>
         <a class="header-cta" href="#apps"><span data-i18n="headerPlay">遊んでみる</span></a>
       </div>
@@ -41,9 +42,9 @@
     <section class="hero-wrap container" aria-labelledby="hero-title">
       <div class="hero-copy">
         <span class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span data-i18n="heroEyebrow">FREE MATH PLAYGROUND</span></span>
-        <h1 id="hero-title" data-i18n-html="heroTitle">遊びから生まれる、<br>数学の<span class="highlight">「わかった！」</span></h1>
+        <h1 id="hero-title" data-i18n-html="heroTitle">数学に、<br><span class="highlight">遊び心を。</span></h1>
         <p class="hero-english">Play. <strong>Learn.</strong> Discover.</p>
-        <p class="hero-description" data-i18n="heroDesc">触って、試して、気づいていく。数学がちょっと好きになる、無料の学習ゲームを集めました。</p>
+        <p class="hero-description" data-i18n="heroDesc">現役数学教員がつくる、無料の学習教材。授業の導入から日々の復習まで、数学の「わかった！」を教室に。</p>
         <div class="hero-actions">
           <a class="button button-dark" href="#apps"><span data-i18n="heroExplore">ゲームを見つける</span></a>
           <a class="button button-light" href="#how"><span data-i18n="teachers">先生方へ</span></a>
@@ -73,6 +74,13 @@
       </div>
     </section>
 
+    <section class="book-section container" id="book" aria-labelledby="bookTitle">
+      <a class="book-banner" href="https://www.maruzenjunkudo.co.jp/products/9784801110496" target="_blank" rel="noopener noreferrer">
+        <img id="bookBannerImage" src="./book-banner.png.png" alt="鈴木真人著『1冊でわかる 中学3年間の方程式』2026年12月25日発売予定" hidden>
+        <div class="book-copy"><div><span class="section-kicker" data-i18n="bookKicker">BOOK NEWS / 著書のご案内</span><h2 id="bookTitle">1冊でわかる 中学3年間の方程式</h2><p data-i18n="bookMeta">鈴木真人 著 · くろしお出版 · 2026年12月25日発売予定</p></div><span class="book-cta" data-i18n="bookAction">書籍の詳細 ↗</span></div>
+      </a>
+    </section>
+
     <section class="news-section container" aria-labelledby="newsTitle">
       <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
       <div id="newsList"></div>
@@ -80,6 +88,7 @@
 
     <section class="catalog-section container" id="apps" aria-labelledby="apps-title" tabindex="-1">
       <h2 id="filterTitle" data-i18n="find">教材を探す</h2>
+      <div class="grade-shortcuts" aria-label="Grade" data-label="byGrade"><button type="button" data-quick-grade="j1"><span aria-hidden="true">01</span><strong data-i18n="gradeJ1">中学1年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j2"><span aria-hidden="true">02</span><strong data-i18n="gradeJ2">中学2年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j3"><span aria-hidden="true">03</span><strong data-i18n="gradeJ3">中学3年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="high"><span aria-hidden="true">04</span><strong data-i18n="gradeHigh">高校数学</strong><span aria-hidden="true">↗</span></button></div>
       <form id="filters" aria-labelledby="filterTitle">
         <div class="filter-grid">
           <label><span data-i18n="byGrade">学年から探す</span><select id="grade"></select></label>
