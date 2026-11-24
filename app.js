@@ -33,6 +33,41 @@
       connectKicker:'STAY CURIOUS',connectTitle:'新玩法，新作品。',connectSubtitle:'我们计划通过 YouTube 介绍玩法，并在 X 发布新应用动态。',youtubeDesc:'通过视频学习游戏玩法和背后的数学原理。',xDesc:'了解最新作品与制作过程。',comingSoonSocial:'筹备中',visitChannel:'访问频道 ↗',visitX:'访问 X ↗',footerMessage:'在游戏中发现数学的“原来如此！”',footerNote:'本网站为独立运营的学习平台，并非学校官方网站。',backToTop:'返回顶部 ↑'
     }
   };
+
+  // Editorial copy; existing translation and catalog mechanisms remain unchanged.
+  const editorialCopy = {
+  "ja": {
+    "bookNav": "著書のご案内",
+    "bookKicker": "BOOK NEWS / 著書のご案内",
+    "bookMeta": "鈴木真人 著 · くろしお出版 · 2026年12月25日発売予定",
+    "bookAction": "書籍の詳細 ↗",
+    "heroTitle": "数学に、<br><span class=\"highlight\">遊び心を。</span>",
+    "heroDesc": "現役数学教員がつくる、無料の学習教材。授業の導入から日々の復習まで、数学の「わかった！」を教室に。",
+    "heroExplore": "教材を探す",
+    "heroEyebrow": "PLAY. LEARN. DISCOVER."
+  },
+  "en": {
+    "bookNav": "Books",
+    "bookKicker": "BOOK NEWS",
+    "bookMeta": "Masato Suzuki · Kuroshio Publishers · Scheduled for December 25, 2026 · Japanese edition",
+    "bookAction": "Book details ↗",
+    "heroTitle": "A little more<br><span class=\"highlight\">play in math.</span>",
+    "heroDesc": "Free math resources created by a practicing teacher, for classroom introductions, daily practice and independent learning.",
+    "heroExplore": "Explore resources",
+    "heroEyebrow": "PLAY. LEARN. DISCOVER."
+  },
+  "zh": {
+    "bookNav": "图书介绍",
+    "bookKicker": "BOOK NEWS / 图书介绍",
+    "bookMeta": "铃木真人 著 · Kuroshio 出版社 · 预计2026年12月25日发售（日文版）",
+    "bookAction": "图书详情 ↗",
+    "heroTitle": "让数学多一点<br><span class=\"highlight\">游戏的乐趣。</span>",
+    "heroDesc": "由一线数学教师制作的免费学习教材，适用于课堂导入、日常练习和自主学习。",
+    "heroExplore": "探索教材",
+    "heroEyebrow": "PLAY. LEARN. DISCOVER."
+  }
+};
+  for (const lang of Object.keys(editorialCopy)) Object.assign(phrases[lang], editorialCopy[lang]);
   function artSvg(type){
     const base='viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"';
     if(type==='mole')return `<svg ${base}><circle cx="304" cy="104" r="112" fill="#b5e4d0"/><path d="M45 115 112 36 169 115Z M76 186 143 107 200 186Z" fill="none" stroke="#2b6757" stroke-width="7" stroke-linejoin="round"/><path d="M45 115 L76 186 M112 36 L143 107 M169 115 L200 186" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="10 8"/><circle cx="112" cy="36" r="8" fill="#ff995f"/><circle cx="143" cy="107" r="8" fill="#ff995f"/><circle cx="76" cy="186" r="8" fill="#ff995f"/><ellipse cx="291" cy="156" rx="45" ry="28" fill="#ac795b"/><circle cx="292" cy="117" r="40" fill="#bb8b68" stroke="#3d6255" stroke-width="4"/><circle cx="281" cy="112" r="4" fill="#213c35"/><circle cx="305" cy="112" r="4" fill="#213c35"/><path d="M279 128 Q292 141 307 128" stroke="#24433b" stroke-width="4" fill="none" stroke-linecap="round"/><text x="287" y="204" font-family="system-ui" font-size="23" font-weight="900" fill="#1b5949">≅</text><path d="M324 42 342 27" stroke="#ed945c" stroke-width="6" stroke-linecap="round"/></svg>`;
@@ -323,6 +358,20 @@
     button.firstElementChild.textContent = favorite ? '★' : '☆';
   }
   function installEvents() {
+    const banner = $('bookBannerImage');
+    if (banner) {
+      const reveal = () => { banner.hidden = !banner.naturalWidth; };
+      banner.addEventListener('load', reveal);
+      banner.addEventListener('error', () => { banner.hidden = true; });
+      if (banner.complete) reveal();
+    }
+    document.querySelectorAll('[data-quick-grade]').forEach(button => button.addEventListener('click', () => {
+      if (state.status !== 'ready') return;
+      $('grade').value = button.dataset.quickGrade;
+      $('unit').value = '';
+      $('grade').dispatchEvent(new Event('input', {bubbles:true}));
+      $('apps-title').scrollIntoView({block:'start'});
+    }));
     document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click',() => setLang(button.dataset.lang)));
     $('filters').addEventListener('submit',event => event.preventDefault());
     $('filters').addEventListener('input',event => {
