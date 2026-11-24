@@ -1,134 +1,764 @@
 {
-  "version": 2,
-  "note": "Only list games already available in public repositories. Do not link private math-app-factory work before teacher approval.",
+  "version": 3,
+  "units": [
+    {
+      "id": "j1-positive-negative",
+      "grade": "j1",
+      "label": {
+        "ja": "正の数・負の数",
+        "en": "Positive and negative numbers",
+        "zh": "正数与负数"
+      }
+    },
+    {
+      "id": "j1-letters-expressions",
+      "grade": "j1",
+      "label": {
+        "ja": "文字と式",
+        "en": "Algebraic expressions",
+        "zh": "字母与代数式"
+      }
+    },
+    {
+      "id": "j1-linear-equations",
+      "grade": "j1",
+      "label": {
+        "ja": "一次方程式",
+        "en": "Linear equations",
+        "zh": "一元一次方程"
+      }
+    },
+    {
+      "id": "j1-proportion",
+      "grade": "j1",
+      "label": {
+        "ja": "比例・反比例",
+        "en": "Direct and inverse proportion",
+        "zh": "正比例与反比例"
+      }
+    },
+    {
+      "id": "j1-plane-geometry",
+      "grade": "j1",
+      "label": {
+        "ja": "平面図形",
+        "en": "Plane geometry",
+        "zh": "平面图形"
+      }
+    },
+    {
+      "id": "j1-solid-geometry",
+      "grade": "j1",
+      "label": {
+        "ja": "空間図形",
+        "en": "Solid geometry",
+        "zh": "空间图形"
+      }
+    },
+    {
+      "id": "j1-data-analysis",
+      "grade": "j1",
+      "label": {
+        "ja": "データの分析と活用",
+        "en": "Data analysis",
+        "zh": "数据分析与应用"
+      }
+    },
+    {
+      "id": "j2-algebra",
+      "grade": "j2",
+      "label": {
+        "ja": "式の計算",
+        "en": "Calculating with expressions",
+        "zh": "代数式运算"
+      }
+    },
+    {
+      "id": "j2-simultaneous-equations",
+      "grade": "j2",
+      "label": {
+        "ja": "連立方程式",
+        "en": "Simultaneous equations",
+        "zh": "二元一次方程组"
+      }
+    },
+    {
+      "id": "j2-linear-functions",
+      "grade": "j2",
+      "label": {
+        "ja": "一次関数",
+        "en": "Linear functions",
+        "zh": "一次函数"
+      }
+    },
+    {
+      "id": "j2-congruence",
+      "grade": "j2",
+      "label": {
+        "ja": "平行と合同",
+        "en": "Parallel lines and congruence",
+        "zh": "平行与全等"
+      }
+    },
+    {
+      "id": "j2-triangles-quadrilaterals",
+      "grade": "j2",
+      "label": {
+        "ja": "三角形と四角形",
+        "en": "Triangles and quadrilaterals",
+        "zh": "三角形与四边形"
+      }
+    },
+    {
+      "id": "j2-probability",
+      "grade": "j2",
+      "label": {
+        "ja": "確率",
+        "en": "Probability",
+        "zh": "概率"
+      }
+    },
+    {
+      "id": "j2-boxplots",
+      "grade": "j2",
+      "label": {
+        "ja": "データの比較",
+        "en": "Comparing data",
+        "zh": "数据比较"
+      }
+    },
+    {
+      "id": "j3-polynomials",
+      "grade": "j3",
+      "label": {
+        "ja": "多項式",
+        "en": "Polynomials",
+        "zh": "多项式"
+      }
+    },
+    {
+      "id": "j3-square-roots",
+      "grade": "j3",
+      "label": {
+        "ja": "平方根",
+        "en": "Square roots",
+        "zh": "平方根"
+      }
+    },
+    {
+      "id": "j3-quadratic-equations",
+      "grade": "j3",
+      "label": {
+        "ja": "二次方程式",
+        "en": "Quadratic equations",
+        "zh": "二次方程"
+      }
+    },
+    {
+      "id": "j3-quadratic-functions",
+      "grade": "j3",
+      "label": {
+        "ja": "関数 y=ax²",
+        "en": "Functions y=ax²",
+        "zh": "函数 y=ax²"
+      }
+    },
+    {
+      "id": "j3-similarity",
+      "grade": "j3",
+      "label": {
+        "ja": "相似な図形",
+        "en": "Similar figures",
+        "zh": "相似图形"
+      }
+    },
+    {
+      "id": "j3-circle",
+      "grade": "j3",
+      "label": {
+        "ja": "円",
+        "en": "Circles",
+        "zh": "圆"
+      }
+    },
+    {
+      "id": "j3-pythagoras",
+      "grade": "j3",
+      "label": {
+        "ja": "三平方の定理",
+        "en": "Pythagorean theorem",
+        "zh": "勾股定理"
+      }
+    },
+    {
+      "id": "j3-sampling",
+      "grade": "j3",
+      "label": {
+        "ja": "標本調査",
+        "en": "Sampling",
+        "zh": "抽样调查"
+      }
+    },
+    {
+      "id": "numbers-and-algebra",
+      "label": {
+        "ja": "数と式",
+        "en": "Numbers & algebra",
+        "zh": "数与式"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "geometry-measurement",
+      "label": {
+        "ja": "図形と計量",
+        "en": "Geometry & measurement",
+        "zh": "图形与测量"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "quadratic-functions",
+      "label": {
+        "ja": "2次関数",
+        "en": "Quadratic functions",
+        "zh": "二次函数"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "combinatorics-probability",
+      "label": {
+        "ja": "場合の数と確率",
+        "en": "Counting & probability",
+        "zh": "计数与概率"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "trigonometric-functions",
+      "label": {
+        "ja": "三角関数",
+        "en": "Trigonometric functions",
+        "zh": "三角函数"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "exponential-logarithmic",
+      "label": {
+        "ja": "指数関数・対数関数",
+        "en": "Exponential & logarithmic functions",
+        "zh": "指数函数与对数函数"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "sequences",
+      "label": {
+        "ja": "数列",
+        "en": "Sequences",
+        "zh": "数列"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "vectors",
+      "label": {
+        "ja": "ベクトル",
+        "en": "Vectors",
+        "zh": "向量"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "calculus",
+      "label": {
+        "ja": "微分法・積分法",
+        "en": "Differentiation & integration",
+        "zh": "微分与积分"
+      },
+      "grade": "high"
+    },
+    {
+      "id": "high-statistical-inference",
+      "grade": "high",
+      "label": {
+        "ja": "統計的な推測",
+        "en": "Statistical inference",
+        "zh": "统计推断"
+      }
+    },
+    {
+      "id": "high-complex-plane",
+      "grade": "high",
+      "label": {
+        "ja": "複素数平面",
+        "en": "Complex plane",
+        "zh": "复平面"
+      }
+    },
+    {
+      "id": "high-integer-properties",
+      "grade": "high",
+      "label": {
+        "ja": "整数の性質",
+        "en": "Properties of integers",
+        "zh": "整数的性质"
+      }
+    }
+  ],
+  "purposes": [
+    {
+      "id": "intro",
+      "label": {
+        "ja": "初めて学ぶ",
+        "en": "First look",
+        "zh": "初次学习"
+      }
+    },
+    {
+      "id": "basics",
+      "label": {
+        "ja": "基礎を身につける",
+        "en": "Build foundations",
+        "zh": "掌握基础"
+      }
+    },
+    {
+      "id": "practice",
+      "label": {
+        "ja": "反復練習",
+        "en": "Repeated practice",
+        "zh": "反复练习"
+      }
+    },
+    {
+      "id": "timed",
+      "label": {
+        "ja": "タイムアタック",
+        "en": "Time attack",
+        "zh": "限时挑战"
+      }
+    },
+    {
+      "id": "proof",
+      "label": {
+        "ja": "証明トレーニング",
+        "en": "Proof training",
+        "zh": "证明训练"
+      }
+    },
+    {
+      "id": "interactive",
+      "label": {
+        "ja": "グラフ・図形操作",
+        "en": "Explore graphs and figures",
+        "zh": "操作图表与图形"
+      }
+    },
+    {
+      "id": "inquiry",
+      "label": {
+        "ja": "思考・探究",
+        "en": "Reasoning and inquiry",
+        "zh": "思考与探究"
+      }
+    },
+    {
+      "id": "advanced",
+      "label": {
+        "ja": "発展問題",
+        "en": "Advanced problems",
+        "zh": "拓展问题"
+      }
+    }
+  ],
   "apps": [
     {
       "id": "proof-rush",
       "title": "PROOF RUSH",
-      "grade": "j2",
-      "category": "geometry",
       "status": "available",
       "url": "https://manaty-bit.github.io/test1/mole-mvp/",
       "sourceUrl": "https://github.com/manaty-bit/test1/tree/main/mole-mvp",
-      "accent": "mint",
-      "illustration": "mole",
       "description": {
         "ja": "モグラと一緒に合同の証明へ。条件を見抜いて、証明を進めよう。",
         "en": "Race through triangle-congruence proofs with a friendly mole.",
         "zh": "和可爱的鼹鼠一起挑战三角形全等证明。"
       },
-      "topic": {
-        "ja": "三角形の合同・証明",
-        "en": "Triangle congruence & proof",
-        "zh": "三角形全等与证明"
-      }
+      "grades": [
+        "j2"
+      ],
+      "units": [
+        "j2-congruence"
+      ],
+      "purposes": [
+        "basics",
+        "practice",
+        "timed",
+        "proof"
+      ],
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "thumbnail": {
+        "accent": "mint",
+        "illustration": "mole"
+      },
+      "details": {
+        "learning": {
+          "ja": "図から合同条件と対応する辺・角を見つける。",
+          "en": "Identify congruence criteria and corresponding sides and angles.",
+          "zh": "识别全等条件及对应边和对应角。"
+        },
+        "game": {
+          "ja": "モグラを進め、合同条件や証明の根拠を選ぶ。",
+          "en": "Guide a mole by choosing congruence criteria and proof reasons.",
+          "zh": "选择全等条件和证明依据，让鼹鼠前进。"
+        },
+        "classroom": {
+          "ja": "合同条件の導入後に、同じ根拠を異なる図で説明する。",
+          "en": "After introducing congruence, ask students to explain the same rule in different diagrams.",
+          "zh": "介绍全等条件后，让学生用同一依据解释不同图形。"
+        },
+        "stage": {
+          "ja": "合同条件を学んだ後の練習",
+          "en": "Practice after learning congruence criteria",
+          "zh": "学习全等条件后的练习"
+        },
+        "devices": {
+          "ja": "スマートフォン（Chromiumで起動確認）",
+          "en": "Phone-sized screen (launch checked in Chromium)",
+          "zh": "手机尺寸（已用 Chromium 验证启动）"
+        }
+      },
+      "publishedAt": null,
+      "updatedAt": null,
+      "version": null,
+      "history": [],
+      "variants": []
     },
     {
       "id": "detective",
       "title": "証明探偵団",
-      "grade": "j2",
-      "category": "geometry",
       "status": "available",
       "url": "https://manaty-bit.github.io/test1/shomei-tanteidan/",
       "sourceUrl": "https://github.com/manaty-bit/test1/tree/main/shomei-tanteidan",
-      "accent": "violet",
-      "illustration": "detective",
       "description": {
         "ja": "図形に隠された謎を解け！ 証明の手がかりを集めよう。",
         "en": "Solve geometric mysteries and discover clues for each proof.",
         "zh": "破解图形谜题，寻找数学证明的线索。"
       },
-      "topic": {
-        "ja": "図形の証明",
-        "en": "Geometry proofs",
-        "zh": "几何证明"
-      }
+      "grades": [
+        "j2"
+      ],
+      "units": [
+        "j2-congruence",
+        "j2-triangles-quadrilaterals"
+      ],
+      "purposes": [
+        "proof",
+        "inquiry"
+      ],
+      "languages": [
+        "ja"
+      ],
+      "thumbnail": {
+        "accent": "violet",
+        "illustration": "detective"
+      },
+      "details": {
+        "learning": {
+          "ja": "図形から証拠を集め、証明につながる根拠を選ぶ。",
+          "en": "Collect geometric evidence and choose reasons for a proof.",
+          "zh": "收集图形线索并选择证明依据。"
+        },
+        "game": {
+          "ja": "探偵になり、章ごとに図形の事件を解く。",
+          "en": "Solve geometric cases chapter by chapter as a detective.",
+          "zh": "扮演侦探，逐章破解几何案件。"
+        },
+        "classroom": {
+          "ja": "解答前に、図の見た目と条件から言える事実を分けて話し合う。",
+          "en": "Before answering, discuss which facts follow from the conditions and which are only visual impressions.",
+          "zh": "作答前讨论哪些事实来自已知条件，哪些只是视觉印象。"
+        },
+        "stage": {
+          "ja": "平面図形の性質を学んだ後の証明練習",
+          "en": "Proof practice after learning plane geometry properties",
+          "zh": "学习平面图形性质后的证明练习"
+        },
+        "devices": {
+          "ja": "スマートフォン（Chromiumで起動確認）",
+          "en": "Phone-sized screen (launch checked in Chromium)",
+          "zh": "手机尺寸（已用 Chromium 验证启动）"
+        },
+        "certificate": true,
+        "nameInput": true
+      },
+      "publishedAt": null,
+      "updatedAt": null,
+      "version": null,
+      "history": [],
+      "variants": []
     },
     {
       "id": "proof-builder",
       "title": "証明ビルダー",
-      "grade": "j2",
-      "category": "algebra",
       "status": "available",
       "url": "https://manaty-bit.github.io/shoumei-builder/",
       "sourceUrl": "https://github.com/manaty-bit/shoumei-builder",
-      "accent": "peach",
-      "illustration": "blocks",
       "description": {
-        "ja": "証明を組み立て、まちがいを修復。最後は白紙から挑戦しよう。",
-        "en": "Build proofs, repair mistakes, then try writing your own.",
-        "zh": "构建数学证明、纠正错误，最后尝试独立书写。"
+        "ja": "整数の性質を、選択式で証明。式や根拠を組み立てて、誤った証明を修正しよう。",
+        "en": "Build proofs of integer properties from choices and fix incorrect reasoning.",
+        "zh": "通过选择组装整数性质的证明，并修正错误推理。"
       },
-      "topic": {
-        "ja": "整数の性質と証明",
-        "en": "Proofs with integers",
-        "zh": "整数性质与证明"
-      }
+      "grades": [
+        "j1",
+        "j2"
+      ],
+      "units": [
+        "j1-letters-expressions",
+        "j2-algebra"
+      ],
+      "purposes": [
+        "basics",
+        "proof",
+        "advanced"
+      ],
+      "languages": [
+        "ja"
+      ],
+      "thumbnail": {
+        "accent": "peach",
+        "illustration": "blocks"
+      },
+      "details": {
+        "learning": {
+          "ja": "整数を文字で表し、式変形から結論までの流れを組み立てる。",
+          "en": "Represent integers algebraically and connect transformations to a conclusion.",
+          "zh": "用字母表示整数，理解从式子变形到结论的过程。"
+        },
+        "game": {
+          "ja": "選択式で証明を組み立てたり、誤った行と理由を見つけて修正したりする。",
+          "en": "Build a proof from choices or identify and correct a faulty step.",
+          "zh": "通过选择组装证明，或找出并修正错误步骤。"
+        },
+        "classroom": {
+          "ja": "中1では基礎問題で偶数を 2n と表す理由を説明する。中2では式変形の根拠を選び、誤った行を修正した後、証明を紙に書く。",
+          "en": "In Grade 7, use a basic problem to explain why an even integer can be written as 2n. In Grade 8, have students choose reasons for algebraic steps, correct a faulty step, and then write the proof on paper.",
+          "zh": "初一用基础题说明为什么偶数可以写成 2n。初二先选择式子变形的依据，修正错误步骤，再在纸上写出证明。"
+        },
+        "stage": {
+          "ja": "文字式の基礎を学んだ後の証明入門から発展",
+          "en": "Proof practice from introductory to advanced after basic algebra",
+          "zh": "掌握基础代数式后，从入门到进阶的证明练习"
+        },
+        "devices": {
+          "ja": "PC・スマートフォン",
+          "en": "Desktop and phone",
+          "zh": "电脑与手机"
+        }
+      },
+      "publishedAt": null,
+      "updatedAt": "2026-11-17",
+      "version": "5",
+      "history": [
+        {
+          "date": "2026-11-17",
+          "summary": {
+            "ja": "不等号の表示を日本の数学表記に統一。",
+            "en": "Standardized inequality symbols to Japanese mathematical notation.",
+            "zh": "将不等号显示统一为日本数学记法。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/shoumei-builder/commit/5bfde41a992a95f8cd62dfb1c9f2aeca7c6f7cfb"
+        }
+      ],
+      "variants": []
     },
     {
       "id": "trig-bloom",
       "title": "TRIG BLOOM",
-      "grade": "high",
-      "category": "functions",
       "status": "available",
       "url": "https://manaty-bit.github.io/trig-bloom/",
       "sourceUrl": "https://github.com/manaty-bit/trig-bloom",
-      "accent": "sky",
-      "illustration": "trig",
       "description": {
         "ja": "sin・cos・tanの特別角をテンポよくマスター！ 日英切替にも対応。",
         "en": "Master special-angle sine, cosine, and tangent with fast practice.",
         "zh": "通过趣味练习掌握特殊角的正弦、余弦和正切。"
       },
-      "topic": {
-        "ja": "三角関数",
-        "en": "Trigonometric functions",
-        "zh": "三角函数"
+      "grades": [
+        "high"
+      ],
+      "units": [
+        "trigonometric-functions"
+      ],
+      "purposes": [
+        "basics",
+        "practice",
+        "timed"
+      ],
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "thumbnail": {
+        "accent": "sky",
+        "illustration": "trig"
       },
-      "highTopic": "trigonometric-functions"
+      "details": {
+        "learning": {
+          "ja": "特別角における sin、cos、tan の正確な値を確認する。",
+          "en": "Recall exact sine, cosine, and tangent values for special angles.",
+          "zh": "掌握特殊角的正弦、余弦和正切精确值。"
+        },
+        "game": {
+          "ja": "単位円で確かめる練習と、60秒チャレンジがある。",
+          "en": "Choose untimed practice with a unit circle or a 60-second challenge.",
+          "zh": "可选择借助单位圆的不限时练习或60秒挑战。"
+        },
+        "classroom": {
+          "ja": "単位円で値の符号を説明してから、短時間の復習に使う。",
+          "en": "Ask students to explain the sign on the unit circle before a short review round.",
+          "zh": "先让学生用单位圆解释符号，再进行短时复习。"
+        },
+        "stage": {
+          "ja": "単位円を学んだ後の定着と復習",
+          "en": "Consolidation after learning the unit circle",
+          "zh": "学习单位圆后的巩固与复习"
+        },
+        "devices": {
+          "ja": "PC・スマートフォン",
+          "en": "Desktop and phone",
+          "zh": "电脑与手机"
+        },
+        "duration": {
+          "ja": "60秒チャレンジあり。正誤によって残り時間が変動。",
+          "en": "The 60-second challenge adjusts time based on answers.",
+          "zh": "60秒挑战的剩余时间会根据答题情况调整。"
+        }
+      },
+      "publishedAt": null,
+      "updatedAt": "2026-11-07",
+      "version": null,
+      "history": [
+        {
+          "date": "2026-11-07",
+          "summary": {
+            "ja": "日本語または英語で直接開ける共有リンクを追加。",
+            "en": "Added shareable links that open in Japanese or English.",
+            "zh": "新增可直接以日语或英语打开的分享链接。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/trig-bloom/commit/dd8a14b398d969679c96e72d2d9ebb7965109d2c"
+        }
+      ],
+      "variants": []
     },
     {
       "id": "log-lab",
       "title": "LOG LAB",
-      "grade": "high",
-      "category": "functions",
       "status": "available",
       "url": "https://manaty-bit.github.io/test1/log-lab/",
       "sourceUrl": "https://github.com/manaty-bit/test1/tree/main/log-lab",
-      "accent": "yellow",
-      "illustration": "log",
       "description": {
         "ja": "指数・対数のルールを練習。グラフでも性質をつかもう。",
         "en": "Explore exponents, logarithms, and their graphs.",
         "zh": "探索指数、对数及其函数图像。"
       },
-      "topic": {
-        "ja": "指数関数・対数関数",
-        "en": "Exponential & logarithmic functions",
-        "zh": "指数函数与对数函数"
+      "grades": [
+        "high"
+      ],
+      "units": [
+        "exponential-logarithmic"
+      ],
+      "purposes": [
+        "intro",
+        "basics",
+        "practice",
+        "timed",
+        "interactive",
+        "inquiry"
+      ],
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "thumbnail": {
+        "accent": "yellow",
+        "illustration": "log"
       },
-      "highTopic": "exponential-logarithmic"
+      "details": {
+        "learning": {
+          "ja": "指数と対数の関係、公式、グラフの特徴を学ぶ。",
+          "en": "Connect exponent rules, logarithms, and graph behavior.",
+          "zh": "联系指数与对数的关系、运算公式和图像特征。"
+        },
+        "game": {
+          "ja": "計算練習、60秒勝負、グラフ実験、グラフと式の対応問題がある。",
+          "en": "Practice calculations, try a timed round, or match graphs and formulas.",
+          "zh": "包含计算练习、限时挑战、图像实验和图像与公式匹配。"
+        },
+        "classroom": {
+          "ja": "底を変える前にグラフの形を予想し、実験後に比較する。",
+          "en": "Predict the curve before changing the base, then compare it with the experiment.",
+          "zh": "先预测改变底数后的曲线，再与实验结果比较。"
+        },
+        "stage": {
+          "ja": "指数から対数への導入と、公式・グラフの復習",
+          "en": "Introduction to logarithms and review of rules and graphs",
+          "zh": "从指数过渡到对数，并复习公式与图像"
+        },
+        "devices": {
+          "ja": "スマートフォン（Chromiumで起動確認）",
+          "en": "Phone-sized screen (launch checked in Chromium)",
+          "zh": "手机尺寸（已用 Chromium 验证启动）"
+        }
+      },
+      "publishedAt": null,
+      "updatedAt": null,
+      "version": "4",
+      "history": [],
+      "variants": []
     },
     {
       "id": "number-line-dash",
       "title": "数直線ダッシュ",
-      "grade": "j1",
-      "category": "arithmetic",
       "status": "coming",
       "url": null,
       "sourceUrl": null,
-      "accent": "mint",
-      "illustration": "numberline",
       "description": {
-        "ja": "正と負の数を走って学ぶ。ステージ0から練習できるよ。",
-        "en": "Learn positive and negative numbers through a number-line adventure.",
-        "zh": "通过数轴小游戏理解正数与负数。"
+        "ja": "正と負の数を数直線で学ぶ教材です。",
+        "en": "A number-line game for positive and negative numbers.",
+        "zh": "用数轴学习正数与负数的游戏。"
       },
-      "topic": {
-        "ja": "正の数・負の数",
-        "en": "Positive & negative numbers",
-        "zh": "正数与负数"
-      }
+      "grades": [
+        "j1"
+      ],
+      "units": [
+        "j1-positive-negative"
+      ],
+      "purposes": [
+        "intro",
+        "basics"
+      ],
+      "languages": [],
+      "thumbnail": {
+        "accent": "mint",
+        "illustration": "numberline"
+      },
+      "details": {
+        "learning": {
+          "ja": "数直線上の位置と移動から、正負の数の加減を学ぶ。",
+          "en": "Learn signed arithmetic through position and movement on a number line.",
+          "zh": "通过数轴的位置与移动学习有理数加减。"
+        }
+      },
+      "publishedAt": null,
+      "updatedAt": null,
+      "version": null,
+      "history": [],
+      "variants": []
     }
   ]
 }

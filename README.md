@@ -1,84 +1,39 @@
 # MANATY LAB
 
-> **Play. Learn. Discover.**
->
-> 遊びから生まれる、数学の「わかった！」
+**Play. Learn. Discover.**
+遊びから生まれる、数学の「わかった！」
 
-学校から独立した、無料の数学学習アプリのポータルサイトです。
+[公開ポータル](https://manaty-bit.github.io/math-app-portal/)は GitHub Pages 上の静的サイトです。日本語・英語・簡体字中国語で利用でき、教材ごとの対応言語はカードと詳細に表示します。お気に入りはブラウザ内に保存します。
 
-## 構成
+## ローカル確認
 
-- `index.html` — トップページ・アプリ検索・紹介・YouTube/X案内
-- `styles.css` — モバイル・PCレスポンシブ対応
-- `app.js` — 日本語・英語・簡体中国語の切替、検索、学年フィルター、ミニ数直線
-- `apps.json` — 公開・準備中アプリの登録データ
-- `.nojekyll` — GitHub Pages用
-
-外部CDN・認証・分析タグ・Cookieなし。JavaScriptのみで動作します。
-
-## アプリを追加する
-
-`apps.json` の `apps` に1件追加してください。
-
-```json
-{
-  "id": "unique-game-slug",
-  "title": "GAME TITLE",
-  "grade": "j1",
-  "category": "arithmetic",
-  "status": "coming",
-  "url": null,
-  "sourceUrl": null,
-  "accent": "mint",
-  "illustration": "numberline",
-  "description": {"ja": "紹介", "en": "Description", "zh": "简介"},
-  "topic": {"ja": "単元", "en": "Topic", "zh": "主题"}
-}
-```
-
-- `status`: `coming` / `available`。承認前は必ず `coming` にする。
-- `url`: **実際に公開され、動作を確認したサイトURLのみ**。制作途中の private repo リンクを公開しない。
-- `grade`: `j1`, `j2`, `j3`, `high`。
-- `accent`: `mint`, `violet`, `peach`, `sky`, `yellow`。
-- `illustration`: `mole`, `detective`, `blocks`, `trig`, `log`, `numberline`。
-- 既存アプリが日英中に対応していることを意味するものではありません。ポータル自体が3言語対応です。
-
-## SNSを開設したら
-
-`app.js` の `SOCIAL` に確認済みの公式URLを設定すると「準備中」がリンクに切り替わります。
-
-```js
-const SOCIAL={youtube:'https://www.youtube.com/@YOUR_CHANNEL',x:'https://x.com/YOUR_HANDLE'};
-```
-
-※ `YOUR_CHANNEL` / `YOUR_HANDLE` は説明用の例で、実在のアカウントとは無関係です。
-
-## 公開方法
-
-GitHub Pages: Settings → Pages → Build and deployment → Deploy from a branch → `main` → `/(root)` → Save.
-
-想定URL： https://manaty-bit.github.io/math-app-portal/
-
-## 公開の品質ルール
-
-- 私立学校・学校行事・児童生徒の個人情報を載せない。学校の公式サイトではない。
-- private な `manaty-bit/math-app-factory` 内で制作中のアプリは、承認されるまで公開しない。
-- 生徒の提出画像・氏名・学習履歴をこのポータルで収集しない。
-- ゲーム内の賞状の有無・対応言語はアプリごとに異なる。ポータルが一律に保証する記載にしない。
-- 実際に使用する前にアプリのリンク・数学内容・ブラウザ対応を最終確認する。
-
-## ローカルで確認
-
-```bash
+```sh
+python3 scripts/validate.py
 python3 -m http.server 8000
 ```
 
-ブラウザで `http://localhost:8000/` を開く（ブラウザの `file://` では `apps.json` の読み込みが制限される場合があります）。
+ブラウザで `http://localhost:8000/` を開きます。JSON を取得するため HTTP 経由で確認します。
 
+## 教材データの登録
 
-## アプリ一覧の分類
-- 中学数学：`grade` は `j1`, `j2`, `j3` で学年別。
-- 高校数学：`grade` は `high`、`highTopic` に単元IDを記入する（学年では分類しない）。
-- 現在の高校単元ID：`numbers-and-algebra`、`geometry-measurement`、`quadratic-functions`、`combinatorics-probability`、`trigonometric-functions`、`exponential-logarithmic`、`sequences`、`vectors`、`calculus`。
-- 高校単元を増やすときは `app.js` の `HIGH_TOPICS` に日英中の表示名を加え、`apps.json` の該当アプリに `highTopic` を設定。
-- 未公開の単元を選んだときは「準備中」と表示する。未完成アプリを公開リンクにしない。
+教材の追加・更新は `apps.json` で行います。
+
+| 項目 | 登録方法 |
+|---|---|
+| `id`, `title` | 既存IDは維持。タイトルは教材の公開名です。 |
+| `grades`, `units`, `purposes` | 複数指定可能。単元と目的の参照先は同じJSONにあります。単元の学年も `grades` に含めます。 |
+| `status`, `url`, `sourceUrl` | 教員の承認後、公開先で起動を確認してから `available` と公開HTTPS URLを登録します。準備中は `coming`、URLはいずれも `null` です。 |
+| `languages`, `description` | 対応確認済み言語のみ `ja`、`en`、`zh` で登録。未確認の言語一覧は空配列。紹介文は3言語分を登録します。 |
+| `thumbnail` | `accent` は mint / violet / peach / sky / yellow、`illustration` は mole / detective / blocks / trig / log / numberline。 |
+| `details` | `learning` は必須。任意で `game`、`stage`、`devices`、`duration`、`classroom` の3言語文、`certificate`・`nameInput` の真偽値を設定します。未確認の項目は省略できます。 |
+| `publishedAt`, `updatedAt`, `version` | 確認できる資料に基づいて登録。日付は `YYYY-MM-DD`、不明は `null`。日付のない教材は新着欄に表示しません。 |
+| `history`, `variants` | 履歴は `date`、3言語の `summary`、任意の `sourceUrl`。公開済み派生版は3言語の `label` と `url`。該当なしは空配列です。 |
+| `keywords` | 任意。教材名や単元名以外の検索語を3言語で追加できます。 |
+
+中学の22単元と高校の内容別分類は、コードの変更なしに `units` に追加できます。用途も `purposes` で管理します。公開データに非公開の審査記録・ソース・個人情報を載せないでください。YouTube・Xは公式URL確定まで準備中として表示します。確定後は `app.js` の `socialUrls` に設定します。
+
+## 公開確認
+
+1. 変更をDraft PRで提出し、データ検証、PC・タブレット・スマートフォンでの操作、既存教材のリンクを確認します。
+2. 教員承認後にマージし、GitHub Pagesの `main` / `(root)` の配信成功を確認します。
+3. 既存の公開URLから3言語、検索、詳細、お気に入り、既存の起動リンクを確認します。
