@@ -10,7 +10,7 @@
       searchLabel:'アプリを検索',searchPlaceholder:'単元・アプリ名で検索',filterAll:'すべて',gradeJ1:'中学1年',gradeJ2:'中学2年',gradeJ3:'中学3年',gradeHigh:'高校数学',
       source:'コード',
       aboutKicker:'ABOUT MANATY LAB',aboutTitle:'数学に、<br><span>遊び心を。</span>',aboutBody:'MANATY LABは、数学をもっと身近に感じるための個人制作の学習アプリプロジェクトです。現役の数学教員の視点をもとに、「おもしろい」と「なるほど」を両立するゲームを少しずつ公開しています。',aboutLink:'ゲームを探してみる',
-      connectKicker:'STAY CURIOUS',connectTitle:'遊び方も、新作も。',connectSubtitle:'YouTubeで使い方を、Xで新しいアプリのお知らせを発信していく予定です。',youtubeDesc:'ゲームの使い方や、数学の「なるほど！」を動画で紹介していきます。',xDesc:'新作アプリや、制作の裏側を気軽にお知らせしていきます。',comingSoonSocial:'準備中',visitChannel:'チャンネルを見る ↗',visitX:'Xを見る ↗',footerMessage:'遊びから生まれる、数学の「わかった！」',footerNote:'個人運営の学習アプリサイトです。学校の公式サイトではありません。',backToTop:'ページの先頭へ ↑'
+      connectKicker:'STAY CURIOUS',connectTitle:'遊び方も、新作も。',connectSubtitle:'YouTubeで使い方を、Xで新しいアプリのお知らせを発信していく予定です。',youtubeDesc:'ゲームの使い方や、数学の「なるほど！」を動画で紹介していきます。',xDesc:'新作アプリや、制作の裏側を気軽にお知らせしていきます。',comingSoonSocial:'準備中',visitChannel:'チャンネルを見る ↗',visitX:'Xを見る ↗',footerMessage:'遊びから生まれる、数学の「わかった！」',footerNote:'個人運営の学習アプリサイトです。学校の公式サイトではありません。',termsLink:'利用条件・著作権',backToTop:'ページの先頭へ ↑'
     },
     en: {
       navApps:'Explore games',navAbout:'About MANATY LAB',headerPlay:'Start playing',
@@ -20,7 +20,7 @@
       searchLabel:'Search games',searchPlaceholder:'Search by game or topic',filterAll:'All',gradeJ1:'Grade 7',gradeJ2:'Grade 8',gradeJ3:'Grade 9',gradeHigh:'High school',
       source:'Code',
       aboutKicker:'ABOUT MANATY LAB',aboutTitle:'A little more<br><span>play in math.</span>',aboutBody:'MANATY LAB is an independent collection of educational math apps. Built from the perspective of an active math teacher, each game aims to bring together fun and genuine understanding.',aboutLink:'Discover the games',
-      connectKicker:'STAY CURIOUS',connectTitle:'New games. New ideas.',connectSubtitle:'We plan to share game tutorials on YouTube and new releases on X.',youtubeDesc:'Watch how to play and discover the math behind the games.',xDesc:'Follow upcoming games and behind-the-scenes updates.',comingSoonSocial:'Coming soon',visitChannel:'Visit channel ↗',visitX:'Visit X ↗',footerMessage:'Play your way to an “Aha!” moment.',footerNote:'An independent learning site, not an official school website.',backToTop:'Back to top ↑'
+      connectKicker:'STAY CURIOUS',connectTitle:'New games. New ideas.',connectSubtitle:'We plan to share game tutorials on YouTube and new releases on X.',youtubeDesc:'Watch how to play and discover the math behind the games.',xDesc:'Follow upcoming games and behind-the-scenes updates.',comingSoonSocial:'Coming soon',visitChannel:'Visit channel ↗',visitX:'Visit X ↗',footerMessage:'Play your way to an “Aha!” moment.',footerNote:'An independent learning site, not an official school website.',termsLink:'Terms of use & copyright',backToTop:'Back to top ↑'
     },
     zh: {
       navApps:'探索游戏',navAbout:'关于 MANATY LAB',headerPlay:'开始体验',
@@ -30,7 +30,7 @@
       searchLabel:'搜索游戏',searchPlaceholder:'按游戏或数学主题搜索',filterAll:'全部',gradeJ1:'初一',gradeJ2:'初二',gradeJ3:'初三',gradeHigh:'高中数学',
       source:'代码',
       aboutKicker:'ABOUT MANATY LAB',aboutTitle:'让数学多一点<br><span>游戏的乐趣。</span>',aboutBody:'MANATY LAB 是独立制作的数学学习应用项目。我们以一线数学教师的教学经验为基础，陆续推出既有趣又能帮助理解数学概念的小游戏。',aboutLink:'探索游戏',
-      connectKicker:'STAY CURIOUS',connectTitle:'新玩法，新作品。',connectSubtitle:'我们计划通过 YouTube 介绍玩法，并在 X 发布新应用动态。',youtubeDesc:'通过视频学习游戏玩法和背后的数学原理。',xDesc:'了解最新作品与制作过程。',comingSoonSocial:'筹备中',visitChannel:'访问频道 ↗',visitX:'访问 X ↗',footerMessage:'在游戏中发现数学的“原来如此！”',footerNote:'本网站为独立运营的学习平台，并非学校官方网站。',backToTop:'返回顶部 ↑'
+      connectKicker:'STAY CURIOUS',connectTitle:'新玩法，新作品。',connectSubtitle:'我们计划通过 YouTube 介绍玩法，并在 X 发布新应用动态。',youtubeDesc:'通过视频学习游戏玩法和背后的数学原理。',xDesc:'了解最新作品与制作过程。',comingSoonSocial:'筹备中',visitChannel:'访问频道 ↗',visitX:'访问 X ↗',footerMessage:'在游戏中发现数学的“原来如此！”',footerNote:'本网站为独立运营的学习平台，并非学校官方网站。',termsLink:'使用条款与著作权',backToTop:'返回顶部 ↑'
     }
   };
   function artSvg(type){
