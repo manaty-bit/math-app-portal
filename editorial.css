@@ -1,0 +1,91 @@
+/* MANATY LAB / Editorial design v3. Existing functional styles remain in styles.css. */
+:root {
+  --paper:#faf9f5; --ink:#202925; --muted:#506059; --line:#d8ddd5;
+  --green:#245b4b; --mint:#e8f0e7; --white:#fff;
+  font-family:"Hiragino Sans","Yu Gothic","Meiryo",system-ui,sans-serif;
+}
+.container { width:min(100% - 3rem,73rem); }
+.site-header { background:var(--paper); }
+.header-inner { min-height:4.7rem; gap:1.25rem; }
+.wordmark { font-size:1.15rem; letter-spacing:-.055em; }
+.wordmark-symbol { border:0; border-radius:0; padding:0; font-size:1.65rem; }
+.wordmark-symbol span { color:#b95b35; }
+.desktop-nav { gap:1.5rem; }
+.desktop-nav a { font-size:.87rem; }
+.header-cta { display:none; }
+.languages { border:0; background:transparent; border-radius:0; padding:0; gap:.2rem; }
+.languages button { border-radius:2px; padding:.25rem .6rem; font-size:.78rem; min-height:2.35rem; border:1px solid transparent; white-space:nowrap; }
+.languages [aria-pressed="true"] { background:transparent; color:var(--green); border-color:var(--green); font-weight:750; }
+.hero-wrap { grid-template-columns:1.1fr .9fr; gap:clamp(2rem,5vw,5rem); padding-block:clamp(2.5rem,6vw,5.25rem) 2.2rem; }
+.hero-copy h1, html:lang(ja) .hero-copy h1, html:lang(zh) .hero-copy h1 { font-size:clamp(2.8rem,5.8vw,5rem); line-height:1.17; letter-spacing:-.065em; margin:.7rem 0 1.15rem; }
+.highlight { color:var(--green); }
+.eyebrow,.section-kicker,.play-label { font-size:.72rem; letter-spacing:.115em; font-weight:750; }
+.hero-english { font-size:1.15rem; font-weight:500; letter-spacing:0; }
+.hero-description { font-size:1rem; line-height:1.85; margin-block:.85rem 1.3rem; max-width:36em; }
+.hero-actions { gap:.65rem; }
+.button,.app-play,.quiet { border-radius:3px; font-weight:650; }
+.hero-actions .button { min-height:3.1rem; padding-inline:1.2rem; }
+.hero-visual { background:#e6ede2; border:0; border-radius:2px; padding:1.5rem; }
+.hero-blob { width:13rem; background:#f1cb58; inset:-5rem -3.5rem auto auto; opacity:.85; }
+.visual-decor { display:none; }
+.mini-stage { border:1px solid #c7d4c8; border-radius:2px; background:#faf9f5; margin-block:1rem; padding:1rem; }
+.mini-equation { font-family:Georgia,"Times New Roman",serif; font-weight:500; }
+.mini-controls button { border-radius:3px; background:#fff; }
+.hero-note { font-size:.78rem; }
+.book-section { margin-block:0 1.8rem; }
+.book-banner { display:block; border-block:1px solid var(--line); color:inherit; text-decoration:none; background:#fffdf5; }
+.book-banner:hover .book-cta { text-decoration:underline; }
+.book-banner img { width:100%; height:auto; display:block; }
+.book-copy { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 1.25rem; border-left:4px solid #e77b50; }
+.book-copy h2 { font-size:clamp(1.05rem,2vw,1.45rem); line-height:1.5; margin:.15rem 0; letter-spacing:0; }
+.book-copy p { font-size:.83rem; color:var(--muted); }
+.book-cta { color:var(--green); font-size:.85rem; font-weight:700; flex-shrink:0; }
+.news-section { padding-block:1rem; margin-bottom:2.6rem; }
+.news-card { border:0; border-left:1px solid var(--line); border-radius:0; background:transparent; }
+.news-section h2 { font-size:1rem; letter-spacing:0; }
+#filterTitle { margin-bottom:1rem; }
+.grade-shortcuts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem; margin-bottom:1rem; }
+.grade-shortcuts button { border:0; background:#e6eee4; text-align:left; padding:.8rem .9rem; min-height:5.4rem; display:grid; grid-template-columns:1fr auto; gap:.15rem .5rem; align-items:center; }
+.grade-shortcuts button:nth-child(2) { background:#f4e9c9; }
+.grade-shortcuts button:nth-child(3) { background:#f1dfd3; }
+.grade-shortcuts button:nth-child(4) { background:#dce8ed; }
+.grade-shortcuts button span:first-child { grid-column:1/-1; font-size:.7rem; color:var(--muted); letter-spacing:.12em; }
+.grade-shortcuts strong { font-size:clamp(1rem,1.8vw,1.35rem); }
+.grade-shortcuts button:hover { outline:1px solid var(--green); outline-offset:-1px; }
+#filters { background:transparent; border:1px solid var(--line); border-radius:2px; padding:1rem; }
+select,.search-box { border-radius:2px; }
+.list-heading { margin-block:2.25rem 1rem; }
+.app-grid { gap:1.5rem; }
+.app-card { border:0; border-bottom:1px solid var(--line); border-radius:0; background:transparent; }
+.app-art { height:clamp(9rem,15vw,12rem); border-radius:2px; }
+.app-content { padding:1rem 0 1.25rem; gap:.55rem; }
+.app-content h3 { font-size:1.3rem; letter-spacing:-.02em; }
+.app-content p { font-size:.92rem; line-height:1.7; }
+.status-chip { border-radius:2px; font-size:.72rem; border:0; }
+.favorite { border-radius:2px; }
+.tags li { background:transparent; border:1px solid var(--line); border-radius:2px; font-size:.74rem; }
+.teacher-section { background:#e6eee4; padding-block:2.5rem; }
+.about-panel { border-radius:2px; background:#245b4b; }
+.about-orbit { box-shadow:none; }
+.connect-card { border-radius:0; background:transparent; border:0; border-top:1px solid var(--line); }
+.site-footer { padding-block:2rem; }
+dialog,.detail-grid div { border-radius:3px; }
+@media(max-width:55rem) { .header-inner { gap:.4rem; } .hero-wrap { gap:1.3rem; } }
+@media(max-width:41rem) {
+  .container { width:calc(100% - 1.5rem); }
+  .header-inner { min-height:3.9rem; flex-wrap:wrap; gap:.25rem .5rem; padding-block:.4rem; }
+  .wordmark { font-size:1rem; }
+  .wordmark-symbol { font-size:1.2rem; }
+  .languages button { font-size:.72rem; padding-inline:.35rem; }
+  .hero-wrap { grid-template-columns:1fr; padding-block:1.65rem 1.25rem; gap:1.15rem; }
+  .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1 { font-size:clamp(2.35rem,10vw,3.7rem); margin:.45rem 0 .7rem; }
+  .hero-description { font-size:.94rem; margin-block:.5rem .8rem; }
+  .hero-visual { padding:.85rem; }
+  .mini-stage { padding:.6rem; margin-block:.5rem; }
+  .book-copy { align-items:flex-start; flex-direction:column; gap:.5rem; padding:.8rem; }
+  .grade-shortcuts { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .grade-shortcuts button { min-height:4.6rem; }
+  .news-section { margin-bottom:1.8rem; }
+  .app-grid { gap:1.15rem; }
+  .app-art { height:10rem; }
+}
