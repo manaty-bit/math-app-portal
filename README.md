@@ -24,7 +24,7 @@ python3 -m http.server 8000
 | `grades`, `units`, `purposes` | 複数指定可能。単元と目的の参照先は同じJSONにあります。単元の学年も `grades` に含めます。 |
 | `status`, `url`, `sourceUrl` | 教員の承認後、公開先で起動を確認してから `available` と公開HTTPS URLを登録します。準備中は `coming`、URLはいずれも `null` です。 |
 | `languages`, `description` | 対応確認済み言語のみ `ja`、`en`、`zh` で登録。未確認の言語一覧は空配列。紹介文は3言語分を登録します。 |
-| `thumbnail` | `accent` は mint / violet / peach / sky / yellow、`illustration` は mole / detective / blocks / trig / log / numberline。 |
+| `thumbnail` | `accent` は mint / violet / peach / sky / yellow、`illustration` は mole / detective / blocks / trig / log / numberline / balance。 |
 | `details` | `learning` は必須。任意で `game`、`stage`、`devices`、`duration`、`classroom` の3言語文、`certificate`・`nameInput` の真偽値を設定します。未確認の項目は省略できます。 |
 | `publishedAt`, `updatedAt`, `version` | 確認できる資料に基づいて登録。日付は `YYYY-MM-DD`、不明は `null`。日付のない教材は新着欄に表示しません。 |
 | `history`, `variants` | 履歴は `date`、3言語の `summary`、任意の `sourceUrl`。公開済み派生版は3言語の `label` と `url`。該当なしは空配列です。 |
@@ -32,8 +32,11 @@ python3 -m http.server 8000
 
 中学の22単元と高校の内容別分類は、コードの変更なしに `units` に追加できます。用途も `purposes` で管理します。公開データに非公開の審査記録・ソース・個人情報を載せないでください。YouTube・Xは公式URL確定まで準備中として表示します。確定後は `app.js` の `socialUrls` に設定します。
 
-## 公開確認
+## 教材を公開する手順
 
-1. 変更をDraft PRで提出し、データ検証、PC・タブレット・スマートフォンでの操作、既存教材のリンクを確認します。
-2. 教員承認後にマージし、GitHub Pagesの `main` / `(root)` の配信成功を確認します。
-3. 既存の公開URLから3言語、検索、詳細、お気に入り、既存の起動リンクを確認します。
+1. 非公開の開発用リポジトリで、教材の最新PRと `main` へのマージを確認し、取り出すコミットを固定します。最新PRが未マージの場合は、状況を報告して公開作業を止めます。レビュー記録と元コミットの照合情報は非公開側で管理します。
+2. 起動に必要なHTML・素材と、配布用READMEなど必要なファイルを個別に選びます。ファイルの本文・画像・メタデータを点検し、個人情報、秘密情報、内部リンク、不要な通信、第三者素材の権利条件を確認します。賞状の任意入力は端末内で扱い、名前の保存・送信がないことを確認します。公開READMEに日英の利用条件を掲載し、アプリの著作権表示と共通利用条件へのリンクを確認します。
+3. 公開ポータルの `main` を起点に作業ブランチを作ります。個別リポジトリで配信している教材は、公開URLとソースのURLを登録します。ポータルと同時公開する静的教材は `apps/<id>/index.html` に置き、必要な素材と配布用READMEを同じディレクトリに追加します。`apps.json` にカードの紹介文、学年、単元、目的、サムネイル、対応言語、詳細と公開先URLを登録します。同時公開ではURLは `https://manaty-bit.github.io/math-app-portal/apps/<id>/` とし、マージ前はローカルのプレビューで同じパスを確認します。実際の公開日を確認するまでは日付を `null` にします。
+4. `python3 scripts/validate.py`、ポータルのブラウザテスト、教材の数学・ブラウザテストを実行します。PCとスマートフォン幅でカード、検索、詳細、起動リンク、代表的な学習操作と利用条件への導線を確認します。既存教材の登録内容とリンクを比較し、実機とエミュレーションの範囲を区別して記録します。
+5. 公開ブランチへのプッシュ時点でファイルを閲覧できるため、公開対象の点検を済ませてからプッシュします。公開ポータルに Draft PR を作り、変更点、検証結果、未確認事項をまとめて教員の承認を待ちます。
+6. 教員の承認後にマージします。GitHub Pages の既存設定 `main` / `(root)` で配信が成功したことを確認し、本番でカード・教材・利用条件のリンクを開きます。個別リポジトリで配信している教材は、その公開先へ遷移することも確認します。必要に応じて確認済みの公開日を登録し、非公開側の教材台帳にも公開結果を記録します。
