@@ -792,6 +792,78 @@
         }
       ],
       "variants": []
+    },
+    {
+      "id": "balance-rescue",
+      "title": "てんびんレスキュー",
+      "status": "available",
+      "url": "https://manaty-bit.github.io/balance-rescue/",
+      "sourceUrl": "https://github.com/manaty-bit/balance-rescue",
+      "description": {
+        "ja": "てんびんの両皿に同じ操作をして、x を救出！ 等式の性質から一次方程式の解き方を学ぼう。",
+        "en": "Apply the same operation to both sides of a balance to rescue x and learn to solve linear equations.",
+        "zh": "对天平两侧进行相同的运算，解救 x，学习一元一次方程的解法。"
+      },
+      "grades": [
+        "j1"
+      ],
+      "units": [
+        "j1-linear-equations"
+      ],
+      "purposes": [
+        "intro",
+        "basics",
+        "practice",
+        "interactive",
+        "timed"
+      ],
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "thumbnail": {
+        "accent": "mint",
+        "illustration": "blocks"
+      },
+      "details": {
+        "learning": {
+          "ja": "等式の性質を使い、一次方程式を同値変形して解く。",
+          "en": "Use properties of equality to solve linear equations through equivalent transformations.",
+          "zh": "利用等式的性质，通过等价变形解一元一次方程。"
+        },
+        "game": {
+          "ja": "クイズ版・落ちゲー版、全6ステージ、60秒チャレンジ。",
+          "en": "Quiz and Balance Drop modes, six stages, and a 60-second challenge.",
+          "zh": "问答模式、卡片下落模式、六个关卡及60秒挑战。"
+        },
+        "classroom": {
+          "ja": "両辺に同じ操作をする理由を説明し、式の変形をノートに書く。",
+          "en": "Explain why the same operation is applied to both sides, then record the algebraic steps on paper.",
+          "zh": "解释为什么等式两边要进行相同的运算，并在纸上记录变形步骤。"
+        },
+        "devices": {
+          "ja": "PC・スマートフォン向け",
+          "en": "Designed for desktop and phone",
+          "zh": "适用于电脑和手机"
+        },
+        "certificate": true,
+        "nameInput": true
+      },
+      "publishedAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
+      "version": null,
+      "history": [
+        {
+          "date": "2026-11-25",
+          "summary": {
+            "ja": "初回公開。てんびん操作で一次方程式を学ぶ教材。",
+            "en": "Initial release of the balance-based linear equation activity.",
+            "zh": "首次发布，通过操作天平学习一元一次方程。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/balance-rescue/commit/844def7f0622c7460084c7141e4e8401e430f1d3"
+        }
+      ],
+      "variants": []
     }
   ]
 }
