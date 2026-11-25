@@ -797,12 +797,12 @@
       "id": "balance-rescue",
       "title": "てんびんレスキュー",
       "status": "available",
-      "url": "https://manaty-bit.github.io/balance-rescue/",
+      "url": "https://manaty-bit.github.io/balance-rescue/?mode=drop",
       "sourceUrl": "https://github.com/manaty-bit/balance-rescue",
       "description": {
-        "ja": "てんびんの釣り合いを保ちながら、両辺に同じ操作をして一次方程式を解こう。",
-        "en": "Keep the scale balanced and solve linear equations by doing the same thing to both sides.",
-        "zh": "保持天平平衡，对等式两边进行相同的运算，解一元一次方程。"
+        "ja": "カードを両方の皿に落として、てんびんをレスキュー！ 釣り合いを保ちながら、一次方程式を解こう。",
+        "en": "Drop matching cards onto both pans. Keep the scale balanced and solve linear equations.",
+        "zh": "把相同的卡牌投向天平两边，保持平衡，解一元一次方程。"
       },
       "grades": [
         "j1"
