@@ -797,8 +797,8 @@
       "id": "balance-rescue",
       "title": "てんびんレスキュー",
       "status": "available",
-      "url": "https://manaty-bit.github.io/math-app-portal/apps/balance-rescue/",
-      "sourceUrl": "https://github.com/manaty-bit/math-app-portal/tree/main/apps/balance-rescue",
+      "url": "https://manaty-bit.github.io/balance-rescue/",
+      "sourceUrl": "https://github.com/manaty-bit/balance-rescue",
       "description": {
         "ja": "てんびんの釣り合いを保ちながら、両辺に同じ操作をして一次方程式を解こう。",
         "en": "Keep the scale balanced and solve linear equations by doing the same thing to both sides.",
@@ -853,8 +853,8 @@
         "certificate": true,
         "nameInput": true
       },
-      "publishedAt": null,
-      "updatedAt": null,
+      "publishedAt": "2026-11-25",
+      "updatedAt": "2026-11-25",
       "version": "1.0.0",
       "history": [],
       "variants": []
