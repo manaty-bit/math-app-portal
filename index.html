@@ -12,6 +12,96 @@
   <title>MANATY LAB — Play. Learn. Discover.</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./editorial.css">
+  <style>
+    /* App-first portal: compact introduction, searchable game library, quiet editorial footer. */
+    :root{--paper:#f5f7f5;--ink:#172b2a;--muted:#536662;--line:#dce5e0;--green:#14594b;--mint:#e6f3eb;--white:#fff;}
+    body{line-height:1.55}
+    .container{width:min(calc(100% - 3rem),84rem)}
+    .site-header{background:#fff;box-shadow:0 1px 8px #203e2e08}
+    .header-inner{min-height:3.8rem}
+    .wordmark-symbol{background:var(--green);color:white;border-radius:.6rem;padding:.05rem .3rem;font-size:1.35rem}
+    .wordmark-symbol span{color:#f2c959}
+    .languages{border:1px solid var(--line);border-radius:2rem;padding:.16rem}
+    .languages button{border-radius:2rem;min-height:2rem}
+    .languages [aria-pressed="true"]{background:var(--green);color:white;border-color:var(--green)}
+    .hero-wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(1rem,3vw,2.5rem);padding-block:1.4rem 1.35rem}
+    .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.2;letter-spacing:-.045em;margin:.35rem 0 .4rem}
+    .hero-copy h1 br{display:none}
+    .hero-english{font-size:.95rem;color:var(--muted)}
+    .hero-description{font-size:.92rem;line-height:1.6;margin:.4rem 0 .65rem;max-width:46em}
+    .hero-actions .button{min-height:2.5rem;padding:.4rem .85rem}
+    .button,.app-play,.quiet{border-radius:.6rem}
+    .trust-row{font-size:.78rem;margin-top:.45rem}
+    .hero-visual{background:#e4f0e8;border:1px solid #d5e6db;border-radius:1rem;padding:.7rem 1rem}
+    .hero-blob{opacity:.4;width:10rem}
+    .mini-stage{margin:.35rem 0;padding:.45rem .7rem;border-radius:.7rem;background:#fff}
+    .mini-equation{font-size:1.6rem;line-height:1.2}
+    .mini-guides,.hero-note{font-size:.72rem}
+    #miniTrack{max-height:4.8rem}
+    .mini-controls button{min-height:2.35rem;min-width:2.5rem;border-radius:.5rem}
+    .catalog-section{padding-top:1.2rem;border-top:1px solid var(--line)}
+    #filterTitle{font-size:1.45rem;margin-bottom:.7rem}
+    .grade-shortcuts{gap:.65rem;margin-bottom:.7rem}
+    .grade-shortcuts button{min-height:3.45rem;grid-template-columns:auto 1fr auto;gap:.65rem;align-items:center;border-radius:.75rem;border:1px solid #ffffff80;padding:.55rem .8rem}
+    .grade-shortcuts button span:first-child{grid-column:auto;font-size:.7rem;font-weight:800;letter-spacing:0}
+    .grade-shortcuts strong{font-size:clamp(.95rem,1.6vw,1.15rem)}
+    #filters{background:#fff;border-radius:.8rem;padding:.75rem}
+    select,.search-box{border-radius:.5rem;border-color:#bdcdc5;min-height:2.5rem}
+    .filter-tools{margin-top:.45rem;gap:.3rem .7rem}
+    .filter-tools .quiet,.check{min-height:2.5rem}
+    .list-heading{margin:1.25rem 0 .7rem}
+    .list-heading h2{font-size:1.4rem}
+    .app-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+    .app-card{background:white;border:1px solid var(--line);border-radius:.9rem;overflow:hidden;box-shadow:0 2px 8px #183d2c06}
+    .app-art{height:clamp(8.5rem,11vw,10.5rem);border-radius:0}
+    .app-content{padding:.85rem;gap:.45rem}
+    .app-content h3{font-size:1.12rem;line-height:1.3}
+    .app-content p{font-size:.86rem;line-height:1.55}
+    .app-actions{gap:.4rem;align-items:stretch}
+    .app-actions .app-play{flex:1 1 auto}
+    .tags li{border-radius:.3rem;background:#f5f7f5}
+    .favorite{border-radius:50%}
+    .status-chip{border-radius:1rem}
+    .news-section{margin-top:2rem;margin-bottom:1.5rem;padding-block:.75rem}
+    .news-card{border-left:0;background:transparent;border-radius:.45rem}
+    .teacher-section{margin-top:1.8rem;padding-block:1.45rem}
+    .about-section,.connect-section{margin-block:1.8rem}
+    .about-panel{border-radius:.9rem;padding:1.6rem}
+    .about-orbit{width:7rem}
+    .book-section{margin-block:1.5rem}
+    .book-banner{background:#fff;border:1px solid var(--line);border-radius:.7rem}
+    .book-copy{padding:.7rem .9rem;border-left:0}
+    .book-copy h2{font-size:1rem;line-height:1.4;margin:.1rem 0}
+    .book-copy p,.book-cta{font-size:.75rem}
+    .book-copy .section-kicker{font-size:.65rem;color:var(--muted)}
+    .connect-card{border-radius:.7rem;border:1px solid var(--line);background:#fff}
+    @media(min-width:55.01rem) and (max-width:70rem){.app-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:55rem){.app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-wrap{gap:1rem}}
+    @media(max-width:41rem){
+      .container{width:calc(100% - 1.5rem)}
+      .header-inner{min-height:3.6rem}
+      .hero-wrap{grid-template-columns:1fr;padding-block:.95rem;gap:.7rem}
+      .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.65rem,6.5vw,2.3rem)}
+      .hero-copy h1 br{display:initial}
+      .hero-description{font-size:.85rem}
+      .hero-visual{padding:.5rem .7rem}
+      .hero-note{display:none}
+      #miniTrack{max-height:3.7rem}
+      .grade-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem}
+      .grade-shortcuts button{min-height:3rem;padding:.45rem .55rem;gap:.4rem}
+      .app-grid{gap:.65rem}
+      .app-art{height:7rem}
+      .app-content{padding:.6rem;gap:.35rem}
+      .app-content h3{font-size:1rem}
+      .app-content p{font-size:.8rem}
+      .app-actions .button,.app-actions .app-play,.app-actions .quiet{min-height:2.5rem;padding:.35rem .5rem;font-size:.8rem}
+      .status-chip{top:.35rem;left:.35rem;font-size:.65rem}
+      .favorite{top:.35rem;right:.35rem;min-height:2rem;min-width:2rem;font-size:1.1rem}
+      .book-copy{flex-direction:column;align-items:flex-start;gap:.3rem}
+      .about-panel{padding:1.15rem}
+    }
+    @media(max-width:24rem){.app-grid{grid-template-columns:1fr}.app-art{height:9rem}}
+  </style>
   <script defer src="./app.js"></script>
 </head>
 <body>
@@ -25,7 +115,6 @@
       <nav class="desktop-nav" data-label="navigation">
         <a href="#apps" data-i18n="navApps">アプリを探す</a>
         <a href="#how" data-i18n="teachers">先生方へ</a>
-        <a href="#book" data-i18n="bookNav">著書のご案内</a>
       </nav>
       <div class="header-tools">
         <div class="languages" role="group" data-label="language">
@@ -74,18 +163,6 @@
       </div>
     </section>
 
-    <section class="book-section container" id="book" aria-labelledby="bookTitle">
-      <a class="book-banner" href="https://www.maruzenjunkudo.co.jp/products/9784801110496" target="_blank" rel="noopener noreferrer">
-        <img id="bookBannerImage" src="./book-banner.png.png" alt="鈴木真人著『1冊でわかる 中学3年間の方程式』2026年12月25日発売予定" hidden>
-        <div class="book-copy"><div><span class="section-kicker" data-i18n="bookKicker">BOOK NEWS / 著書のご案内</span><h2 id="bookTitle">1冊でわかる 中学3年間の方程式</h2><p data-i18n="bookMeta">鈴木真人 著 · くろしお出版 · 2026年12月25日発売予定</p></div><span class="book-cta" data-i18n="bookAction">書籍の詳細 ↗</span></div>
-      </a>
-    </section>
-
-    <section class="news-section container" aria-labelledby="newsTitle">
-      <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
-      <div id="newsList"></div>
-    </section>
-
     <section class="catalog-section container" id="apps" aria-labelledby="apps-title" tabindex="-1">
       <h2 id="filterTitle" data-i18n="find">教材を探す</h2>
       <div class="grade-shortcuts" aria-label="Grade" data-label="byGrade"><button type="button" data-quick-grade="j1"><span aria-hidden="true">01</span><strong data-i18n="gradeJ1">中学1年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j2"><span aria-hidden="true">02</span><strong data-i18n="gradeJ2">中学2年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j3"><span aria-hidden="true">03</span><strong data-i18n="gradeJ3">中学3年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="high"><span aria-hidden="true">04</span><strong data-i18n="gradeHigh">高校数学</strong><span aria-hidden="true">↗</span></button></div>
@@ -113,6 +190,11 @@
       <button type="button" id="more" class="button button-light more" hidden data-i18n="more">さらに表示</button>
     </section>
 
+    <section class="news-section container" aria-labelledby="newsTitle">
+      <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
+      <div id="newsList"></div>
+    </section>
+
     <section class="teacher-section" id="how" aria-labelledby="teacherTitle">
       <div class="container teacher-layout">
         <div><h2 id="teacherTitle" data-i18n="teachers">先生方へ</h2><p data-i18n="teacherBody">教材の詳細から、前提知識や授業での活用例、名前入力や賞状の有無を確認できます。</p></div>
@@ -130,6 +212,12 @@
         <div><div class="section-kicker" data-i18n="aboutKicker">ABOUT MANATY LAB</div><h2 data-i18n-html="aboutTitle">数学に、<br><span>遊び心を。</span></h2><p data-i18n="aboutBody">MANATY LABは、数学をもっと身近に感じるための個人制作の学習アプリプロジェクトです。現役の数学教員の視点をもとに、「おもしろい」と「なるほど」を両立するゲームを少しずつ公開しています。</p><a href="#apps" class="text-link"><span data-i18n="aboutLink">ゲームを探してみる</span> </a></div>
         <div class="about-orbit" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit-center">M<span>·</span></div><span class="orbit-text orbit-text-a">PLAY</span><span class="orbit-text orbit-text-b">LEARN</span><span class="orbit-text orbit-text-c">DISCOVER</span></div>
       </div>
+    </section>
+
+    <section class="book-section container" id="book" aria-labelledby="bookTitle">
+      <a class="book-banner" href="https://www.maruzenjunkudo.co.jp/products/9784801110496" target="_blank" rel="noopener noreferrer">
+        <div class="book-copy"><div><span class="section-kicker" data-i18n="bookKicker">BOOK NEWS / 著書のご案内</span><h2 id="bookTitle">1冊でわかる 中学3年間の方程式</h2><p data-i18n="bookMeta">鈴木真人 著 · くろしお出版 · 2026年12月25日発売予定</p></div><span class="book-cta" data-i18n="bookAction">書籍の詳細 ↗</span></div>
+      </a>
     </section>
 
     <section class="connect-section container" id="connect">
