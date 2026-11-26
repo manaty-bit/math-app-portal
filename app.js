@@ -68,6 +68,56 @@
   }
 };
   for (const lang of Object.keys(editorialCopy)) Object.assign(phrases[lang], editorialCopy[lang]);
+  // App-specific artwork; illustration-based fallback remains for new catalog entries.
+  function signatureArt(id) {
+    const frame = (bg, body) => `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="background:${bg}"><rect width="400" height="220" fill="${bg}"/>${body}</svg>`;
+    switch (id) {
+      case 'proof-rush':
+        return frame('#14634f', `<g opacity=".14" stroke="#fff" stroke-width="1"><path d="M0 170 170 0M0 210 210 0M80 220 300 0M180 220 400 0M280 220 400 100"/></g>
+          <g transform="translate(20 20)" stroke-linejoin="round"><path d="M46 150 105 55 158 150Z" fill="#9de4c6" stroke="#ecfff4" stroke-width="4"/><path d="M218 150 277 55 330 150Z" fill="#9de4c6" stroke="#ecfff4" stroke-width="4"/>
+          <g stroke="#155740" stroke-width="4" stroke-linecap="round"><path d="m70 98 12 8m160-8 12 8M98 143v14m172-14v14"/><path d="M63 150a17 17 0 0 0-8-14m180 14a17 17 0 0 0-8-14" fill="none"/></g>
+          <g fill="#fff" font-family="Georgia,serif" font-size="37" text-anchor="middle"><text x="188" y="117">≡</text></g></g>
+          <path d="M147 198h106" stroke="#85d8b3" stroke-width="3" stroke-linecap="round"/><circle cx="200" cy="198" r="13" fill="#e5ff94"/><path d="m194 198 4 4 8-9" fill="none" stroke="#20513c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`);
+      case 'detective':
+        return frame('#6d4733', `<path d="M0 180 400 100M0 205 400 125" stroke="#a27650" stroke-width="1" opacity=".55"/>
+          <g transform="rotate(-9 158 113)"><rect x="76" y="38" width="156" height="151" rx="5" fill="#be936b" opacity=".65"/><rect x="68" y="29" width="156" height="151" rx="5" fill="#f7e8c6"/><path d="M85 54h118M85 162h118" stroke="#c4a276" stroke-width="2"/><path d="M90 141 147 72 205 141Z" stroke="#79543b" stroke-width="4" fill="none"/><path d="M90 141h115M147 72v69" stroke="#b68c61" stroke-dasharray="5 5" stroke-width="2"/><path d="M103 141a13 13 0 0 0-5-10" stroke="#ba673e" stroke-width="3" fill="none"/><circle cx="147" cy="72" r="4" fill="#ba673e"/></g>
+          <path d="m289 142 41 44" stroke="#33261e" stroke-width="19" stroke-linecap="round"/><path d="m289 142 41 44" stroke="#cf9d61" stroke-width="10" stroke-linecap="round"/><circle cx="253" cy="105" r="49" fill="#fff4d9" fill-opacity=".87" stroke="#d8b477" stroke-width="9"/><circle cx="253" cy="105" r="41" fill="none" stroke="#785137" stroke-width="2"/><text x="253" y="125" fill="#805030" font-family="Georgia,serif" font-size="58" font-weight="bold" text-anchor="middle">?</text>`);
+      case 'proof-builder':
+        return frame('#dceeff', `<g stroke="#a6c5e7" stroke-width="1" opacity=".7"><path d="M0 40h400M0 80h400M0 120h400M0 160h400M0 200h400M40 0v220M80 0v220M120 0v220M160 0v220M200 0v220M240 0v220M280 0v220M320 0v220M360 0v220"/></g>
+          <g font-family="Georgia,serif" font-weight="bold" text-anchor="middle"><rect x="83" y="42" width="234" height="54" rx="8" fill="#96bce5"/><rect x="83" y="36" width="234" height="54" rx="8" fill="#fff" stroke="#31659c" stroke-width="2"/><text x="200" y="72" fill="#214f84" font-size="31">3<tspan font-style="italic">n</tspan> + 3</text>
+          <path d="M200 98v20m-7-7 7 7 7-7" stroke="#31659c" fill="none" stroke-width="3" stroke-linecap="round"/>
+          <rect x="83" y="132" width="234" height="55" rx="8" fill="#174f86"/><rect x="83" y="126" width="234" height="55" rx="8" fill="#287ac5"/><text x="200" y="162" fill="#fff" font-size="31">3(<tspan font-style="italic">n</tspan> + 1)</text></g><circle cx="317" cy="181" r="13" fill="#baf1cd" stroke="#31775c" stroke-width="2"/><path d="m311 181 4 4 8-9" stroke="#216447" stroke-width="3" fill="none" stroke-linecap="round"/>`);
+      case 'trig-bloom':
+        return frame('#e8ddfa', `<g transform="translate(200 112)" fill="#c7a7f1" opacity=".52"><ellipse cy="-45" rx="30" ry="47"/><ellipse cy="-45" rx="30" ry="47" transform="rotate(60)"/><ellipse cy="-45" rx="30" ry="47" transform="rotate(120)"/><ellipse cy="-45" rx="30" ry="47" transform="rotate(180)"/><ellipse cy="-45" rx="30" ry="47" transform="rotate(240)"/><ellipse cy="-45" rx="30" ry="47" transform="rotate(300)"/></g>
+          <circle cx="200" cy="112" r="70" fill="#f9f4ff" fill-opacity=".75" stroke="#7252ad" stroke-width="3"/>
+          <path d="M91 112H308M200 20V203" stroke="#7252ad" stroke-width="2"/><path d="m302 108 6 4-6 4m-106-90 4-6 4 6" fill="none" stroke="#7252ad" stroke-width="2"/>
+          <path d="M200 112H256V70Z" fill="#c6f2e6" fill-opacity=".9" stroke="#40857f" stroke-width="2.5"/><path d="M200 112 256 70" stroke="#a045ba" stroke-width="5" stroke-linecap="round"/><path d="M224 112a24 24 0 0 0-5-14.4" stroke="#a045ba" fill="none" stroke-width="2.5"/><circle cx="256" cy="70" r="6" fill="#a045ba"/>
+          <g font-family="Georgia,serif" font-style="italic" fill="#60409c" font-size="18"><text x="226" y="105">θ</text><text x="214" y="130">cos</text><text x="263" y="94">sin</text><text x="310" y="106">x</text><text x="207" y="26">y</text></g>`);
+      case 'log-lab': {
+        // Same scale on both axes; x=1,2,4 correspond to y=0,1,2.
+        const curve=Array.from({length:70},(_,i)=>{const x=.36+i*.084;return `${100+35*x},${145-35*Math.log2(x)}`;}).join(' ');
+        return frame('#15243d', `<g stroke="#2c4662" stroke-width="1"><path d="M65 40h270M65 75h270M65 110h270M65 145h270M65 180h270M100 32v157M135 32v157M170 32v157M205 32v157M240 32v157M275 32v157M310 32v157"/></g>
+          <path d="M66 145H337M100 195V29" stroke="#8da4bc" stroke-width="2"/><path d="m331 141 6 4-6 4m-235-114 4-6 4 6" stroke="#8da4bc" stroke-width="2" fill="none"/>
+          <polyline points="${curve}" stroke="#66e4da" stroke-width="4.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <g fill="#f2d477"><circle cx="135" cy="145" r="4.5"/><circle cx="170" cy="110" r="4.5"/><circle cx="240" cy="75" r="4.5"/></g>
+          <g font-family="Georgia,serif" fill="#bfd3e7" font-size="15" text-anchor="middle"><text x="135" y="163">1</text><text x="170" y="163">2</text><text x="240" y="163">4</text><text x="89" y="115">1</text><text x="89" y="80">2</text></g>
+          <text x="204" y="194" fill="#c4fffa" font-family="Georgia,serif" font-size="25" text-anchor="middle"><tspan font-style="italic">y</tspan> = log<tspan font-size="16" baseline-shift="sub">2</tspan> <tspan font-style="italic">x</tspan></text>`);
+      }
+      case 'number-line-dash':
+        return frame('#ffb86c', `<path d="M0 20 170 0 0 84ZM400 153 270 220h130Z" fill="#ffdb99" opacity=".8"/><g stroke="#c96d2d" stroke-width="3" opacity=".5" stroke-linecap="round"><path d="M47 73h44M38 83h34M45 94h20"/></g>
+          <path d="M47 145H353m-9-7 9 7-9 7M56 138l-9 7 9 7" fill="none" stroke="#713b27" stroke-width="4" stroke-linecap="round"/>
+          <g stroke="#713b27" stroke-width="3"><path d="M64 137v16M98 137v16M132 137v16M166 137v16M200 134v22M234 137v16M268 137v16M302 137v16M336 137v16"/></g>
+          <g fill="#713b27" font-family="system-ui,sans-serif" font-size="15" font-weight="700" text-anchor="middle"><text x="64" y="178">−4</text><text x="132" y="178">−2</text><text x="200" y="178">0</text><text x="234" y="178">+1</text><text x="268" y="178">+2</text><text x="336" y="178">+4</text></g>
+          <path d="M132 119Q149 77 166 119Q183 77 200 119Q217 77 234 119" fill="none" stroke="#fff8e7" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 6"/><path d="m225 111 9 8 3-12" fill="none" stroke="#fff8e7" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="132" cy="145" r="7" fill="#713b27"/><circle cx="234" cy="131" r="14" fill="#fff4d3" stroke="#713b27" stroke-width="3"/><path d="m230 130 3 3 5-6" stroke="#713b27" stroke-width="2" fill="none" stroke-linecap="round"/><text x="200" y="64" fill="#713b27" font-family="system-ui,sans-serif" font-size="26" font-weight="850" text-anchor="middle">+3</text>`);
+      case 'balance-rescue':
+        return frame('#f5e5a5', `<path d="M0 184h400v36H0z" fill="#e7cd77"/><g stroke="#8d642a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M200 64V179M164 181h72" stroke-width="8"/><path d="M83 72H317" stroke-width="7"/><circle cx="200" cy="72" r="11" fill="#fff8d5"/><path d="m83 72-34 80h68Zm234 0-34 80h68Z" fill="none" stroke-width="2.5"/><path d="M50 152h66l-8 9H58Zm234 0h66l-8 9h-50Z" fill="#b57e30"/></g>
+          <rect x="55" y="114" width="32" height="35" rx="4" fill="#3b7560" stroke="#245943" stroke-width="2"/><text x="71" y="139" fill="#fff" font-family="Georgia,serif" font-size="26" font-style="italic" text-anchor="middle">x</text>
+          <g fill="#fff9dd" stroke="#96712f" stroke-width="1.5"><rect x="89" y="132" width="14" height="17" rx="2"/><rect x="103" y="132" width="14" height="17" rx="2"/><rect x="291" y="132" width="16" height="17" rx="2"/><rect x="307" y="132" width="16" height="17" rx="2"/><rect x="323" y="132" width="16" height="17" rx="2"/><rect x="299" y="115" width="16" height="17" rx="2"/><rect x="315" y="115" width="16" height="17" rx="2"/></g>
+          <text x="200" y="47" fill="#6c4d22" font-family="Georgia,serif" font-size="30" text-anchor="middle"><tspan font-style="italic">x</tspan> + 2 = 5</text>`);
+      default: return '';
+    }
+  }
   function artSvg(type){
     const base='viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"';
     if(type==='mole')return `<svg ${base}><circle cx="304" cy="104" r="112" fill="#b5e4d0"/><path d="M45 115 112 36 169 115Z M76 186 143 107 200 186Z" fill="none" stroke="#2b6757" stroke-width="7" stroke-linejoin="round"/><path d="M45 115 L76 186 M112 36 L143 107 M169 115 L200 186" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="10 8"/><circle cx="112" cy="36" r="8" fill="#ff995f"/><circle cx="143" cy="107" r="8" fill="#ff995f"/><circle cx="76" cy="186" r="8" fill="#ff995f"/><ellipse cx="291" cy="156" rx="45" ry="28" fill="#ac795b"/><circle cx="292" cy="117" r="40" fill="#bb8b68" stroke="#3d6255" stroke-width="4"/><circle cx="281" cy="112" r="4" fill="#213c35"/><circle cx="305" cy="112" r="4" fill="#213c35"/><path d="M279 128 Q292 141 307 128" stroke="#24433b" stroke-width="4" fill="none" stroke-linecap="round"/><text x="287" y="204" font-family="system-ui" font-size="23" font-weight="900" fill="#1b5949">≅</text><path d="M324 42 342 27" stroke="#ed945c" stroke-width="6" stroke-linecap="round"/></svg>`;
@@ -212,7 +262,7 @@
     const favorite = state.favorites.has(app.id);
     return `<article class="app-card" data-app="${esc(app.id)}">
       <div class="app-art art-${esc(app.thumbnail.accent)}">
-        ${artSvg(app.thumbnail.illustration)}
+        ${signatureArt(app.id) || artSvg(app.thumbnail.illustration)}
         <span class="status-chip ${available ? 'published' : ''}">${esc(text(available ? 'available' : 'coming'))}</span>
         <button type="button" class="favorite" data-favorite="${esc(app.id)}" aria-pressed="${favorite}" aria-label="${esc(text(favorite ? 'removeFavorite' : 'addFavorite',{name:app.title}))}"><span aria-hidden="true">${favorite ? '★' : '☆'}</span></button>
       </div>
