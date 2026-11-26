@@ -716,9 +716,19 @@
         }
       },
       "publishedAt": null,
-      "updatedAt": null,
-      "version": "4",
-      "history": [],
+      "updatedAt": "2026-11-26",
+      "version": "5",
+      "history": [
+        {
+          "date": "2026-11-26",
+          "summary": {
+            "ja": "指数・対数の数式組版と分数表記、画面レイアウトを改善。",
+            "en": "Improved exponent and logarithm typesetting, stacked fractions, and screen layout.",
+            "zh": "改进指数与对数排版、上下分数及页面布局。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/test1/commit/d378e9a4c538818a09d67b7eccfd0a4f5f82b3e7"
+        }
+      ],
       "variants": []
     },
     {
