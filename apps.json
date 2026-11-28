@@ -86,7 +86,7 @@
       "id": "j2-linear-functions",
       "grade": "j2",
       "label": {
-        "ja": "一次関数",
+        "ja": "1次関数",
         "en": "Linear functions",
         "zh": "一次函数"
       }
@@ -891,7 +891,7 @@
       "url": "https://manaty-bit.github.io/line-pilot/",
       "sourceUrl": "https://github.com/manaty-bit/line-pilot",
       "description": {
-        "ja": "傾きと切片を操って目標点を通そう！ 一次関数の式とグラフを学ぶゲーム。2点に直線を重ねるLINE LOCKも搭載。（基礎先行版）",
+        "ja": "傾きと切片を操って目標点を通そう！ 1次関数の式とグラフを学ぶゲーム。2点に直線を重ねるLINE LOCKも搭載。（基礎先行版）",
         "en": "Control slope and y-intercept to hit targets and connect equations with graphs. Includes LINE LOCK, a two-point alignment game (basic-course preview).",
         "zh": "操控斜率与纵截距，让直线穿过目标，学习一次函数的表达式与图像。附带 LINE LOCK 双点对准游戏（基础课程预览版）。"
       },
