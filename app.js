@@ -107,7 +107,7 @@
   const messages = {
     ja: {
       skip:'教材一覧へスキップ', navigation:'メインナビゲーション', home:'MANATY LAB トップ', language:'表示言語',
-      news:'新着・アップデート', noNews:'日付を確認できた新着情報はありません。', newRelease:'新規公開', updated:'アップデート', find:'教材を探す', library:'教材アプリ一覧',
+      filterMore:'絞り込み', news:'新しい教材', noNews:'日付を確認できた新着情報はありません。', newRelease:'新規公開', updated:'アップデート', find:'教材を探す', library:'教材アプリ一覧',
       byGrade:'学年から探す', byUnit:'単元から探す', byPurpose:'学習目的から探す', sortLabel:'表示順', recommended:'掲載順', newest:'新着順', latest:'更新順',
       favorites:'お気に入り', onlyPublished:'公開済みのみ', clear:'条件をクリア', count:'検索結果 {matches}件 / 公開教材 全{total}本',
       retry:'再試行', more:'さらに表示', loading:'教材一覧を読み込み中です。', fetchError:'教材一覧を読み込めませんでした。接続を確認して再試行してください。', noMatches:'条件に合う教材がありません。検索条件を変更してください。',
@@ -118,7 +118,7 @@
     },
     en: {
       skip:'Skip to the library', navigation:'Main navigation', home:'MANATY LAB home', language:'Site language',
-      news:'New & updated', noNews:'No dated announcements are available.', newRelease:'New release', updated:'Update', find:'Find a game', library:'Math game library',
+      filterMore:'Filters', news:'New games', noNews:'No dated announcements are available.', newRelease:'New release', updated:'Update', find:'Find a game', library:'Math game library',
       byGrade:'Browse by grade', byUnit:'Browse by topic', byPurpose:'Browse by goal', sortLabel:'Sort by', recommended:'Catalog order', newest:'Newest releases', latest:'Latest updates',
       favorites:'Favorites', onlyPublished:'Published only', clear:'Clear filters', count:'{matches} results / {total} published games',
       retry:'Try again', more:'Show more', loading:'Loading the game library…', fetchError:'The game library could not load. Check your connection and try again.', noMatches:'No games match these filters. Try changing your selection.',
@@ -129,7 +129,7 @@
     },
     zh: {
       skip:'跳转到教材列表', navigation:'主导航', home:'MANATY LAB 首页', language:'网站语言',
-      news:'新上线与更新', noNews:'暂无日期已确认的动态。', newRelease:'新上线', updated:'更新', find:'查找教材', library:'数学教材列表',
+      filterMore:'筛选', news:'新上线教材', noNews:'暂无日期已确认的动态。', newRelease:'新上线', updated:'更新', find:'查找教材', library:'数学教材列表',
       byGrade:'按年级查找', byUnit:'按单元查找', byPurpose:'按学习目标查找', sortLabel:'排序', recommended:'目录顺序', newest:'最新发布', latest:'最近更新',
       favorites:'收藏', onlyPublished:'仅显示已发布', clear:'清除筛选', count:'找到 {matches} 项 / 已发布 {total} 项',
       retry:'重试', more:'显示更多', loading:'正在加载教材列表…', fetchError:'无法加载教材列表。请检查网络连接后重试。', noMatches:'没有符合条件的教材，请调整筛选条件。',
@@ -197,6 +197,7 @@
   function renderFilters() {
     replaceOptions($('grade'), [new Option(text('filterAll'),''), ...grades.map(grade => new Option(gradeLabel(grade), grade))]);
     const selectedGrade = $('grade').value;
+    document.querySelectorAll('[data-quick-grade]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.quickGrade === selectedGrade)));
     const groups = grades.filter(grade => !selectedGrade || selectedGrade === grade).map(grade => {
       const group = document.createElement('optgroup');
       group.label = gradeLabel(grade);
@@ -207,22 +208,22 @@
     });
     replaceOptions($('unit'), [new Option(text('filterAll'),''), ...groups]);
     replaceOptions($('purpose'), [new Option(text('filterAll'),''), ...Array.from(state.purposes.values(), p => new Option(local(p.label), p.id))]);
-    replaceOptions($('sort'), ['recommended','newest','latest'].map(key => new Option(text(key), key)));
+    replaceOptions($('sort'), ['recommended','newest'].map(key => new Option(text(key), key)));
   }
   // Approved beta library illustrations. Individual silhouettes, shared 16:9 canvas.
   function libraryThumbnail(app) {
     const designs = {
       "proof-rush": [
         "#D8ECDD",
-        "<ellipse cx=\"120\" cy=\"116\" rx=\"83\" ry=\"12\" fill=\"#A3CCB3\"/><path d=\"M70 113C65 68 90 48 119 48C148 48 174 72 169 113Z\" fill=\"#A47B60\" stroke=\"#182E39\" stroke-width=\"4\" stroke-linejoin=\"round\"/><ellipse cx=\"119\" cy=\"90\" rx=\"25\" ry=\"21\" fill=\"#E9C9A3\"/><g fill=\"#182E39\"><circle cx=\"101\" cy=\"76\" r=\"3.5\"/><circle cx=\"137\" cy=\"76\" r=\"3.5\"/><ellipse cx=\"119\" cy=\"86\" rx=\"6\" ry=\"4\"/></g><path d=\"M112 96Q119 103 126 96\" stroke=\"#182E39\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M53 49L78 10L103 49Z M145 49L170 10L195 49Z\" fill=\"#FCF6E9\" stroke=\"#21695C\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M61 30L68 35M153 30L160 35\" stroke=\"#21695C\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><text x=\"124\" y=\"39\" text-anchor=\"middle\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"29\" font-weight=\"700\" fill=\"#21695C\">≡</text>"
+        "<ellipse cx=\"120\" cy=\"116\" rx=\"83\" ry=\"12\" fill=\"#A3CCB3\"/><path d=\"M70 113C65 68 90 48 119 48C148 48 174 72 169 113Z\" fill=\"#A47B60\" stroke=\"#182E39\" stroke-width=\"4\" stroke-linejoin=\"round\"/><ellipse cx=\"119\" cy=\"90\" rx=\"25\" ry=\"21\" fill=\"#E9C9A3\"/><g fill=\"#182E39\"><circle cx=\"101\" cy=\"76\" r=\"3.5\"/><circle cx=\"137\" cy=\"76\" r=\"3.5\"/><ellipse cx=\"119\" cy=\"86\" rx=\"6\" ry=\"4\"/></g><path d=\"M112 96Q119 103 126 96\" stroke=\"#182E39\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M53 49L78 10L103 49Z M145 49L170 10L195 49Z\" fill=\"#FCF6E9\" stroke=\"#21695C\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M61 30L68 35M153 30L160 35\" stroke=\"#21695C\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><g><g transform=\"translate(115.41 17.52) scale(2.1481)\" fill=\"none\" stroke=\"#21695C\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.5 2H7.5M.5 5H7.5M.5 8H7.5\" transform=\"translate(0 0)\"/></g></g>"
       ],
       "detective": [
         "#F3DFC0",
-        "<path d=\"M143 88L181 122\" stroke=\"#182E39\" stroke-width=\"19\" stroke-linecap=\"round\"/><path d=\"M149 94L178 119\" stroke=\"#AD7950\" stroke-width=\"10\" stroke-linecap=\"round\"/><circle cx=\"105\" cy=\"54\" r=\"46\" fill=\"#FFF8E7\" stroke=\"#182E39\" stroke-width=\"7\"/><path d=\"M75 75L105 26L135 75Z\" stroke=\"#AD7950\" stroke-width=\"4\" fill=\"none\" stroke-linejoin=\"round\"/><text x=\"105\" y=\"65\" font-family=\"system-ui,sans-serif\" font-size=\"29\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#182E39\">?</text>"
+        "<path d=\"M143 88L181 122\" stroke=\"#182E39\" stroke-width=\"19\" stroke-linecap=\"round\"/><path d=\"M149 94L178 119\" stroke=\"#AD7950\" stroke-width=\"10\" stroke-linecap=\"round\"/><circle cx=\"105\" cy=\"54\" r=\"46\" fill=\"#FFF8E7\" stroke=\"#182E39\" stroke-width=\"7\"/><path d=\"M75 75L105 26L135 75Z\" stroke=\"#AD7950\" stroke-width=\"4\" fill=\"none\" stroke-linejoin=\"round\"/><g><g transform=\"translate(97.48 43.52) scale(2.1481)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.6 2.5Q.5 0 3.5 0T6.5 2.7Q6.5 4.4 4.2 5.5 3.5 6 3.5 7.3M3.5 10v.01\" transform=\"translate(0 0)\"/></g></g>"
       ],
       "proof-builder": [
         "#BFDDED",
-        "<g stroke=\"#182E39\" stroke-width=\"3.5\" stroke-linejoin=\"round\"><rect x=\"44\" y=\"77\" width=\"74\" height=\"45\" rx=\"7\" fill=\"#FCF6E9\"/><rect x=\"122\" y=\"77\" width=\"74\" height=\"45\" rx=\"7\" fill=\"#FCF6E9\"/><rect x=\"65\" y=\"26\" width=\"110\" height=\"45\" rx=\"7\" fill=\"#578CB7\" transform=\"rotate(-7 120 48)\"/></g><g font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-weight=\"700\" text-anchor=\"middle\"><text x=\"120\" y=\"57\" font-size=\"25\" fill=\"#FFFFFF\" transform=\"rotate(-7 120 48)\">2<tspan font-family=\"KaTeX_Math, 'Latin Modern Math', 'Cambria Math', serif\" font-style=\"italic\">n</tspan>−1</text><text x=\"81\" y=\"108\" font-size=\"25\" fill=\"#182E39\">＝</text><text x=\"159\" y=\"111\" font-size=\"33\" fill=\"#182E39\">∴</text></g>"
+        "<g stroke=\"#182E39\" stroke-width=\"3.5\" stroke-linejoin=\"round\"><rect x=\"44\" y=\"77\" width=\"74\" height=\"45\" rx=\"7\" fill=\"#FCF6E9\"/><rect x=\"122\" y=\"77\" width=\"74\" height=\"45\" rx=\"7\" fill=\"#FCF6E9\"/><rect x=\"65\" y=\"26\" width=\"110\" height=\"45\" rx=\"7\" fill=\"#578CB7\" transform=\"rotate(-7 120 48)\"/></g><g font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-weight=\"700\" text-anchor=\"middle\"><g transform=\"rotate(-7 120 48)\"><g transform=\"translate(92.87 38.48) scale(1.8519)\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.5 2.4Q.5 0 3.5 0T6.5 2.6Q6.5 4.1 4.3 6L.7 10H6.5\" transform=\"translate(0 0)\"/><path d=\"M.8 10 2.2 3.2M1.6 6.3Q3.3 2.8 5 3.4T6 6.1L5.2 10\" transform=\"translate(8.1 0)\"/><path d=\"M.5 5H6.5\" transform=\"translate(16.2 0)\"/><path d=\"M.6 2.1 2.6 0V10\" transform=\"translate(24.299999999999997 0)\"/></g></g><g><g transform=\"translate(73.59 89.48) scale(1.8519)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.5 3H7.5M.5 7H7.5\" transform=\"translate(0 0)\"/></g></g><g><g transform=\"translate(149.22 86.56) scale(2.4444)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 1.7v.01M1.1 8v.01M6.9 8v.01\" transform=\"translate(0 0)\" stroke-width=\"2.8\"/></g></g></g>"
       ],
       "trig-bloom": [
         "#E7D9EF",
@@ -230,15 +231,15 @@
       ],
       "log-lab": [
         "#203E50",
-        "<path d=\"M28 86H211M65 12V122\" stroke=\"#9CB3BC\" stroke-width=\"2\" stroke-linecap=\"round\"/><polyline points=\"68.24,123.11 69.39,116.53 70.54,111.48 71.70,107.40 72.85,103.96 74.00,101.00 75.15,98.39 76.30,96.07 77.46,93.97 78.61,92.05 79.76,90.29 80.91,88.67 82.06,87.16 83.22,85.74 84.37,84.41 85.52,83.16 86.67,81.98 87.82,80.86 88.98,79.80 90.13,78.78 91.28,77.81 92.43,76.88 93.58,75.99 94.74,75.14 95.89,74.31 97.04,73.52 98.19,72.76 99.34,72.02 100.50,71.31 101.65,70.61 102.80,69.94 103.95,69.29 105.10,68.66 106.26,68.05 107.41,67.45 108.56,66.87 109.71,66.31 110.86,65.76 112.02,65.22 113.17,64.70 114.32,64.19 115.47,63.69 116.62,63.20 117.78,62.72 118.93,62.25 120.08,61.80 121.23,61.35 122.38,60.91 123.54,60.48 124.69,60.06 125.84,59.64 126.99,59.24 128.14,58.84 129.30,58.45 130.45,58.06 131.60,57.69 132.75,57.32 133.90,56.95 135.06,56.59 136.21,56.24 137.36,55.89 138.51,55.55 139.66,55.21 140.82,54.88 141.97,54.56 143.12,54.23 144.27,53.92 145.42,53.61 146.58,53.30 147.73,52.99 148.88,52.70 150.03,52.40 151.18,52.11 152.34,51.82 153.49,51.54 154.64,51.26 155.79,50.98 156.94,50.71 158.10,50.44 159.25,50.17 160.40,49.91 161.55,49.65 162.70,49.39 163.86,49.14 165.01,48.89 166.16,48.64 167.31,48.40 168.46,48.15 169.62,47.91 170.77,47.68 171.92,47.44 173.07,47.21 174.22,46.98 175.38,46.75 176.53,46.53 177.68,46.31 178.83,46.09 179.98,45.87 181.14,45.65 182.29,45.44 183.44,45.23 184.59,45.02 185.74,44.81 186.90,44.61 188.05,44.40 189.20,44.20 190.35,44.00 191.50,43.80 192.66,43.61 193.81,43.41 194.96,43.22 196.11,43.03 197.26,42.84 198.42,42.65 199.57,42.47 200.72,42.28 201.87,42.10 203.02,41.92 204.18,41.74 205.33,41.56\" stroke=\"#9ADCC3\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"83\" cy=\"86\" r=\"4.5\" fill=\"#F4BE48\"/><text x=\"167\" y=\"113\" font-size=\"30\" text-anchor=\"middle\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-weight=\"700\" fill=\"#FCF6E9\">log</text>"
+        "<path d=\"M28 86H211M65 12V122\" stroke=\"#9CB3BC\" stroke-width=\"2\" stroke-linecap=\"round\"/><polyline points=\"68.24,123.11 69.39,116.53 70.54,111.48 71.70,107.40 72.85,103.96 74.00,101.00 75.15,98.39 76.30,96.07 77.46,93.97 78.61,92.05 79.76,90.29 80.91,88.67 82.06,87.16 83.22,85.74 84.37,84.41 85.52,83.16 86.67,81.98 87.82,80.86 88.98,79.80 90.13,78.78 91.28,77.81 92.43,76.88 93.58,75.99 94.74,75.14 95.89,74.31 97.04,73.52 98.19,72.76 99.34,72.02 100.50,71.31 101.65,70.61 102.80,69.94 103.95,69.29 105.10,68.66 106.26,68.05 107.41,67.45 108.56,66.87 109.71,66.31 110.86,65.76 112.02,65.22 113.17,64.70 114.32,64.19 115.47,63.69 116.62,63.20 117.78,62.72 118.93,62.25 120.08,61.80 121.23,61.35 122.38,60.91 123.54,60.48 124.69,60.06 125.84,59.64 126.99,59.24 128.14,58.84 129.30,58.45 130.45,58.06 131.60,57.69 132.75,57.32 133.90,56.95 135.06,56.59 136.21,56.24 137.36,55.89 138.51,55.55 139.66,55.21 140.82,54.88 141.97,54.56 143.12,54.23 144.27,53.92 145.42,53.61 146.58,53.30 147.73,52.99 148.88,52.70 150.03,52.40 151.18,52.11 152.34,51.82 153.49,51.54 154.64,51.26 155.79,50.98 156.94,50.71 158.10,50.44 159.25,50.17 160.40,49.91 161.55,49.65 162.70,49.39 163.86,49.14 165.01,48.89 166.16,48.64 167.31,48.40 168.46,48.15 169.62,47.91 170.77,47.68 171.92,47.44 173.07,47.21 174.22,46.98 175.38,46.75 176.53,46.53 177.68,46.31 178.83,46.09 179.98,45.87 181.14,45.65 182.29,45.44 183.44,45.23 184.59,45.02 185.74,44.81 186.90,44.61 188.05,44.40 189.20,44.20 190.35,44.00 191.50,43.80 192.66,43.61 193.81,43.41 194.96,43.22 196.11,43.03 197.26,42.84 198.42,42.65 199.57,42.47 200.72,42.28 201.87,42.10 203.02,41.92 204.18,41.74 205.33,41.56\" stroke=\"#9ADCC3\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"83\" cy=\"86\" r=\"4.5\" fill=\"#F4BE48\"/><g><g transform=\"translate(145.11 90.78) scale(2.2222)\" fill=\"none\" stroke=\"#FCF6E9\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1.5 0V10\" transform=\"translate(0 0)\"/><path d=\"M3.5 3C-.6 3-.6 10 3.5 10S7.6 3 3.5 3Z\" transform=\"translate(4.6 0)\"/><path d=\"M6.2 3.4V10.5Q6.2 14 .9 12.8M6.2 5.2C3.9 1.1.5 3.1.5 6.6S4.3 11.5 6.2 8\" transform=\"translate(12.7 0)\"/></g></g>"
       ],
       "number-line-dash": [
         "#FFD5B2",
-        "<path d=\"M16 86H224M215 79L224 86L215 93\" stroke=\"#182E39\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M30 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><text x=\"30\" y=\"111\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"13\" fill=\"#182E39\" text-anchor=\"middle\">−3</text><path d=\"M60 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><text x=\"60\" y=\"111\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"13\" fill=\"#182E39\" text-anchor=\"middle\">−2</text><path d=\"M90 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><text x=\"90\" y=\"111\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"13\" fill=\"#182E39\" text-anchor=\"middle\">−1</text><path d=\"M120 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><text x=\"120\" y=\"111\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"13\" fill=\"#182E39\" text-anchor=\"middle\">0</text><path d=\"M150 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><text x=\"150\" y=\"111\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"13\" fill=\"#182E39\" text-anchor=\"middle\">1</text><path d=\"M180 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><text x=\"180\" y=\"111\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"13\" fill=\"#182E39\" text-anchor=\"middle\">2</text><path d=\"M210 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><text x=\"210\" y=\"111\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"13\" fill=\"#182E39\" text-anchor=\"middle\">3</text><path d=\"M60 76Q105 -16 150 76M136 65L150 76L152 59\" stroke=\"#D16D36\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><circle cx=\"60\" cy=\"86\" r=\"7\" fill=\"#D16D36\"/><text x=\"105\" y=\"29\" text-anchor=\"middle\" font-family=\"KaTeX_Main, 'Latin Modern Math', 'Cambria Math', serif\" font-size=\"24\" font-weight=\"700\" fill=\"#B45325\">+3</text>"
+        "<path d=\"M16 86H224M215 79L224 86L215 93\" stroke=\"#182E39\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M30 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><g><g transform=\"translate(22.73 101.37) scale(0.9630)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.5 5H6.5\" transform=\"translate(0 0)\"/><path d=\"M.7 1Q2.2 0 3.5 0 6.5 0 6.5 2.5 6.5 5 3.5 5H2.5M3.5 5Q6.7 5 6.7 7.6T3.3 10Q1.6 10 .5 9\" transform=\"translate(8.1 0)\"/></g></g><path d=\"M60 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><g><g transform=\"translate(52.73 101.37) scale(0.9630)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.5 5H6.5\" transform=\"translate(0 0)\"/><path d=\"M.5 2.4Q.5 0 3.5 0T6.5 2.6Q6.5 4.1 4.3 6L.7 10H6.5\" transform=\"translate(8.1 0)\"/></g></g><path d=\"M90 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><g><g transform=\"translate(83.69 101.37) scale(0.9630)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.5 5H6.5\" transform=\"translate(0 0)\"/><path d=\"M.6 2.1 2.6 0V10\" transform=\"translate(8.1 0)\"/></g></g><path d=\"M120 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><g><g transform=\"translate(116.63 101.37) scale(0.9630)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 0C.8 0 .5 2.5 .5 5S.8 10 3.5 10 6.5 7.5 6.5 5 6.2 0 3.5 0Z\" transform=\"translate(0 0)\"/></g></g><path d=\"M150 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><g><g transform=\"translate(147.59 101.37) scale(0.9630)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.6 2.1 2.6 0V10\" transform=\"translate(0 0)\"/></g></g><path d=\"M180 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><g><g transform=\"translate(176.63 101.37) scale(0.9630)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.5 2.4Q.5 0 3.5 0T6.5 2.6Q6.5 4.1 4.3 6L.7 10H6.5\" transform=\"translate(0 0)\"/></g></g><path d=\"M210 79V93\" stroke=\"#182E39\" stroke-width=\"2.5\"/><g><g transform=\"translate(206.63 101.37) scale(0.9630)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.7 1Q2.2 0 3.5 0 6.5 0 6.5 2.5 6.5 5 3.5 5H2.5M3.5 5Q6.7 5 6.7 7.6T3.3 10Q1.6 10 .5 9\" transform=\"translate(0 0)\"/></g></g><path d=\"M60 76Q105 -16 150 76M136 65L150 76L152 59\" stroke=\"#D16D36\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><circle cx=\"60\" cy=\"86\" r=\"7\" fill=\"#D16D36\"/><g><g transform=\"translate(91.58 11.22) scale(1.7778)\" fill=\"none\" stroke=\"#B45325\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M.5 5H6.5M3.5 2V8\" transform=\"translate(0 0)\"/><path d=\"M.7 1Q2.2 0 3.5 0 6.5 0 6.5 2.5 6.5 5 3.5 5H2.5M3.5 5Q6.7 5 6.7 7.6T3.3 10Q1.6 10 .5 9\" transform=\"translate(8.1 0)\"/></g></g>"
       ],
       "balance-rescue": [
         "#FBE8A5",
-        "<path d=\"M120 25V116M92 116H148M45 35H195\" stroke=\"#182E39\" stroke-width=\"6\" stroke-linecap=\"round\"/><circle cx=\"120\" cy=\"35\" r=\"7\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"3\"/><path d=\"M45 35L20 92M45 35L70 92M195 35L170 92M195 35L220 92\" stroke=\"#182E39\" stroke-width=\"2.5\" fill=\"none\"/><rect x=\"28\" y=\"56\" width=\"34\" height=\"35\" rx=\"5\" fill=\"#73C9B5\" stroke=\"#182E39\" stroke-width=\"2.5\"/><text x=\"45\" y=\"81\" font-size=\"27\" font-family=\"KaTeX_Math, 'Latin Modern Math', 'Cambria Math', serif\" font-style=\"italic\" font-weight=\"700\" fill=\"#182E39\" text-anchor=\"middle\">x</text><rect x=\"172\" y=\"74\" width=\"14\" height=\"17\" rx=\"3\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"1.8\"/><rect x=\"188\" y=\"74\" width=\"14\" height=\"17\" rx=\"3\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"1.8\"/><rect x=\"204\" y=\"74\" width=\"14\" height=\"17\" rx=\"3\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"1.8\"/><path d=\"M16 92H74Q69 107 45 107T16 92ZM166 92H224Q219 107 195 107T166 92Z\" fill=\"#D8A53F\" stroke=\"#182E39\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/>"
+        "<path d=\"M120 25V116M92 116H148M45 35H195\" stroke=\"#182E39\" stroke-width=\"6\" stroke-linecap=\"round\"/><circle cx=\"120\" cy=\"35\" r=\"7\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"3\"/><path d=\"M45 35L20 92M45 35L70 92M195 35L170 92M195 35L220 92\" stroke=\"#182E39\" stroke-width=\"2.5\" fill=\"none\"/><rect x=\"28\" y=\"56\" width=\"34\" height=\"35\" rx=\"5\" fill=\"#73C9B5\" stroke=\"#182E39\" stroke-width=\"2.5\"/><g><g transform=\"translate(38.00 61.00) scale(2.0000)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1.2 3.3 5.8 10M6.6 3.3.5 10\" transform=\"translate(0 0)\"/></g></g><rect x=\"172\" y=\"74\" width=\"14\" height=\"17\" rx=\"3\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"1.8\"/><rect x=\"188\" y=\"74\" width=\"14\" height=\"17\" rx=\"3\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"1.8\"/><rect x=\"204\" y=\"74\" width=\"14\" height=\"17\" rx=\"3\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"1.8\"/><path d=\"M16 92H74Q69 107 45 107T16 92ZM166 92H224Q219 107 195 107T166 92Z\" fill=\"#D8A53F\" stroke=\"#182E39\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/>"
       ],
       "line-pilot": [
         "#C9E6F6",
@@ -246,7 +247,7 @@
       ],
       "twin-cipher": [
         "#F2CDD3",
-        "<path d=\"M77 59V39C77 -4 163 -4 163 39V59\" stroke=\"#182E39\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"61\" y=\"49\" width=\"118\" height=\"75\" rx=\"17\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"4\"/><g font-size=\"30\" font-family=\"KaTeX_Math, 'Latin Modern Math', 'Cambria Math', serif\" font-style=\"italic\" font-weight=\"700\" fill=\"#182E39\" text-anchor=\"middle\"><text x=\"92\" y=\"84\">x</text><text x=\"148\" y=\"84\">y</text></g><circle cx=\"120\" cy=\"99\" r=\"6\" fill=\"#B8667C\"/><path d=\"M120 100V111\" stroke=\"#B8667C\" stroke-width=\"5\" stroke-linecap=\"round\"/>"
+        "<path d=\"M77 59V39C77 -4 163 -4 163 39V59\" stroke=\"#182E39\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"61\" y=\"49\" width=\"118\" height=\"75\" rx=\"17\" fill=\"#FCF6E9\" stroke=\"#182E39\" stroke-width=\"4\"/><g font-size=\"30\" font-family=\"KaTeX_Math, 'Latin Modern Math', 'Cambria Math', serif\" font-style=\"italic\" font-weight=\"700\" fill=\"#182E39\" text-anchor=\"middle\"><g><g transform=\"translate(84.22 61.78) scale(2.2222)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1.2 3.3 5.8 10M6.6 3.3.5 10\" transform=\"translate(0 0)\"/></g></g><g><g transform=\"translate(140.22 61.78) scale(2.2222)\" fill=\"none\" stroke=\"#182E39\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1.2 3.3 3.8 9.8M6.6 3.3 2.5 12.5Q1.7 14 .5 13.5\" transform=\"translate(0 0)\"/></g></g></g><circle cx=\"120\" cy=\"99\" r=\"6\" fill=\"#B8667C\"/><path d=\"M120 100V111\" stroke=\"#B8667C\" stroke-width=\"5\" stroke-linecap=\"round\"/>"
       ]
     };
     const design = designs[app.id];
@@ -265,7 +266,7 @@
       <div class="app-content">
         <div class="app-meta">${esc(app.grades.map(gradeLabel).join(' / '))} · ${esc(app.units.map(id => local(state.units.get(id).label)).join(' / '))}</div>
         <h3>${esc(app.title)}</h3>
-        <p>${esc(local(app.description))}</p>
+        <p class="app-summary">${esc(local(app.description))}</p>
         <ul class="tags">${app.purposes.map(id => `<li>${esc(local(state.purposes.get(id).label))}</li>`).join('')}</ul>
         <p class="game-language">${esc(text('languages'))} · ${esc(languageList(app))}</p>
         <div class="app-actions">
@@ -308,30 +309,23 @@
     if (append && matches.length > offset) $('appGrid').children[offset].querySelector('button').focus();
   }
   function renderNews() {
-    const events = state.apps.filter(app => app.status === 'available').flatMap(app => [
-      {app, date:app.publishedAt, label:'newRelease'},
-      {app, date:app.updatedAt, label:'updated'}
-    ]).filter(event => event.date).sort((a,b) => b.date.localeCompare(a.date)).slice(0,3);
+    const events = state.apps.filter(app => app.status === 'available').map(app => ({app, date:app.publishedAt, label:'newRelease'})).filter(event => event.date).sort((a,b) => b.date.localeCompare(a.date)).slice(0,3);
     $('newsList').innerHTML = events.length ? events.map(({app,date,label}) =>
       `<button type="button" class="news-card" data-detail="${esc(app.id)}"><span><time datetime="${esc(date)}">${esc(dateLabel(date))}</time> · <span class="news-label">${esc(text(label))}</span></span><strong>${esc(app.title)}</strong></button>`
     ).join('') : `<p>${esc(text(state.status === 'loading' ? 'loading' : state.status === 'error' ? 'fetchError' : 'noNews'))}</p>`;
   }
   function renderDetail(app) {
     $('detailTitle').textContent = app.title;
-    const details = ['learning','game','stage','languages','devices','duration','classroom','certificate','nameInput','version'];
+    const details = ['learning','game','stage','languages','devices','duration','classroom','certificate','nameInput'];
     const values = {...app.details,languages:languageList(app),version:app.version};
     const row = key => {
       const value = values[key];
       const label = typeof value === 'boolean' ? text(value ? 'yes' : 'no') : (typeof value === 'string' ? value : local(value));
       return `<div><dt>${esc(text(key))}</dt><dd>${esc(label || text('unknown'))}</dd></div>`;
     };
-    const history = [...app.history].sort((a,b) => b.date.localeCompare(a.date)).map(entry =>
-      `<li><time datetime="${esc(entry.date)}">${esc(dateLabel(entry.date))}</time> · ${esc(local(entry.summary))} ${appLink(entry.sourceUrl,text('reference'))}</li>`
-    ).join('');
     const available = app.status === 'available';
     const variants = (available ? app.variants : []).map(variant => `<li>${appLink(variant.url,local(variant.label))}</li>`).join('');
     $('detailBody').innerHTML = `<dl class="detail-grid">${details.map(row).join('')}</dl>
-      ${history ? `<h3>${esc(text('history'))}</h3><ul>${history}</ul>` : ''}
       ${variants ? `<h3>${esc(text('variants'))}</h3><ul>${variants}</ul>` : ''}
       ${available ? `<div class="detail-actions">${appLink(app.url,text('launch'),'app-play',text('openApp'))} ${appLink(app.sourceUrl,text('source'))}</div>` : ''}`;
   }
@@ -413,12 +407,17 @@
     }
     document.querySelectorAll('[data-quick-grade]').forEach(button => button.addEventListener('click', () => {
       if (state.status !== 'ready') return;
-      $('grade').value = button.dataset.quickGrade;
+      $('grade').value = $('grade').value === button.dataset.quickGrade ? '' : button.dataset.quickGrade;
       $('unit').value = '';
       $('grade').dispatchEvent(new Event('input', {bubbles:true}));
       $('apps-title').scrollIntoView({block:'start'});
     }));
     document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click',() => setLang(button.dataset.lang)));
+    const toggle = $('toggleFilters');
+    toggle.addEventListener('click', () => {
+      const expanded = $('filters').classList.toggle('filters-expanded');
+      toggle.setAttribute('aria-expanded', String(expanded));
+    });
     $('filters').addEventListener('submit',event => event.preventDefault());
     $('filters').addEventListener('input',event => {
       if (event.target.id === 'grade') renderFilters();
