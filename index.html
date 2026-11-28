@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f9f8f3">
+  <meta name="theme-color" content="#fff8e9">
   <meta name="description" content="MANATY LAB — 遊びから生まれる、数学の「わかった！」。中学・高校数学を楽しく学べる無料の学習ゲームを公開しています。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="MANATY LAB | Play. Learn. Discover.">
@@ -13,96 +13,146 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./editorial.css">
   <style>
-    /* App-first portal: compact introduction, searchable game library, quiet editorial footer. */
-    :root{--paper:#f5f7f5;--ink:#172b2a;--muted:#536662;--line:#dce5e0;--green:#14594b;--mint:#e6f3eb;--white:#fff;}
-    body{line-height:1.55}
+
+    /* MANATY LAB / Cream Playground. Brand shell only; app artwork remains unchanged. */
+    :root{--paper:#fff8e9;--ink:#203b45;--muted:#53666b;--line:#e5d9c5;--green:#176b60;--mint:#e1f1e6;--white:#fffefa;--yellow:#f4be48;--coral:#e97d69}
+    body{line-height:1.55;background:var(--paper)}
     .container{width:min(calc(100% - 3rem),84rem)}
-    .site-header{background:#fff;box-shadow:0 1px 8px #203e2e08}
-    .header-inner{min-height:3.8rem}
-    .wordmark-symbol{background:var(--green);color:white;border-radius:.6rem;padding:.05rem .3rem;font-size:1.35rem}
-    .wordmark-symbol span{color:#f2c959}
-    .languages{border:1px solid var(--line);border-radius:2rem;padding:.16rem}
-    .languages button{border-radius:2rem;min-height:2rem}
-    .languages [aria-pressed="true"]{background:var(--green);color:white;border-color:var(--green)}
-    .hero-wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(1rem,3vw,2.5rem);padding-block:1.4rem 1.35rem}
-    .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.2;letter-spacing:-.045em;margin:.35rem 0 .4rem}
-    .hero-copy h1 br{display:initial}
-    .hero-english{font-size:.95rem;color:var(--muted)}
-    .hero-description{font-size:.92rem;line-height:1.6;margin:.4rem 0 .65rem;max-width:46em}
-    .hero-actions .button{min-height:2.5rem;padding:.4rem .85rem}
-    .button,.app-play,.quiet{border-radius:.6rem}
-    .trust-row{font-size:.78rem;margin-top:.45rem}
-    .hero-visual{background:#e4f0e8;border:1px solid #d5e6db;border-radius:1rem;padding:.7rem 1rem}
-    .hero-blob{opacity:.4;width:10rem}
-    .mini-stage{margin:.35rem 0;padding:.45rem .7rem;border-radius:.7rem;background:#fff}
-    .mini-equation{font-size:1.6rem;line-height:1.2}
-    .mini-guides,.hero-note{font-size:.72rem}
-    #miniTrack{max-height:4.8rem}
-    .mini-controls button{min-height:2.35rem;min-width:2.5rem;border-radius:.5rem}
-    .catalog-section{padding-top:1.2rem;border-top:1px solid var(--line)}
-    #filterTitle{font-size:1.45rem;margin-bottom:.7rem}
-    .grade-shortcuts{gap:.65rem;margin-bottom:.7rem}
-    .grade-shortcuts button{min-height:3.45rem;grid-template-columns:auto 1fr auto;gap:.65rem;align-items:center;border-radius:.75rem;border:1px solid #ffffff80;padding:.55rem .8rem}
-    .grade-shortcuts button span:first-child{grid-column:auto;font-size:.7rem;font-weight:800;letter-spacing:0}
-    .grade-shortcuts strong{font-size:clamp(.95rem,1.6vw,1.15rem)}
-    #filters{background:#fff;border-radius:.8rem;padding:.75rem}
-    select,.search-box{border-radius:.5rem;border-color:#bdcdc5;min-height:2.5rem}
-    .filter-tools{margin-top:.45rem;gap:.3rem .7rem}
-    .filter-tools .quiet,.check{min-height:2.5rem}
-    .list-heading{margin:1.25rem 0 .7rem}
-    .list-heading h2{font-size:1.4rem}
+    .site-header{background:#fffaf0;border-bottom:1px solid #e5d9c5}
+    .header-inner{min-height:3.75rem;gap:1rem}
+    .wordmark{font-size:1.13rem;letter-spacing:-.045em}
+    .wordmark-symbol{display:inline-block;background:var(--ink);color:#fff8e9;border-radius:10px;padding:.05rem .32rem;line-height:1.4;font-size:1.28rem}
+    .wordmark-symbol span{color:var(--yellow)}
+    .wordmark b{color:var(--green)}
+    .desktop-nav{gap:1.3rem}
+    .desktop-nav a{font-weight:750}
+    .languages{border:1px solid var(--line);border-radius:2rem;padding:.15rem;background:var(--white)}
+    .languages button{border-radius:2rem;min-height:2rem;padding-inline:.58rem}
+    .languages [aria-pressed="true"]{background:var(--ink);color:white;border-color:var(--ink)}
+    .hero-wrap{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);gap:1.1rem;align-items:center;margin-block:1rem 1.15rem;padding:1.05rem 1.55rem;background:#f9e7b7;border:1px solid #e5c985;border-radius:1.25rem}
+    .hero-wrap::before{content:"";position:absolute;z-index:-1;inset:0;background-image:radial-gradient(#b4a16740 1px,transparent 1px);background-size:18px 18px;mask-image:linear-gradient(90deg,transparent 35%,black)}
+    .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.75rem,3.1vw,2.65rem);line-height:1.16;letter-spacing:-.045em;margin:.28rem 0 .35rem}
+    .hero-copy h1 br{display:none}
+    html:lang(en) .hero-copy h1 br{display:initial}
+    .hero-english{font-size:.86rem;font-weight:750;letter-spacing:.06em;color:var(--green)}
+    .hero-description{max-width:58em;font-size:.85rem;line-height:1.6;margin:.3rem 0 .4rem;color:var(--ink)}
+    .eyebrow,.section-kicker,.play-label{font-size:.68rem;letter-spacing:.13em;font-weight:850;color:var(--green)}
+    .eyebrow-dot{display:inline-block;width:.5rem;height:.5rem;background:var(--green);border-radius:50%;margin-right:.4rem}
+    .hero-actions{display:none}
+    .trust-row{margin-top:.35rem;font-size:.75rem;color:#4b625c}
+    .hero-brand-art{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0}
+    .lab-manatee{display:block;width:min(100%,15rem);height:auto;overflow:visible}
+    .hero-stamp{position:absolute;right:0;top:0;line-height:1.04;font-size:clamp(.54rem,.78vw,.73rem);font-weight:900;letter-spacing:.07em;color:#365e58;transform:rotate(5deg)}
+    .hero-stamp span{color:#9b493b}
+    .catalog-section{padding-top:0}
+    .catalog-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:.7rem;margin-bottom:.6rem}
+    .catalog-heading h2,#filterTitle{font-size:1.4rem;margin:.12rem 0 0;letter-spacing:-.035em}
+    .catalog-decoration{color:#8d7853;font-size:.85rem;letter-spacing:.12em}
+    .grade-shortcuts{gap:.65rem;margin-bottom:.6rem}
+    .grade-shortcuts button{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:.55rem;min-height:3.05rem;border:1px solid #d0c5aa;border-radius:.65rem;padding:.45rem .75rem;color:var(--ink);box-shadow:0 2px 0 #203b4510}
+    .grade-shortcuts button:nth-child(1){background:#cfe9d9}
+    .grade-shortcuts button:nth-child(2){background:#f9df8c}
+    .grade-shortcuts button:nth-child(3){background:#f6c7b8}
+    .grade-shortcuts button:nth-child(4){background:#cbdcf4}
+    .grade-shortcuts button span:first-child{grid-column:auto;font-size:.66rem;font-weight:850;letter-spacing:0;color:#40585e}
+    .grade-shortcuts strong{font-size:clamp(.95rem,1.5vw,1.09rem);font-weight:850}
+    .grade-shortcuts button:hover{outline:2px solid var(--ink);outline-offset:-2px}
+    #filters{background:#fffdf7;border:1px solid var(--line);border-radius:.85rem;padding:.65rem .8rem}
+    .filter-grid{gap:.5rem}
+    .filter-grid label,.filter-tools label{font-size:.78rem}
+    select,.search-box{border-radius:.5rem;border-color:#c9d2c8;min-height:2.35rem;padding-block:.3rem}
+    .filter-tools{gap:.25rem .65rem;margin-top:.4rem}
+    .filter-tools .quiet,.check{min-height:2.35rem}
+    .button,.app-play,.quiet{border-radius:.55rem;font-weight:750}
+    .button-dark,.app-play{background:var(--ink);border-color:var(--ink)}
+    .button-dark:hover,.app-play:hover{background:var(--green)}
+    .list-heading{margin:1.05rem 0 .65rem;align-items:end}
+    .list-heading h2{font-size:1.45rem;margin-top:.12rem}
+    .count-pill{font-size:.79rem;background:#f4ecdb;padding:.25rem .55rem;border-radius:2rem}
+    #catalogStatus:empty{display:none}
     .app-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-    .app-card{background:white;border:1px solid var(--line);border-radius:.9rem;overflow:hidden;box-shadow:0 2px 8px #183d2c06}
-    .app-art{height:clamp(8.5rem,11vw,10.5rem);border-radius:0}
-    .app-content{padding:.85rem;gap:.45rem}
-    .app-content h3{font-size:1.12rem;line-height:1.3}
-    .app-content p{font-size:.86rem;line-height:1.55}
-    .app-actions{gap:.4rem;align-items:stretch}
+    .app-card{background:var(--white);border:1px solid #e2d7c4;border-radius:.9rem;overflow:hidden;box-shadow:0 3px 0 #5843250b}
+    .app-art{height:auto;aspect-ratio:16/9;border-radius:0;border-bottom:1px solid #203b4510}
+    .app-art svg{display:block;width:100%;height:100%}
+    .app-content{padding:.8rem;gap:.35rem}
+    .app-content h3{font-size:1.14rem;line-height:1.3;letter-spacing:-.025em}
+    .app-content p{font-size:.83rem;line-height:1.55}
+    .app-meta,.game-language{font-size:.72rem!important}
+    .app-meta{color:var(--green);font-weight:750}
+    .tags{gap:.25rem}
+    .tags li{background:#f4f0e4;border:0;border-radius:.3rem;font-size:.69rem;padding:.15rem .4rem}
+    .status-chip{border-radius:.35rem;background:#fffdf7;color:#203b45;font-size:.69rem;box-shadow:0 1px 4px #203b4518}
+    .status-chip.published{background:#fffdf7}
+    .favorite{border-radius:50%;border-color:#fff8e9;background:#fffdf7;min-width:2.4rem;min-height:2.4rem;box-shadow:0 1px 5px #203b451c}
+    .app-actions{gap:.35rem;align-items:stretch}
     .app-actions .app-play{flex:1 1 auto}
-    .tags li{border-radius:.3rem;background:#f5f7f5}
-    .favorite{border-radius:50%}
-    .status-chip{border-radius:1rem}
-    .news-section{margin-top:2rem;margin-bottom:1.5rem;padding-block:.75rem}
-    .news-card{border-left:0;background:transparent;border-radius:.45rem}
-    .teacher-section{margin-top:1.8rem;padding-block:1.45rem}
-    .about-section,.connect-section{margin-block:1.8rem}
-    .about-panel{border-radius:.9rem;padding:1.6rem}
-    .about-orbit{width:7rem}
+    .app-actions .app-play,.app-actions .quiet{font-size:.8rem;min-height:2.55rem;padding:.4rem .6rem}
+    .app-actions .quiet{background:#fffdf7;border-color:var(--line)}
+    .news-section{margin:2rem auto 1.3rem;padding:.8rem 1rem;border:1px solid var(--line);border-radius:.8rem;background:#f6efdf}
+    .news-card{border-left:1px solid var(--line)}
+    .mini-section{margin-block:1.3rem}
+    .mini-section .hero-visual{max-width:100%;display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);align-items:center;gap:.6rem 1.25rem;border:1px solid #c6d9cb;border-radius:1rem;background:#e3efe2;padding:1rem 1.3rem}
+    .mini-section .mini-stage{grid-column:2;grid-row:1/3;margin:0;padding:.5rem .75rem;border-radius:.6rem}
+    .mini-section .play-label{align-self:end;font-size:1rem}
+    .mini-section .hero-note{align-self:start;text-align:left;font-size:.9rem}
+    .mini-section .mini-equation{font-size:1.5rem}
+    .mini-section #miniTrack{max-height:4.5rem}
+    .mini-section .mini-controls button{min-height:2.4rem;min-width:2.5rem}
+    .teacher-section{margin-top:1.5rem;padding-block:1.3rem;background:#f1e4c7}
+    .about-section,.connect-section{margin-block:1.7rem}
+    .about-panel{background:var(--ink);border-radius:1rem;padding:1.5rem}
+    .about-panel .section-kicker{color:#f4d17d}
+    .about-orbit{width:7rem;border-color:#9bc1b2}
     .book-section{margin-block:1.5rem}
-    .book-banner{background:#fff;border:1px solid var(--line);border-radius:.7rem;overflow:hidden}
-    .book-banner img{display:block;width:100%;height:auto;max-height:22rem;object-fit:contain;background:#fffdf5}
-    .book-banner:hover{border-color:var(--green)}
+    .book-banner{background:#fffdf7;border:1px solid var(--line);border-radius:.8rem;overflow:hidden}
+    .book-banner img{display:block;width:100%;height:auto;max-height:22rem;object-fit:contain;background:#fffdf7}
     .book-copy{padding:.7rem .9rem;border-left:0}
     .book-copy h2{font-size:1rem;line-height:1.4;margin:.1rem 0}
-    .book-copy p,.book-cta{font-size:.75rem}
-    .book-copy .section-kicker{font-size:.65rem;color:var(--muted)}
-    .connect-card{border-radius:.7rem;border:1px solid var(--line);background:#fff}
+    .book-copy p,.book-cta{font-size:.78rem}
+    .connect-card{border-radius:.7rem;border:1px solid var(--line);background:var(--white)}
+    .site-footer{background:#f1e7d3}
+    :focus-visible{outline:3px solid #9a542e;outline-offset:3px}
+    @media(hover:hover) and (prefers-reduced-motion:no-preference){
+      .app-card,.grade-shortcuts button{transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+      .app-card:hover{transform:translateY(-3px);box-shadow:0 8px 16px #59432116;border-color:#bfb398}
+      .grade-shortcuts button:hover{transform:translateY(-2px)}
+      .lab-manatee{transition:transform .3s ease}
+      .hero-brand-art:hover .lab-manatee{transform:translateY(-4px) rotate(-3deg)}
+    }
     @media(min-width:55.01rem) and (max-width:70rem){.app-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:55rem){.app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-wrap{gap:1rem}}
+    @media(max-width:55rem){.app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-wrap{grid-template-columns:minmax(0,1.6fr) minmax(0,.4fr);padding:1rem}}
     @media(max-width:41rem){
-      .container{width:calc(100% - 1.5rem)}
+      .container{width:calc(100% - 1.25rem)}
       .header-inner{min-height:3.6rem}
-      .hero-wrap{grid-template-columns:1fr;padding-block:.95rem;gap:.7rem}
-      .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.65rem,6.5vw,2.3rem)}
+      .wordmark{font-size:1rem}
+      .languages button{padding-inline:.38rem;font-size:.71rem}
+      .hero-wrap{grid-template-columns:minmax(0,1fr) 5.5rem;gap:.35rem;margin-block:.7rem .9rem;padding:.8rem .7rem;border-radius:.8rem}
+      .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.35rem,5.8vw,1.85rem);line-height:1.2}
       .hero-copy h1 br{display:initial}
-      .hero-description{font-size:.85rem}
-      .hero-visual{padding:.5rem .7rem}
-      .hero-note{display:none}
-      #miniTrack{max-height:3.7rem}
+      .hero-english{font-size:.68rem}
+      .hero-description{font-size:.76rem}
+      .trust-row{font-size:.68rem}
+      .hero-stamp{display:none}
       .grade-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem}
-      .grade-shortcuts button{min-height:3rem;padding:.45rem .55rem;gap:.4rem}
+      .grade-shortcuts button{min-height:2.85rem;padding:.45rem .5rem;gap:.35rem}
+      #filters{padding:.55rem}
+      .filter-tools{gap:.2rem .45rem}
+      .list-heading{margin-top:.85rem}
       .app-grid{gap:.65rem}
-      .app-art{height:7rem}
-      .app-content{padding:.6rem;gap:.35rem}
+      .app-content{padding:.6rem;gap:.3rem}
       .app-content h3{font-size:1rem}
-      .app-content p{font-size:.8rem}
-      .app-actions .button,.app-actions .app-play,.app-actions .quiet{min-height:2.5rem;padding:.35rem .5rem;font-size:.8rem}
-      .status-chip{top:.35rem;left:.35rem;font-size:.65rem}
-      .favorite{top:.35rem;right:.35rem;min-height:2rem;min-width:2rem;font-size:1.1rem}
-      .book-copy{flex-direction:column;align-items:flex-start;gap:.3rem}
+      .app-content p{font-size:.77rem}
+      .app-actions .app-play,.app-actions .quiet{font-size:.75rem;min-height:2.45rem;padding:.35rem .4rem}
+      .status-chip{top:.35rem;left:.35rem;font-size:.61rem}
+      .favorite{top:.35rem;right:.35rem;min-height:2.1rem;min-width:2.1rem;font-size:1.1rem}
+      .mini-section .hero-visual{display:block;padding:.8rem}
+      .mini-section .mini-stage{margin:.4rem 0}
+      .mini-section .hero-note{text-align:right;font-size:.73rem}
+      .book-copy{flex-direction:column;align-items:flex-start;gap:.35rem}
       .about-panel{padding:1.15rem}
     }
-    @media(max-width:24rem){.app-grid{grid-template-columns:1fr}.app-art{height:9rem}}
+    @media(max-width:23rem){.app-grid{grid-template-columns:1fr}.hero-wrap{grid-template-columns:minmax(0,1fr) 4.2rem}}
+
   </style>
   <script defer src="./app.js"></script>
 </head>
@@ -143,6 +193,42 @@
         <div class="trust-row"><span class="trust-mark" aria-hidden="true">✓</span><span data-i18n="heroTrust">登録不要・無料・スマホでもPCでも</span></div>
       </div>
 
+      <div class="hero-brand-art" aria-hidden="true"><div class="hero-stamp">PLAY<br>LEARN<br>DISCOVER<span>.</span></div><svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="lab-manatee"><g fill="none" stroke="#d9b66b" stroke-width="2.2" stroke-linecap="round"><path d="M14 31h14m-7-7v14M236 110h14m-7-7v14M211 18l7 11 7-11"/><circle cx="44" cy="113" r="5"/><path d="M6 75q12-8 24 0m-10 10q12-8 24 0"/></g><g transform="rotate(-9 136 77)"><path d="M76 82Q52 79 34 58Q20 54 22 66Q24 83 43 93Q24 103 31 115Q46 122 67 105L82 94" fill="#7fb7ab" stroke="#203b45" stroke-width="2.5" stroke-linejoin="round"/><path d="M63 83C63 47 110 28 162 38C204 46 225 67 221 91C218 112 190 125 151 125C105 125 66 111 63 83Z" fill="#94c8bb" stroke="#203b45" stroke-width="2.5"/><path d="M159 79q29-19 49 2q16 17-1 29q-20 10-43-2q-11-12-5-29Z" fill="#d4e6d9"/><path d="M113 100q-12 26 12 32q16 2 29-25" fill="#75ab9e" stroke="#203b45" stroke-width="2.5" stroke-linecap="round"/><circle cx="185" cy="67" r="3.6" fill="#203b45"/><circle cx="203" cy="86" r="2.6" fill="#203b45"/><path d="M182 95q7 6 16 1" fill="none" stroke="#203b45" stroke-width="2.2" stroke-linecap="round"/><path d="M98 52q13-8 27-9" fill="none" stroke="#d1eee0" stroke-width="3" stroke-linecap="round"/></g><g font-family="Georgia,serif" font-size="21" font-style="italic" fill="#377b72"><text x="42" y="28">π</text><text x="226" y="58">x</text></g><path d="M226 76l5 9 10 2-7 7 1 10-9-5-9 5 2-10-8-7 10-2z" fill="#f4be48" stroke="#203b45" stroke-width="1.4"/></svg></div>
+    </section>
+
+    <section class="catalog-section container" id="apps" aria-labelledby="apps-title" tabindex="-1">
+      <div class="catalog-heading"><div><span class="section-kicker">01 / EXPLORE</span><h2 id="filterTitle" data-i18n="find">教材を探す</h2></div><span class="catalog-decoration" aria-hidden="true">✳ &nbsp; △ &nbsp; +</span></div>
+      <div class="grade-shortcuts" aria-label="Grade" data-label="byGrade"><button type="button" data-quick-grade="j1"><span aria-hidden="true">01</span><strong data-i18n="gradeJ1">中学1年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j2"><span aria-hidden="true">02</span><strong data-i18n="gradeJ2">中学2年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j3"><span aria-hidden="true">03</span><strong data-i18n="gradeJ3">中学3年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="high"><span aria-hidden="true">04</span><strong data-i18n="gradeHigh">高校数学</strong><span aria-hidden="true">↗</span></button></div>
+      <form id="filters" aria-labelledby="filterTitle">
+        <div class="filter-grid">
+          <label><span data-i18n="byGrade">学年から探す</span><select id="grade"></select></label>
+          <label><span data-i18n="byUnit">単元から探す</span><select id="unit"></select></label>
+          <label><span data-i18n="byPurpose">学習目的から探す</span><select id="purpose"></select></label>
+        </div>
+        <div class="filter-tools">
+          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only" data-i18n="searchLabel">教材を検索</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" autocomplete="off"></label>
+          <label class="sort-control"><span data-i18n="sortLabel">表示順</span><select id="sort"></select></label>
+          <label class="check"><input type="checkbox" id="onlyFavorites"><span data-i18n="favorites">お気に入り</span></label>
+          <label class="check"><input type="checkbox" id="onlyPublished" checked><span data-i18n="onlyPublished">公開済みのみ</span></label>
+          <button type="button" class="quiet" id="resetFilters" data-i18n="clear">条件をクリア</button>
+        </div>
+      </form>
+      <div class="section-heading list-heading">
+        <div><span class="section-kicker">02 / GAME LIBRARY</span><h2 id="apps-title" data-i18n="library">教材アプリ一覧</h2></div>
+        <p class="count-pill" id="appCount" aria-live="polite"></p>
+      </div>
+      <p id="catalogStatus" role="status"></p>
+      <button type="button" id="retry" class="button button-dark" hidden data-i18n="retry">再試行</button>
+      <div class="app-grid" id="appGrid"></div>
+      <button type="button" id="more" class="button button-light more" hidden data-i18n="more">さらに表示</button>
+    </section>
+
+    <section class="news-section container" aria-labelledby="newsTitle">
+      <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
+      <div id="newsList"></div>
+    </section>
+
+    <section class="mini-section container" aria-label="Mini math game">
       <div class="hero-visual" data-label="miniLabel">
         <span class="visual-decor visual-decor-one" aria-hidden="true">✦</span>
         <span class="visual-decor visual-decor-two" aria-hidden="true">＋</span>
@@ -163,38 +249,6 @@
         </div>
         <div class="hero-note"><span class="smile" aria-hidden="true">☺</span><span data-i18n="heroVisualNote">正解は、遊びの中にある。</span></div>
       </div>
-    </section>
-
-    <section class="catalog-section container" id="apps" aria-labelledby="apps-title" tabindex="-1">
-      <h2 id="filterTitle" data-i18n="find">教材を探す</h2>
-      <div class="grade-shortcuts" aria-label="Grade" data-label="byGrade"><button type="button" data-quick-grade="j1"><span aria-hidden="true">01</span><strong data-i18n="gradeJ1">中学1年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j2"><span aria-hidden="true">02</span><strong data-i18n="gradeJ2">中学2年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j3"><span aria-hidden="true">03</span><strong data-i18n="gradeJ3">中学3年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="high"><span aria-hidden="true">04</span><strong data-i18n="gradeHigh">高校数学</strong><span aria-hidden="true">↗</span></button></div>
-      <form id="filters" aria-labelledby="filterTitle">
-        <div class="filter-grid">
-          <label><span data-i18n="byGrade">学年から探す</span><select id="grade"></select></label>
-          <label><span data-i18n="byUnit">単元から探す</span><select id="unit"></select></label>
-          <label><span data-i18n="byPurpose">学習目的から探す</span><select id="purpose"></select></label>
-        </div>
-        <div class="filter-tools">
-          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only" data-i18n="searchLabel">教材を検索</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" autocomplete="off"></label>
-          <label class="sort-control"><span data-i18n="sortLabel">表示順</span><select id="sort"></select></label>
-          <label class="check"><input type="checkbox" id="onlyFavorites"><span data-i18n="favorites">お気に入り</span></label>
-          <label class="check"><input type="checkbox" id="onlyPublished" checked><span data-i18n="onlyPublished">公開済みのみ</span></label>
-          <button type="button" class="quiet" id="resetFilters" data-i18n="clear">条件をクリア</button>
-        </div>
-      </form>
-      <div class="section-heading list-heading">
-        <h2 id="apps-title" data-i18n="library">教材アプリ一覧</h2>
-        <p class="count-pill" id="appCount" aria-live="polite"></p>
-      </div>
-      <p id="catalogStatus" role="status"></p>
-      <button type="button" id="retry" class="button button-dark" hidden data-i18n="retry">再試行</button>
-      <div class="app-grid" id="appGrid"></div>
-      <button type="button" id="more" class="button button-light more" hidden data-i18n="more">さらに表示</button>
-    </section>
-
-    <section class="news-section container" aria-labelledby="newsTitle">
-      <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
-      <div id="newsList"></div>
     </section>
 
     <section class="teacher-section" id="how" aria-labelledby="teacherTitle">
