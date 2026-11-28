@@ -891,9 +891,9 @@
       "url": "https://manaty-bit.github.io/line-pilot/",
       "sourceUrl": "https://github.com/manaty-bit/line-pilot",
       "description": {
-        "ja": "傾きと切片を操り、ターゲットを通過せよ！ 一次関数の式とグラフを学ぶゲーム。動点回避のLINE DODGEも搭載。（基礎先行版）",
-        "en": "Control slope and y-intercept to hit targets and connect linear equations with graphs. Includes the LINE DODGE survival game (basic-course preview).",
-        "zh": "操控斜率与纵截距，让直线穿过目标，学习一次函数的表达式与图像。附带 LINE DODGE 躲避游戏（基础课程预览版）。"
+        "ja": "傾きと切片を操って目標点を通そう！ 一次関数の式とグラフを学ぶゲーム。2点に直線を重ねるLINE LOCKも搭載。（基礎先行版）",
+        "en": "Control slope and y-intercept to hit targets and connect equations with graphs. Includes LINE LOCK, a two-point alignment game (basic-course preview).",
+        "zh": "操控斜率与纵截距，让直线穿过目标，学习一次函数的表达式与图像。附带 LINE LOCK 双点对准游戏（基础课程预览版）。"
       },
       "grades": [
         "j2"
@@ -923,9 +923,9 @@
           "zh": "斜率、纵截距以及表达式与图像的相互转换。"
         },
         "game": {
-          "ja": "基礎5ステージ、LINE SHOT、60秒チャレンジ、自由操縦、6段階の動点回避ゲーム。標準・図形融合コースは未実装。",
-          "en": "Five basic stages, LINE SHOT, a 60-second challenge, free exploration and six levels of LINE DODGE. Standard and geometry courses are not yet implemented.",
-          "zh": "五个基础关卡、直线射击、60秒挑战、自由探索和六级躲避游戏。标准与几何拓展课程尚未实现。"
+          "ja": "基礎5ステージ、LINE SHOT、60秒チャレンジ、自由操縦、6段階のLINE LOCK。標準・図形融合コースは未実装。",
+          "en": "Five basic stages, LINE SHOT, a 60-second challenge, free exploration and six levels of LINE LOCK. Standard and geometry courses are not yet implemented.",
+          "zh": "五个基础关卡、直线射击、60秒挑战、自由探索和六级 LINE LOCK 双点对准游戏。标准与几何拓展课程尚未实现。"
         },
         "classroom": {
           "ja": "傾きと切片を別々に変更し、直線の変化を説明してから、グラフを見て式をノートに書く。",
@@ -942,8 +942,17 @@
       },
       "publishedAt": "2026-11-28",
       "updatedAt": "2026-11-28",
-      "version": "0.4",
+      "version": "0.5",
       "history": [
+        {
+          "date": "2026-11-28",
+          "summary": {
+            "ja": "目標点を通る基礎問題に改良し、動点回避を2点照準ゲームLINE LOCKへ変更。",
+            "en": "Reworked basic exercises around targets and replaced LINE DODGE with two-point LINE LOCK.",
+            "zh": "优化目标点基础练习，以双点对准游戏 LINE LOCK 替代躲避游戏。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/line-pilot/commit/8af1bf456ee98b13a88ff2a09896f6842aea1293"
+        },
         {
           "date": "2026-11-28",
           "summary": {
