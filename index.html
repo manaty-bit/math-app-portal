@@ -3,106 +3,324 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f9f8f3">
+  <meta name="theme-color" content="#fcf6e9">
   <meta name="description" content="MANATY LAB — 遊びから生まれる、数学の「わかった！」。中学・高校数学を楽しく学べる無料の学習ゲームを公開しています。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="MANATY LAB | Play. Learn. Discover.">
   <meta property="og:description" content="遊びから生まれる、数学の「わかった！」無料で遊べる数学の学習アプリ。">
   <meta property="og:locale" content="ja_JP">
   <title>MANATY LAB — Play. Learn. Discover.</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/brand/beta-favicon.svg">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./editorial.css">
   <style>
-    /* App-first portal: compact introduction, searchable game library, quiet editorial footer. */
-    :root{--paper:#f5f7f5;--ink:#172b2a;--muted:#536662;--line:#dce5e0;--green:#14594b;--mint:#e6f3eb;--white:#fff;}
-    body{line-height:1.55}
+
+    /* MANATY LAB / Cream Playground. Brand shell only; app artwork remains unchanged. */
+    :root{--paper:#fff8e9;--ink:#203b45;--muted:#53666b;--line:#e5d9c5;--green:#176b60;--mint:#e1f1e6;--white:#fffefa;--yellow:#f4be48;--coral:#e97d69}
+    body{line-height:1.55;background:var(--paper)}
     .container{width:min(calc(100% - 3rem),84rem)}
-    .site-header{background:#fff;box-shadow:0 1px 8px #203e2e08}
-    .header-inner{min-height:3.8rem}
-    .wordmark-symbol{background:var(--green);color:white;border-radius:.6rem;padding:.05rem .3rem;font-size:1.35rem}
-    .wordmark-symbol span{color:#f2c959}
-    .languages{border:1px solid var(--line);border-radius:2rem;padding:.16rem}
-    .languages button{border-radius:2rem;min-height:2rem}
-    .languages [aria-pressed="true"]{background:var(--green);color:white;border-color:var(--green)}
-    .hero-wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(1rem,3vw,2.5rem);padding-block:1.4rem 1.35rem}
-    .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.2;letter-spacing:-.045em;margin:.35rem 0 .4rem}
-    .hero-copy h1 br{display:initial}
-    .hero-english{font-size:.95rem;color:var(--muted)}
-    .hero-description{font-size:.92rem;line-height:1.6;margin:.4rem 0 .65rem;max-width:46em}
-    .hero-actions .button{min-height:2.5rem;padding:.4rem .85rem}
-    .button,.app-play,.quiet{border-radius:.6rem}
-    .trust-row{font-size:.78rem;margin-top:.45rem}
-    .hero-visual{background:#e4f0e8;border:1px solid #d5e6db;border-radius:1rem;padding:.7rem 1rem}
-    .hero-blob{opacity:.4;width:10rem}
-    .mini-stage{margin:.35rem 0;padding:.45rem .7rem;border-radius:.7rem;background:#fff}
-    .mini-equation{font-size:1.6rem;line-height:1.2}
-    .mini-guides,.hero-note{font-size:.72rem}
-    #miniTrack{max-height:4.8rem}
-    .mini-controls button{min-height:2.35rem;min-width:2.5rem;border-radius:.5rem}
-    .catalog-section{padding-top:1.2rem;border-top:1px solid var(--line)}
-    #filterTitle{font-size:1.45rem;margin-bottom:.7rem}
-    .grade-shortcuts{gap:.65rem;margin-bottom:.7rem}
-    .grade-shortcuts button{min-height:3.45rem;grid-template-columns:auto 1fr auto;gap:.65rem;align-items:center;border-radius:.75rem;border:1px solid #ffffff80;padding:.55rem .8rem}
-    .grade-shortcuts button span:first-child{grid-column:auto;font-size:.7rem;font-weight:800;letter-spacing:0}
-    .grade-shortcuts strong{font-size:clamp(.95rem,1.6vw,1.15rem)}
-    #filters{background:#fff;border-radius:.8rem;padding:.75rem}
-    select,.search-box{border-radius:.5rem;border-color:#bdcdc5;min-height:2.5rem}
-    .filter-tools{margin-top:.45rem;gap:.3rem .7rem}
-    .filter-tools .quiet,.check{min-height:2.5rem}
-    .list-heading{margin:1.25rem 0 .7rem}
-    .list-heading h2{font-size:1.4rem}
+    .site-header{background:#fffaf0;border-bottom:1px solid #e5d9c5}
+    .header-inner{min-height:3.75rem;gap:1rem}
+    .wordmark{font-size:1.13rem;letter-spacing:-.045em}
+    .wordmark-symbol{display:inline-block;background:var(--ink);color:#fff8e9;border-radius:10px;padding:.05rem .32rem;line-height:1.4;font-size:1.28rem}
+    .wordmark-symbol span{color:var(--yellow)}
+    .wordmark b{color:var(--green)}
+    .desktop-nav{gap:1.3rem}
+    .desktop-nav a{font-weight:750}
+    .languages{border:1px solid var(--line);border-radius:2rem;padding:.15rem;background:var(--white)}
+    .languages button{border-radius:2rem;min-height:2rem;padding-inline:.58rem}
+    .languages [aria-pressed="true"]{background:var(--ink);color:white;border-color:var(--ink)}
+    .hero-wrap{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);gap:1.1rem;align-items:center;margin-block:1rem 1.15rem;padding:1.05rem 1.55rem;background:#f9e7b7;border:1px solid #e5c985;border-radius:1.25rem}
+    .hero-wrap::before{content:"";position:absolute;z-index:-1;inset:0;background-image:radial-gradient(#b4a16740 1px,transparent 1px);background-size:18px 18px;mask-image:linear-gradient(90deg,transparent 35%,black)}
+    .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.75rem,3.1vw,2.65rem);line-height:1.16;letter-spacing:-.045em;margin:.28rem 0 .35rem}
+    .hero-copy h1 br{display:none}
+    html:lang(en) .hero-copy h1 br{display:initial}
+    .hero-english{font-size:.86rem;font-weight:750;letter-spacing:.06em;color:var(--green)}
+    .hero-description{max-width:58em;font-size:.85rem;line-height:1.6;margin:.3rem 0 .4rem;color:var(--ink)}
+    .eyebrow,.section-kicker,.play-label{font-size:.68rem;letter-spacing:.13em;font-weight:850;color:var(--green)}
+    .eyebrow-dot{display:inline-block;width:.5rem;height:.5rem;background:var(--green);border-radius:50%;margin-right:.4rem}
+    .hero-actions{display:none}
+    .trust-row{margin-top:.35rem;font-size:.75rem;color:#4b625c}
+    .hero-brand-art{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0}
+    .lab-manatee{display:block;width:min(100%,15rem);height:auto;overflow:visible}
+    .hero-stamp{position:absolute;right:0;top:0;line-height:1.04;font-size:clamp(.54rem,.78vw,.73rem);font-weight:900;letter-spacing:.07em;color:#365e58;transform:rotate(5deg)}
+    .hero-stamp span{color:#9b493b}
+    .catalog-section{padding-top:0}
+    .catalog-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:.7rem;margin-bottom:.6rem}
+    .catalog-heading h2,#filterTitle{font-size:1.4rem;margin:.12rem 0 0;letter-spacing:-.035em}
+    .catalog-decoration{color:#8d7853;font-size:.85rem;letter-spacing:.12em}
+    .grade-shortcuts{gap:.65rem;margin-bottom:.6rem}
+    .grade-shortcuts button{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:.55rem;min-height:3.05rem;border:1px solid #d0c5aa;border-radius:.65rem;padding:.45rem .75rem;color:var(--ink);box-shadow:0 2px 0 #203b4510}
+    .grade-shortcuts button:nth-child(1){background:#cfe9d9}
+    .grade-shortcuts button:nth-child(2){background:#f9df8c}
+    .grade-shortcuts button:nth-child(3){background:#f6c7b8}
+    .grade-shortcuts button:nth-child(4){background:#cbdcf4}
+    .grade-shortcuts button span:first-child{grid-column:auto;font-size:.66rem;font-weight:850;letter-spacing:0;color:#40585e}
+    .grade-shortcuts strong{font-size:clamp(.95rem,1.5vw,1.09rem);font-weight:850}
+    .grade-shortcuts button:hover{outline:2px solid var(--ink);outline-offset:-2px}
+    #filters{background:#fffdf7;border:1px solid var(--line);border-radius:.85rem;padding:.65rem .8rem}
+    .filter-grid{gap:.5rem}
+    .filter-grid label,.filter-tools label{font-size:.78rem}
+    select,.search-box{border-radius:.5rem;border-color:#c9d2c8;min-height:2.35rem;padding-block:.3rem}
+    .filter-tools{gap:.25rem .65rem;margin-top:.4rem}
+    .filter-tools .quiet,.check{min-height:2.35rem}
+    .button,.app-play,.quiet{border-radius:.55rem;font-weight:750}
+    .button-dark,.app-play{background:var(--ink);border-color:var(--ink)}
+    .button-dark:hover,.app-play:hover{background:var(--green)}
+    .list-heading{margin:1.05rem 0 .65rem;align-items:end}
+    .list-heading h2{font-size:1.45rem;margin-top:.12rem}
+    .count-pill{font-size:.79rem;background:#f4ecdb;padding:.25rem .55rem;border-radius:2rem}
+    #catalogStatus:empty{display:none}
     .app-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-    .app-card{background:white;border:1px solid var(--line);border-radius:.9rem;overflow:hidden;box-shadow:0 2px 8px #183d2c06}
-    .app-art{height:clamp(8.5rem,11vw,10.5rem);border-radius:0}
-    .app-content{padding:.85rem;gap:.45rem}
-    .app-content h3{font-size:1.12rem;line-height:1.3}
-    .app-content p{font-size:.86rem;line-height:1.55}
-    .app-actions{gap:.4rem;align-items:stretch}
+    .app-card{background:var(--white);border:1px solid #e2d7c4;border-radius:.9rem;overflow:hidden;box-shadow:0 3px 0 #5843250b}
+    .app-art{height:auto;aspect-ratio:16/9;border-radius:0;border-bottom:1px solid #203b4510}
+    .app-art svg{display:block;width:100%;height:100%}
+    .app-content{padding:.8rem;gap:.35rem}
+    .app-content h3{font-size:1.14rem;line-height:1.3;letter-spacing:-.025em}
+    .app-content p{font-size:.83rem;line-height:1.55}
+    .app-meta,.game-language{font-size:.72rem!important}
+    .app-meta{color:var(--green);font-weight:750}
+    .tags{gap:.25rem}
+    .tags li{background:#f4f0e4;border:0;border-radius:.3rem;font-size:.69rem;padding:.15rem .4rem}
+    .status-chip{border-radius:.35rem;background:#fffdf7;color:#203b45;font-size:.69rem;box-shadow:0 1px 4px #203b4518}
+    .status-chip.published{background:#fffdf7}
+    .favorite{border-radius:50%;border-color:#fff8e9;background:#fffdf7;min-width:2.4rem;min-height:2.4rem;box-shadow:0 1px 5px #203b451c}
+    .app-actions{gap:.35rem;align-items:stretch}
     .app-actions .app-play{flex:1 1 auto}
-    .tags li{border-radius:.3rem;background:#f5f7f5}
-    .favorite{border-radius:50%}
-    .status-chip{border-radius:1rem}
-    .news-section{margin-top:2rem;margin-bottom:1.5rem;padding-block:.75rem}
-    .news-card{border-left:0;background:transparent;border-radius:.45rem}
-    .teacher-section{margin-top:1.8rem;padding-block:1.45rem}
-    .about-section,.connect-section{margin-block:1.8rem}
-    .about-panel{border-radius:.9rem;padding:1.6rem}
-    .about-orbit{width:7rem}
+    .app-actions .app-play,.app-actions .quiet{font-size:.8rem;min-height:2.55rem;padding:.4rem .6rem}
+    .app-actions .quiet{background:#fffdf7;border-color:var(--line)}
+    .news-section{margin:2rem auto 1.3rem;padding:.8rem 1rem;border:1px solid var(--line);border-radius:.8rem;background:#f6efdf}
+    .news-card{border-left:1px solid var(--line)}
+    .mini-section{margin-block:1.3rem}
+    .mini-section .hero-visual{max-width:100%;display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);align-items:center;gap:.6rem 1.25rem;border:1px solid #c6d9cb;border-radius:1rem;background:#e3efe2;padding:1rem 1.3rem}
+    .mini-section .mini-stage{grid-column:2;grid-row:1/3;margin:0;padding:.5rem .75rem;border-radius:.6rem}
+    .mini-section .play-label{align-self:end;font-size:1rem}
+    .mini-section .hero-note{align-self:start;text-align:left;font-size:.9rem}
+    .mini-section .mini-equation{font-size:1.5rem}
+    .mini-section #miniTrack{max-height:4.5rem}
+    .mini-section .mini-controls button{min-height:2.4rem;min-width:2.5rem}
+    .teacher-section{margin-top:1.5rem;padding-block:1.3rem;background:#f1e4c7}
+    .about-section,.connect-section{margin-block:1.7rem}
+    .about-panel{background:var(--ink);border-radius:1rem;padding:1.5rem}
+    .about-panel .section-kicker{color:#f4d17d}
+    .about-orbit{width:7rem;border-color:#9bc1b2}
     .book-section{margin-block:1.5rem}
-    .book-banner{background:#fff;border:1px solid var(--line);border-radius:.7rem;overflow:hidden}
-    .book-banner img{display:block;width:100%;height:auto;max-height:22rem;object-fit:contain;background:#fffdf5}
-    .book-banner:hover{border-color:var(--green)}
+    .book-banner{background:#fffdf7;border:1px solid var(--line);border-radius:.8rem;overflow:hidden}
+    .book-banner img{display:block;width:100%;height:auto;max-height:22rem;object-fit:contain;background:#fffdf7}
     .book-copy{padding:.7rem .9rem;border-left:0}
     .book-copy h2{font-size:1rem;line-height:1.4;margin:.1rem 0}
-    .book-copy p,.book-cta{font-size:.75rem}
-    .book-copy .section-kicker{font-size:.65rem;color:var(--muted)}
-    .connect-card{border-radius:.7rem;border:1px solid var(--line);background:#fff}
+    .book-copy p,.book-cta{font-size:.78rem}
+    .connect-card{border-radius:.7rem;border:1px solid var(--line);background:var(--white)}
+    .site-footer{background:#f1e7d3}
+    :focus-visible{outline:3px solid #9a542e;outline-offset:3px}
+    @media(hover:hover) and (prefers-reduced-motion:no-preference){
+      .app-card,.grade-shortcuts button{transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+      .app-card:hover{transform:translateY(-3px);box-shadow:0 8px 16px #59432116;border-color:#bfb398}
+      .grade-shortcuts button:hover{transform:translateY(-2px)}
+      .lab-manatee{transition:transform .3s ease}
+      .hero-brand-art:hover .lab-manatee{transform:translateY(-4px) rotate(-3deg)}
+    }
     @media(min-width:55.01rem) and (max-width:70rem){.app-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:55rem){.app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-wrap{gap:1rem}}
+    @media(max-width:55rem){.app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-wrap{grid-template-columns:minmax(0,1.6fr) minmax(0,.4fr);padding:1rem}}
     @media(max-width:41rem){
-      .container{width:calc(100% - 1.5rem)}
+      .container{width:calc(100% - 1.25rem)}
       .header-inner{min-height:3.6rem}
-      .hero-wrap{grid-template-columns:1fr;padding-block:.95rem;gap:.7rem}
-      .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.65rem,6.5vw,2.3rem)}
+      .wordmark{font-size:1rem}
+      .languages button{padding-inline:.38rem;font-size:.71rem}
+      .hero-wrap{grid-template-columns:minmax(0,1fr) 5.5rem;gap:.35rem;margin-block:.7rem .9rem;padding:.8rem .7rem;border-radius:.8rem}
+      .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.35rem,5.8vw,1.85rem);line-height:1.2}
       .hero-copy h1 br{display:initial}
-      .hero-description{font-size:.85rem}
-      .hero-visual{padding:.5rem .7rem}
-      .hero-note{display:none}
-      #miniTrack{max-height:3.7rem}
+      .hero-english{font-size:.68rem}
+      .hero-description{font-size:.76rem}
+      .trust-row{font-size:.68rem}
+      .hero-stamp{display:none}
       .grade-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem}
-      .grade-shortcuts button{min-height:3rem;padding:.45rem .55rem;gap:.4rem}
+      .grade-shortcuts button{min-height:2.85rem;padding:.45rem .5rem;gap:.35rem}
+      #filters{padding:.55rem}
+      .filter-tools{gap:.2rem .45rem}
+      .list-heading{margin-top:.85rem}
       .app-grid{gap:.65rem}
-      .app-art{height:7rem}
-      .app-content{padding:.6rem;gap:.35rem}
+      .app-content{padding:.6rem;gap:.3rem}
       .app-content h3{font-size:1rem}
-      .app-content p{font-size:.8rem}
-      .app-actions .button,.app-actions .app-play,.app-actions .quiet{min-height:2.5rem;padding:.35rem .5rem;font-size:.8rem}
-      .status-chip{top:.35rem;left:.35rem;font-size:.65rem}
-      .favorite{top:.35rem;right:.35rem;min-height:2rem;min-width:2rem;font-size:1.1rem}
-      .book-copy{flex-direction:column;align-items:flex-start;gap:.3rem}
+      .app-content p{font-size:.77rem}
+      .app-actions .app-play,.app-actions .quiet{font-size:.75rem;min-height:2.45rem;padding:.35rem .4rem}
+      .status-chip{top:.35rem;left:.35rem;font-size:.61rem}
+      .favorite{top:.35rem;right:.35rem;min-height:2.1rem;min-width:2.1rem;font-size:1.1rem}
+      .mini-section .hero-visual{display:block;padding:.8rem}
+      .mini-section .mini-stage{margin:.4rem 0}
+      .mini-section .hero-note{text-align:right;font-size:.73rem}
+      .book-copy{flex-direction:column;align-items:flex-start;gap:.35rem}
       .about-panel{padding:1.15rem}
     }
-    @media(max-width:24rem){.app-grid{grid-template-columns:1fr}.app-art{height:9rem}}
+    @media(max-width:23rem){.app-grid{grid-template-columns:1fr}.hero-wrap{grid-template-columns:minmax(0,1fr) 4.2rem}}
+
+  
+    /* H / THE BEAUTY OF PLAY — a mathematical dark header and a warm, game-first library. */
+    :root{--paper:#fcf6e9;--ink:#182e39;--muted:#52656a;--line:#e4dbca;--green:#176b60;--mint:#e1f1e6;--white:#fffefa;--yellow:#f4be48;--coral:#e78976}
+    .site-header{background:#182e39;color:#fcf6e9;border-bottom:1px solid #36515a}
+    .wordmark{letter-spacing:-.025em}
+    .wordmark-symbol{background:#9adcc3;color:#182e39;border-radius:6px}
+    .wordmark-symbol span{color:#182e39}
+    .wordmark b{color:#9adcc3}
+    .desktop-nav a{color:#f1efe5}
+    .desktop-nav a:hover{text-decoration-color:#9adcc3;text-underline-offset:.35em}
+    .languages{background:#203b46;border-color:#45616c}
+    .languages button{color:#f1efe5}
+    .languages [aria-pressed="true"]{background:#9adcc3;border-color:#9adcc3;color:#182e39;font-weight:850}
+    .hero-wrap{background:#182e39;border:1px solid #34505a;border-radius:.85rem;color:#fcf6e9;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:1.4rem;margin-block:.85rem .9rem;padding:.8rem 1.45rem}
+    .hero-wrap::before{background-image:linear-gradient(115deg,#182e39 30%,#254550 100%);mask-image:none}
+    .hero-copy .eyebrow{color:#9adcc3}
+    .eyebrow-dot{background:#9adcc3}
+    .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{color:#fcf6e9;font-size:clamp(1.6rem,2.8vw,2.55rem);line-height:1.2;letter-spacing:-.04em;margin:.25rem 0 .4rem}
+    .hero-copy h1 .highlight{color:#9adcc3}
+    .hero-english{color:#9adcc3;font-size:.86rem}
+    .hero-description{color:#e1e9e4;line-height:1.55;font-size:.83rem}
+    .trust-row{color:#c0d3d4}
+    .trust-mark{color:#f4be48}
+    .hero-brand-art{width:100%;height:100%;max-height:9.7rem;overflow:hidden}
+    .math-figure{display:block;width:100%;height:auto;max-height:9.7rem}
+    .rose-curve{transform-origin:200px 77px}
+    .catalog-heading{margin-bottom:.45rem}
+    .catalog-heading h2,#filterTitle{font-size:1.25rem}
+    .catalog-decoration{color:#176b60;font-family:Georgia,serif;font-size:1.05rem}
+    .grade-shortcuts button{border:1px solid #d4cab8;min-height:2.85rem;border-radius:.45rem}
+    .grade-shortcuts button:nth-child(1){background:#d0e9dd}
+    .grade-shortcuts button:nth-child(2){background:#f8df9a}
+    .grade-shortcuts button:nth-child(3){background:#f6cbbd}
+    .grade-shortcuts button:nth-child(4){background:#d0dff2}
+    #filters{border-radius:.55rem;background:#fffdf7;padding:.6rem .75rem}
+    .list-heading{margin:.9rem 0 .6rem}
+    .list-heading h2{font-size:1.45rem}
+    .app-grid{gap:.9rem}
+    .app-card{border-radius:.65rem;box-shadow:0 2px 0 #5843250c}
+    .app-art{border-bottom:1px solid #182e3915}
+    .app-content{padding:.72rem .8rem}
+    .app-meta{color:#176b60}
+    .button-dark,.app-play{background:#182e39;border-color:#182e39;color:#fcf6e9}
+    .app-actions .app-play{justify-content:center}
+    .about-panel{background:#182e39}
+    .about-mascot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;width:10rem;color:#9adcc3;font-size:.64rem;font-weight:800;letter-spacing:.13em}
+    .about-mascot svg{width:100%;height:auto}
+    .about-mascot svg g[font-family]{fill:#9adcc3}
+    .teacher-section{background:#efe6d2}
+    .site-footer{background:#182e39;color:#fcf6e9}
+    .footer-inner small{color:#c0d3d4}
+    .site-header :focus-visible,.hero-wrap :focus-visible,.site-footer :focus-visible{outline-color:#f4be48}
+    @media(hover:hover) and (prefers-reduced-motion:no-preference){
+      .rose-curve{transition:stroke-width .25s ease,fill-opacity .25s ease}
+      .hero-brand-art:hover .rose-curve{stroke-width:2.5;fill-opacity:.14}
+    }
+    @media(max-width:55rem){.hero-wrap{grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:.65rem}}
+    @media(max-width:41rem){
+      .hero-wrap{grid-template-columns:minmax(0,1fr) minmax(0,.45fr);gap:.4rem;padding:.8rem .75rem;border-radius:.6rem}
+      .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.3rem,5.2vw,1.85rem)}
+      .hero-description{font-size:.75rem}
+      .hero-brand-art{max-height:7rem}
+      .math-figure{max-height:7rem}
+      .math-figure text{display:none}
+      .about-mascot{width:7rem;justify-self:end}
+      .app-card{border-radius:.55rem}
+    }
+    @media(max-width:23rem){.hero-wrap{grid-template-columns:minmax(0,1fr) 4.5rem}}
+
+  
+    /* Beta brand — fixed SVG assets, sourced from the approved image. */
+    :root{--brand-mint:#73c9b5;--brand-gold:#f4be48;--brand-navy:#182e39;--brand-cream:#fcf6e9}
+    .site-header .wordmark{display:flex;align-items:center;flex-shrink:0;min-width:0;line-height:1;padding:0}
+    .header-brand-logo{display:block;width:clamp(11.2rem,20vw,15.2rem);height:auto;max-width:100%;object-fit:contain}
+    .header-inner{min-height:4.35rem}
+    .site-header .languages [aria-pressed="true"]{background:var(--brand-mint);border-color:var(--brand-mint)}
+    .hero-copy h1 .highlight,.hero-copy .eyebrow,.hero-english{color:#9adcc3}
+    .hero-wrap{border-radius:.85rem}
+    .grade-shortcuts button:nth-child(1){background:#d0e9dd}
+    .grade-shortcuts button:nth-child(2){background:#f8df9a}
+    .about-mascot{width:min(100%,13rem);padding:.25rem}
+    .about-mascot img{display:block;width:100%;height:auto}
+    .footer-brand img{display:block;width:12.8rem;max-width:100%;height:auto}
+    @media(max-width:55rem){.header-brand-logo{width:11.2rem}.header-inner{min-height:3.7rem}}
+    @media(max-width:41rem){.header-inner{gap:.35rem;min-height:3.3rem}.header-brand-logo{width:clamp(8.1rem,39vw,10.4rem)}.header-tools{gap:.25rem;min-width:0}.languages{padding:.08rem}.languages button{padding-inline:.25rem;font-size:.69rem}.about-mascot{width:8.5rem}.footer-brand img{width:11rem}}
+    @media(max-width:23rem){.header-brand-logo{width:7.8rem}.languages button{padding-inline:.18rem;font-size:.65rem}}
+
+  
+    /* Beta identity / gentle mathematical playground.
+       Preserve the catalog and all controls; use the same fixed brand assets. */
+    :root{--paper:#fcf6e9;--ink:#182e39;--muted:#4d6665;--line:#deded0;--green:#21695c;--mint:#e1f2e9;--white:#fffefa;--yellow:#f4be48;--coral:#e78976}
+    body{background:var(--paper);color:var(--ink)}
+    .site-header{background:#fffdf6;color:var(--ink);border-bottom:1px solid #e2dfd2}
+    .header-inner{min-height:4.1rem}
+    .desktop-nav a{color:var(--ink)}
+    .desktop-nav a:hover{text-decoration-color:var(--green)}
+    .languages{background:#f4f6ed;border-color:#d4e0d5;border-radius:2rem}
+    .site-header .languages button{color:#385651;border-radius:2rem}
+    .site-header .languages [aria-pressed="true"]{background:#21695c;border-color:#21695c;color:#fffefa}
+    .hero-wrap{background:#e6f1e5;color:var(--ink);border:1px solid #cddfcf;border-radius:1.4rem;margin-block:.8rem .9rem;padding:.9rem 1.5rem;grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);gap:1rem;box-shadow:none}
+    .hero-wrap::before{display:none;background:none}
+    .hero-copy .eyebrow,.hero-english{color:#21695c}
+    .eyebrow-dot{background:#21695c}
+    .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{color:var(--ink);font-size:clamp(1.65rem,3vw,2.65rem);letter-spacing:-.035em;line-height:1.2;margin:.25rem 0 .4rem}
+    .hero-copy h1 .highlight{color:#21695c}
+    .hero-description{color:#385651;font-size:.87rem;line-height:1.65}
+    .trust-row{color:#385651}
+    .trust-mark{color:#21695c}
+    .hero-brand-art{position:relative;display:grid;place-items:center;width:100%;max-height:9.9rem;min-width:0;overflow:hidden;isolation:isolate}
+    .hero-ripples{position:absolute;inset:auto 0 0;width:100%;height:auto;z-index:-1}
+    .hero-brand-mark{display:block;width:min(100%,15.5rem);height:auto;max-height:9.3rem;object-fit:contain}
+    .section-kicker,.eyebrow{letter-spacing:.10em;color:#21695c}
+    .catalog-decoration{color:#557a70;opacity:.75;font-family:Georgia,serif}
+    .grade-shortcuts button{border:1px solid #d6e0d3;border-radius:.85rem;box-shadow:none;min-height:2.85rem}
+    .grade-shortcuts button:nth-child(1){background:#dcefe4}
+    .grade-shortcuts button:nth-child(2){background:#f9e8b4;border-color:#ead7a4}
+    .grade-shortcuts button:nth-child(3){background:#f7dcd3;border-color:#ead3ca}
+    .grade-shortcuts button:nth-child(4){background:#dce9f1;border-color:#cfdfeb}
+    .grade-shortcuts button:hover{outline:2px solid #21695c;outline-offset:-2px}
+    #filters{background:#fffefa;border:1px solid var(--line);border-radius:1rem;padding:.65rem .8rem}
+    select,.search-box{background:#fffefa;border-color:#c7d9cf;border-radius:.65rem}
+    .list-heading h2,.catalog-heading h2,#filterTitle{letter-spacing:-.025em;color:var(--ink)}
+    .app-card{background:#fffefa;border:1px solid #e1ddd0;border-radius:1.05rem;box-shadow:0 3px 9px #203b4509;overflow:hidden}
+    .app-art{border-radius:0;border-bottom:1px solid #203b450d}
+    .app-content{padding:.75rem .85rem}
+    .app-content h3{color:var(--ink)}
+    .app-meta{color:#21695c}
+    .tags li{background:#edf3e9;color:#385651;border-radius:.45rem}
+    .count-pill{background:#e5eee2;color:#385651}
+    .status-chip{background:#fffefa;border-radius:.6rem}
+    .button,.app-play,.quiet{border-radius:.7rem}
+    .button-dark,.app-play{background:#21695c;border-color:#21695c;color:#fffefa}
+    .button-dark:hover,.app-play:hover{background:#174e45;border-color:#174e45}
+    .app-actions .quiet{background:#fffefa;border-color:#d4dfd4}
+    .news-section{background:#f3ecdd;border-color:#e2dac9;border-radius:1rem}
+    .mini-section .hero-visual{background:#e5f2e8;border-color:#d0e0d3;border-radius:1.2rem}
+    .teacher-section{background:#f5ebd5}
+    .about-panel{background:#e3f0e6;color:var(--ink);border:1px solid #d0e0d3;border-radius:1.25rem}
+    .about-panel .section-kicker,.about-panel h2 span,.about-panel .text-link{color:#21695c}
+    .about-panel p{color:#385651}
+    .about-mascot{width:min(100%,13rem)}
+    .connect-card,.book-banner{background:#fffefa;border-radius:1rem}
+    .site-footer{background:#eeeede;color:var(--ink);border-top:1px solid #d9ded0}
+    .footer-inner small{color:#4d6665}
+    .site-footer a{color:#21695c}
+    .site-header :focus-visible,.hero-wrap :focus-visible,.site-footer :focus-visible,:focus-visible{outline:3px solid #21695c;outline-offset:3px}
+    @media(hover:hover) and (prefers-reduced-motion:no-preference){
+      .app-card:hover{transform:translateY(-3px);border-color:#b7cfc0;box-shadow:0 9px 18px #203b4512}
+      .hero-brand-mark{transition:transform .28s ease}
+      .hero-brand-art:hover .hero-brand-mark{transform:translateY(-3px)}
+    }
+    @media(max-width:55rem){.hero-wrap{grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:.7rem;padding:1rem}.header-inner{min-height:3.7rem}}
+    @media(max-width:41rem){
+      .header-inner{min-height:3.35rem}
+      .hero-wrap{grid-template-columns:minmax(0,1fr) minmax(0,.42fr);gap:.35rem;border-radius:1.05rem;padding:.85rem .7rem;margin-block:.65rem .8rem}
+      .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.35rem,5.4vw,1.9rem)}
+      .hero-description{font-size:.76rem}
+      .hero-brand-art,.hero-brand-mark{max-height:7rem}
+      .app-grid{gap:.65rem}
+      .app-card{border-radius:.85rem}
+      .app-content{padding:.6rem}
+      .grade-shortcuts button{border-radius:.7rem}
+      #filters{padding:.55rem}
+      .about-mascot{width:9rem;justify-self:center}
+    }
+    @media(max-width:23rem){.hero-wrap{grid-template-columns:minmax(0,1fr) 4.7rem}}
+
   </style>
   <script defer src="./app.js"></script>
 </head>
@@ -111,8 +329,7 @@
   <header class="site-header" id="top">
     <div class="header-inner container">
       <a class="wordmark" href="#top" data-label="home">
-        <span class="wordmark-symbol" aria-hidden="true">M<span>·</span></span>
-        <span>MANATY <b>LAB</b></span>
+        <img class="header-brand-logo" src="./assets/brand/beta-header.svg" alt="MANATY LAB — Play. Learn. Discover." width="378" height="94">
       </a>
       <nav class="desktop-nav" data-label="navigation">
         <a href="#apps" data-i18n="navApps">アプリを探す</a>
@@ -143,6 +360,49 @@
         <div class="trust-row"><span class="trust-mark" aria-hidden="true">✓</span><span data-i18n="heroTrust">登録不要・無料・スマホでもPCでも</span></div>
       </div>
 
+      <div class="hero-brand-art" aria-hidden="true">
+        <svg class="hero-ripples" viewBox="0 0 440 168" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M-20 126C55 75 113 165 200 119S355 77 460 133M-20 147C55 96 113 186 200 140S355 98 460 154" stroke="#73c9b5" stroke-width="1.4" opacity=".23"/>
+          <circle cx="346" cy="26" r="19" stroke="#d8b461" stroke-width="1" opacity=".35"/>
+          <circle cx="346" cy="26" r="26" stroke="#d8b461" stroke-width=".8" stroke-dasharray="2 5" opacity=".3"/>
+        </svg>
+        <img class="hero-brand-mark" src="./assets/brand/beta-mark.svg" alt="" width="466" height="278" fetchpriority="high">
+      </div>
+    </section>
+
+    <section class="catalog-section container" id="apps" aria-labelledby="apps-title" tabindex="-1">
+      <div class="catalog-heading"><div><span class="section-kicker">01 / EXPLORE</span><h2 id="filterTitle" data-i18n="find">教材を探す</h2></div><span class="catalog-decoration" aria-hidden="true"><span>π</span> &nbsp; △ &nbsp; ∞</span></div>
+      <div class="grade-shortcuts" aria-label="Grade" data-label="byGrade"><button type="button" data-quick-grade="j1"><span aria-hidden="true">01</span><strong data-i18n="gradeJ1">中学1年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j2"><span aria-hidden="true">02</span><strong data-i18n="gradeJ2">中学2年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j3"><span aria-hidden="true">03</span><strong data-i18n="gradeJ3">中学3年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="high"><span aria-hidden="true">04</span><strong data-i18n="gradeHigh">高校数学</strong><span aria-hidden="true">↗</span></button></div>
+      <form id="filters" aria-labelledby="filterTitle">
+        <div class="filter-grid">
+          <label><span data-i18n="byGrade">学年から探す</span><select id="grade"></select></label>
+          <label><span data-i18n="byUnit">単元から探す</span><select id="unit"></select></label>
+          <label><span data-i18n="byPurpose">学習目的から探す</span><select id="purpose"></select></label>
+        </div>
+        <div class="filter-tools">
+          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only" data-i18n="searchLabel">教材を検索</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" autocomplete="off"></label>
+          <label class="sort-control"><span data-i18n="sortLabel">表示順</span><select id="sort"></select></label>
+          <label class="check"><input type="checkbox" id="onlyFavorites"><span data-i18n="favorites">お気に入り</span></label>
+          <label class="check"><input type="checkbox" id="onlyPublished" checked><span data-i18n="onlyPublished">公開済みのみ</span></label>
+          <button type="button" class="quiet" id="resetFilters" data-i18n="clear">条件をクリア</button>
+        </div>
+      </form>
+      <div class="section-heading list-heading">
+        <div><span class="section-kicker">02 / GAME LIBRARY</span><h2 id="apps-title" data-i18n="library">教材アプリ一覧</h2></div>
+        <p class="count-pill" id="appCount" aria-live="polite"></p>
+      </div>
+      <p id="catalogStatus" role="status"></p>
+      <button type="button" id="retry" class="button button-dark" hidden data-i18n="retry">再試行</button>
+      <div class="app-grid" id="appGrid"></div>
+      <button type="button" id="more" class="button button-light more" hidden data-i18n="more">さらに表示</button>
+    </section>
+
+    <section class="news-section container" aria-labelledby="newsTitle">
+      <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
+      <div id="newsList"></div>
+    </section>
+
+    <section class="mini-section container" aria-label="Mini math game">
       <div class="hero-visual" data-label="miniLabel">
         <span class="visual-decor visual-decor-one" aria-hidden="true">✦</span>
         <span class="visual-decor visual-decor-two" aria-hidden="true">＋</span>
@@ -165,38 +425,6 @@
       </div>
     </section>
 
-    <section class="catalog-section container" id="apps" aria-labelledby="apps-title" tabindex="-1">
-      <h2 id="filterTitle" data-i18n="find">教材を探す</h2>
-      <div class="grade-shortcuts" aria-label="Grade" data-label="byGrade"><button type="button" data-quick-grade="j1"><span aria-hidden="true">01</span><strong data-i18n="gradeJ1">中学1年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j2"><span aria-hidden="true">02</span><strong data-i18n="gradeJ2">中学2年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j3"><span aria-hidden="true">03</span><strong data-i18n="gradeJ3">中学3年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="high"><span aria-hidden="true">04</span><strong data-i18n="gradeHigh">高校数学</strong><span aria-hidden="true">↗</span></button></div>
-      <form id="filters" aria-labelledby="filterTitle">
-        <div class="filter-grid">
-          <label><span data-i18n="byGrade">学年から探す</span><select id="grade"></select></label>
-          <label><span data-i18n="byUnit">単元から探す</span><select id="unit"></select></label>
-          <label><span data-i18n="byPurpose">学習目的から探す</span><select id="purpose"></select></label>
-        </div>
-        <div class="filter-tools">
-          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only" data-i18n="searchLabel">教材を検索</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" autocomplete="off"></label>
-          <label class="sort-control"><span data-i18n="sortLabel">表示順</span><select id="sort"></select></label>
-          <label class="check"><input type="checkbox" id="onlyFavorites"><span data-i18n="favorites">お気に入り</span></label>
-          <label class="check"><input type="checkbox" id="onlyPublished" checked><span data-i18n="onlyPublished">公開済みのみ</span></label>
-          <button type="button" class="quiet" id="resetFilters" data-i18n="clear">条件をクリア</button>
-        </div>
-      </form>
-      <div class="section-heading list-heading">
-        <h2 id="apps-title" data-i18n="library">教材アプリ一覧</h2>
-        <p class="count-pill" id="appCount" aria-live="polite"></p>
-      </div>
-      <p id="catalogStatus" role="status"></p>
-      <button type="button" id="retry" class="button button-dark" hidden data-i18n="retry">再試行</button>
-      <div class="app-grid" id="appGrid"></div>
-      <button type="button" id="more" class="button button-light more" hidden data-i18n="more">さらに表示</button>
-    </section>
-
-    <section class="news-section container" aria-labelledby="newsTitle">
-      <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
-      <div id="newsList"></div>
-    </section>
-
     <section class="teacher-section" id="how" aria-labelledby="teacherTitle">
       <div class="container teacher-layout">
         <div><h2 id="teacherTitle" data-i18n="teachers">先生方へ</h2><p data-i18n="teacherBody">教材の詳細から、前提知識や授業での活用例、名前入力や賞状の有無を確認できます。</p></div>
@@ -212,7 +440,7 @@
     <section class="about-section container" id="about">
       <div class="about-panel">
         <div><div class="section-kicker" data-i18n="aboutKicker">ABOUT MANATY LAB</div><h2 data-i18n-html="aboutTitle">数学に、<br><span>遊び心を。</span></h2><p data-i18n="aboutBody">MANATY LABは、数学をもっと身近に感じるための個人制作の学習アプリプロジェクトです。現役の数学教員の視点をもとに、「おもしろい」と「なるほど」を両立するゲームを少しずつ公開しています。</p><a href="#apps" class="text-link"><span data-i18n="aboutLink">ゲームを探してみる</span> </a></div>
-        <div class="about-orbit" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit-center">M<span>·</span></div><span class="orbit-text orbit-text-a">PLAY</span><span class="orbit-text orbit-text-b">LEARN</span><span class="orbit-text orbit-text-c">DISCOVER</span></div>
+        <div class="about-mascot" aria-hidden="true"><img src="./assets/brand/beta-logo.svg" alt="" width="620" height="418" loading="lazy"></div>
       </div>
     </section>
 
@@ -232,6 +460,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><div><a class="footer-brand" href="#top">MANATY LAB</a><p>Play. Learn. Discover.</p></div><div><p data-i18n="footerMessage">遊びから生まれる、数学の「わかった！」</p><small data-i18n="footerNote">個人運営の学習アプリサイトです。学校の公式サイトではありません。</small></div><div><a href="./terms.html" data-i18n="termsLink">利用条件・著作権</a><br><small>© 2026 MANATY LAB. All rights reserved.</small></div><a href="#top" class="to-top" data-i18n="backToTop">ページの先頭へ</a></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><div><a class="footer-brand" href="#top"><img src="./assets/brand/beta-header.svg" width="378" height="94" alt="MANATY LAB — Play. Learn. Discover." loading="lazy"></a></div><div><p data-i18n="footerMessage">遊びから生まれる、数学の「わかった！」</p><small data-i18n="footerNote">個人運営の学習アプリサイトです。学校の公式サイトではありません。</small></div><div><a href="./terms.html" data-i18n="termsLink">利用条件・著作権</a><br><small>© 2026 MANATY LAB. All rights reserved.</small></div><a href="#top" class="to-top" data-i18n="backToTop">ページの先頭へ</a></div></footer>
 </body>
 </html>
