@@ -1000,9 +1000,9 @@
           "zh": "体验加入第二个方程后如何确定唯一解。9个引导关卡，另有可选范围、不限时的连击练习，支持分数输入。英文与中文界面为试验版。"
         },
         "stage": {
-          "ja": "全9ステージ（発展2ステージを含む）",
-          "en": "Nine stages, including two advanced stages.",
-          "zh": "共9个关卡，其中包括2个拓展关卡。"
+          "ja": "全9ステージ。06 A=B=C型、07 3元1次連立方程式、08 総合チャレンジ。ランダム演習は01から指定ステージまで、または個別の出題範囲を選択。",
+          "en": "Nine stages, ending with chained equalities (06), three-variable systems (07), and mixed review (08). Random practice supports inclusive stage ranges or individual topics.",
+          "zh": "共9个关卡，06连等式、07三元一次方程组、08综合挑战。随机练习可选择连续关卡范围或自定义关卡。"
         },
         "classroom": {
           "ja": "操作と同じ途中式をノートに書き、なぜその文字を消すか説明する。",
@@ -1014,7 +1014,7 @@
       },
       "publishedAt": "2026-11-28",
       "updatedAt": "2026-11-28",
-      "version": "1.1 RC",
+      "version": "1.2 RC",
       "history": [
         {
           "date": "2026-11-28",
@@ -1033,6 +1033,15 @@
             "zh": "v1.1 RC：优化条件探索，新增可选范围、支持分数输入的不限时连击练习。"
           },
           "sourceUrl": "https://github.com/manaty-bit/twin-cipher/commit/4c26004cd482044c3c39444e8ece4234fc5c1171"
+        },
+        {
+          "date": "2026-11-28",
+          "summary": {
+            "ja": "v1.2 RC：ステージ順と配色を改善し、ランダム演習に上限ステージの一括指定を追加。",
+            "en": "v1.2 RC: revised stage order and visuals; added inclusive stage range selection to random practice.",
+            "zh": "v1.2 RC：优化关卡顺序与配色，新增随机练习的关卡上限选择。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/twin-cipher/commit/8013db1f45179054d4d78b8f77d14603d4ab0822"
         }
       ],
       "variants": [],
