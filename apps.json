@@ -942,8 +942,17 @@
       },
       "publishedAt": "2026-11-28",
       "updatedAt": "2026-11-28",
-      "version": "0.5",
+      "version": "0.6",
       "history": [
+        {
+          "date": "2026-11-28",
+          "summary": {
+            "ja": "数式欄の高さを固定し、ポータルと配色を統一。2点から傾きを求める問題と誤答を意識した選択肢を追加。",
+            "en": "Stabilized mathematical layout, aligned colors with the portal, and improved slope questions and distractors.",
+            "zh": "固定数学公式区域高度，统一门户配色，优化斜率题目及干扰选项。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/line-pilot/commit/6280ff044c8ef169c004559b5c1a11da105671aa"
+        },
         {
           "date": "2026-11-28",
           "summary": {
