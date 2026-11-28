@@ -9,7 +9,7 @@ from urllib.parse import urlsplit
 GRADES = {"j1", "j2", "j3", "high"}
 LANGUAGES = {"ja", "en", "zh"}
 ACCENTS = {"mint", "violet", "peach", "sky", "yellow"}
-ILLUSTRATIONS = {"mole", "detective", "blocks", "trig", "log", "numberline"}
+ILLUSTRATIONS = {"mole", "detective", "blocks", "trig", "log", "numberline", "linepilot", "twincipher"}
 
 
 def require(condition, message):
