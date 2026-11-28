@@ -21,7 +21,7 @@
     .site-header{background:#fffaf0;border-bottom:1px solid #e5d9c5}
     .header-inner{min-height:3.75rem;gap:1rem}
     .wordmark{font-size:1.13rem;letter-spacing:-.045em}
-    .wordmark-symbol{display:grid;place-items:center;background:var(--ink);color:#fff8e9;border-radius:10px;padding:.05rem .32rem;line-height:1.4;font-size:1.28rem;display:inline-block}
+    .wordmark-symbol{display:inline-block;background:var(--ink);color:#fff8e9;border-radius:10px;padding:.05rem .32rem;line-height:1.4;font-size:1.28rem}
     .wordmark-symbol span{color:var(--yellow)}
     .wordmark b{color:var(--green)}
     .desktop-nav{gap:1.3rem}
@@ -33,6 +33,7 @@
     .hero-wrap::before{content:"";position:absolute;z-index:-1;inset:0;background-image:radial-gradient(#b4a16740 1px,transparent 1px);background-size:18px 18px;mask-image:linear-gradient(90deg,transparent 35%,black)}
     .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.75rem,3.1vw,2.65rem);line-height:1.16;letter-spacing:-.045em;margin:.28rem 0 .35rem}
     .hero-copy h1 br{display:none}
+    html:lang(en) .hero-copy h1 br{display:initial}
     .hero-english{font-size:.86rem;font-weight:750;letter-spacing:.06em;color:var(--green)}
     .hero-description{max-width:58em;font-size:.85rem;line-height:1.6;margin:.3rem 0 .4rem;color:var(--ink)}
     .eyebrow,.section-kicker,.play-label{font-size:.68rem;letter-spacing:.13em;font-weight:850;color:var(--green)}
