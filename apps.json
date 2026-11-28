@@ -963,7 +963,7 @@
       "url": "https://manaty-bit.github.io/twin-cipher/",
       "sourceUrl": "https://github.com/manaty-bit/twin-cipher",
       "description": {
-        "ja": "式を操り、謎を解き明かせ！ 加減法・代入法からA＝B＝C型、三元一次連立方程式まで、解法を選びながら学ぼう。",
+        "ja": "式を操り、謎を解き明かせ！ 加減法・代入法からA＝B＝C型、3元1次連立方程式まで、解法を選びながら学ぼう。",
         "en": "Crack the cipher by transforming equations! Choose your approach, from elimination and substitution to chained equalities and three-variable systems.",
         "zh": "操作方程，破解谜题！自主选择解法，从加减消元法、代入消元法到连等式与三元一次方程组。"
       },
@@ -995,9 +995,9 @@
           "zh": "利用等式的性质，通过消元与代入解方程组；在拓展关卡中选择连等式的拆分方式与消元对象。"
         },
         "game": {
-          "ja": "倍率・加減・代入を操作して暗号を解く。全9ステージ、60秒チャレンジ、FUN／SIMPLE、認定証。英語・中国語切替は試験対応。",
-          "en": "Transform equations across nine stages, with a 60-second challenge, FUN/SIMPLE modes and certificates. English and Chinese interfaces are experimental.",
-          "zh": "通过方程变形挑战9个关卡，并提供60秒挑战、FUN／SIMPLE模式与学习证书。英文与中文界面为试验版。"
+          "ja": "1つ目の式を満たす候補を探し、2つ目の式で解を絞る。加減法・代入法の全9ステージに加え、出題範囲を選ぶ時間無制限のコンボ演習（分数入力対応）。英語・中国語切替は試験対応。",
+          "en": "Discover how a second equation determines a unique solution. Nine guided stages, plus untimed combo practice with selectable topics and fraction entry. English and Chinese interfaces are experimental.",
+          "zh": "体验加入第二个方程后如何确定唯一解。9个引导关卡，另有可选范围、不限时的连击练习，支持分数输入。英文与中文界面为试验版。"
         },
         "stage": {
           "ja": "全9ステージ（発展2ステージを含む）",
@@ -1014,7 +1014,7 @@
       },
       "publishedAt": "2026-11-28",
       "updatedAt": "2026-11-28",
-      "version": "1.0 RC",
+      "version": "1.1 RC",
       "history": [
         {
           "date": "2026-11-28",
@@ -1024,6 +1024,15 @@
             "zh": "v1.0 RC首次发布：9个关卡、解法选择、学习证书和60秒挑战。"
           },
           "sourceUrl": "https://github.com/manaty-bit/twin-cipher/commit/fec95062ea316b9fbfdb5a566f63b368cbeebf14"
+        },
+        {
+          "date": "2026-11-28",
+          "summary": {
+            "ja": "v1.1 RC：条件の探索を改良し、範囲選択・分数入力対応の時間無制限コンボ演習を追加。",
+            "en": "v1.1 RC: improved condition discovery and added untimed combo practice with selectable topics and fraction entry.",
+            "zh": "v1.1 RC：优化条件探索，新增可选范围、支持分数输入的不限时连击练习。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/twin-cipher/commit/4c26004cd482044c3c39444e8ece4234fc5c1171"
         }
       ],
       "variants": [],
