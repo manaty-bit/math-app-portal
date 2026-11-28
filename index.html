@@ -330,6 +330,65 @@
     .about-mascot .about-brand-wordmark{width:83%;height:auto}
     @media(max-width:41rem){.site-header .brand-symbol{width:2.15rem}.site-header .brand-word img{width:6.2rem}.site-header .wordmark{gap:.16rem}.brand-tagline{font-size:.44rem}}
     @media(max-width:23rem){.site-header .brand-symbol{width:1.8rem}.site-header .brand-word img{width:5.5rem}}
+  
+    /* Mobile-first catalog: the first games should appear near the top. */
+    .mobile-filter-toggle{display:none}
+    .advanced-filter-options{display:contents}
+    .grade-shortcuts button[aria-pressed="true"]{outline:2px solid #21695c;outline-offset:-2px}
+    @media(max-width:48rem){
+      .container{width:calc(100% - 1.15rem)}
+      .site-header .header-inner{min-height:3.25rem;gap:.3rem;padding-block:.25rem}
+      .site-header .brand-word img{width:clamp(5.5rem,24vw,7.5rem)}
+      .site-header .brand-symbol{width:clamp(1.9rem,8vw,2.6rem)}
+      .site-header .languages button{min-height:2.5rem;padding-inline:.28rem;font-size:.69rem}
+      .hero-wrap{display:block;margin:.4rem auto .55rem;padding:.55rem .75rem;border-radius:.85rem}
+      .hero-copy .eyebrow,.hero-copy .hero-english,.hero-description,.hero-brand-art,.hero-actions{display:none}
+      .hero-copy h1,html:lang(ja) .hero-copy h1,html:lang(zh) .hero-copy h1{font-size:clamp(1.2rem,4.8vw,1.75rem);margin:0;line-height:1.35;letter-spacing:-.025em}
+      .hero-copy h1 br{display:none}
+      .hero-copy .trust-row{font-size:.7rem;margin:.22rem 0 0;line-height:1.3}
+      .catalog-heading{margin:0 0 .28rem}
+      .catalog-heading .section-kicker,.catalog-decoration,.list-heading .section-kicker{display:none}
+      .catalog-heading h2,#filterTitle{font-size:.96rem;margin:0}
+      .grade-shortcuts{grid-template-columns:repeat(4,minmax(0,1fr));gap:.28rem;margin:0 0 .4rem}
+      .grade-shortcuts button{display:flex;justify-content:center;text-align:center;min-height:2.65rem;padding:.25rem .1rem;border-radius:.65rem;gap:0}
+      .grade-shortcuts button span{display:none}
+      .grade-shortcuts button strong{font-size:clamp(.68rem,2.9vw,.88rem);line-height:1.25;overflow-wrap:anywhere}
+      #filters{padding:0;border:0;background:transparent;margin:0}
+      .filter-tools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem;margin:0;align-items:center}
+      .filter-tools .search-box{margin:0;min-width:0;min-height:2.75rem;width:100%;box-sizing:border-box}
+      .search-box input{font-size:16px;min-width:0;width:100%}
+      .filter-tools .mobile-filter-toggle{display:inline-flex;min-height:2.75rem;padding:.35rem .6rem;font-size:.77rem;background:#fffefa;border-color:#c7d9cf;white-space:nowrap}
+      #filters:not(.filters-expanded) .filter-grid,#filters:not(.filters-expanded) .advanced-filter-options{display:none}
+      #filters.filters-expanded{display:flex;flex-direction:column;gap:.45rem}
+      #filters.filters-expanded .filter-tools{display:contents}
+      #filters.filters-expanded .search-box{order:-3}
+      #filters.filters-expanded .mobile-filter-toggle{order:-2;align-self:flex-end;margin-top:-.15rem}
+      #filters.filters-expanded .filter-grid{order:-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;background:#fffefa;padding:.55rem;border:1px solid var(--line);border-radius:.75rem}
+      #filters.filters-expanded .filter-grid label:last-child{grid-column:1/-1}
+      #filters select{max-width:100%;font-size:16px;min-height:2.5rem}
+      #filters.filters-expanded .advanced-filter-options{display:flex;flex-wrap:wrap;gap:.3rem .6rem;align-items:center;padding:.2rem .15rem}
+      .list-heading{margin:.55rem 0 .35rem;gap:.3rem}
+      .list-heading h2{font-size:1.12rem;margin:0}
+      .count-pill{font-size:.7rem;margin:0}
+      #catalogStatus[hidden],#retry[hidden],#more[hidden]{display:none!important}
+      .app-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+      .app-card{border-radius:.85rem}
+      .app-art{aspect-ratio:16/9;height:auto}
+      .app-art .status-chip.published{display:none}
+      .app-art .favorite{min-width:2.5rem;min-height:2.5rem;top:.15rem;right:.15rem}
+      .app-content{padding:.48rem;gap:.25rem}
+      .app-content h3{font-size:.94rem;line-height:1.25;margin:0;overflow-wrap:anywhere}
+      .app-content .app-meta{font-size:.66rem!important;line-height:1.3}
+      .app-content .app-summary{font-size:.75rem;line-height:1.4;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.1em}
+      .app-content .tags,.app-content .game-language{display:none}
+      .app-actions{display:grid;grid-template-columns:1fr;gap:.2rem;margin-top:auto}
+      .app-actions .app-play{min-height:2.6rem;font-size:.82rem;padding:.3rem .15rem}
+      .app-actions .quiet{min-height:2.2rem;font-size:.73rem;padding:.25rem .1rem}
+      #apps-title,#apps{scroll-margin-top:4rem}
+      .news-section{margin-block:1rem}
+    }
+    @media(max-width:23rem){.app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-header .languages button{padding-inline:.15rem;font-size:.65rem}.site-header .brand-word img{width:5.1rem}.site-header .brand-symbol{width:1.7rem}.brand-tagline{font-size:.4rem}}
+
   </style>
   <script defer src="./app.js"></script>
 </head>
@@ -383,17 +442,17 @@
       <div class="catalog-heading"><div><span class="section-kicker">01 / EXPLORE</span><h2 id="filterTitle" data-i18n="find">教材を探す</h2></div><span class="catalog-decoration" aria-hidden="true"><span>π</span> &nbsp; △ &nbsp; ∞</span></div>
       <div class="grade-shortcuts" aria-label="Grade" data-label="byGrade"><button type="button" data-quick-grade="j1"><span aria-hidden="true">01</span><strong data-i18n="gradeJ1">中学1年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j2"><span aria-hidden="true">02</span><strong data-i18n="gradeJ2">中学2年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="j3"><span aria-hidden="true">03</span><strong data-i18n="gradeJ3">中学3年</strong><span aria-hidden="true">↗</span></button><button type="button" data-quick-grade="high"><span aria-hidden="true">04</span><strong data-i18n="gradeHigh">高校数学</strong><span aria-hidden="true">↗</span></button></div>
       <form id="filters" aria-labelledby="filterTitle">
-        <div class="filter-grid">
+        <div class="filter-grid" id="advancedFilterGrid">
           <label><span data-i18n="byGrade">学年から探す</span><select id="grade"></select></label>
           <label><span data-i18n="byUnit">単元から探す</span><select id="unit"></select></label>
           <label><span data-i18n="byPurpose">学習目的から探す</span><select id="purpose"></select></label>
         </div>
         <div class="filter-tools">
           <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only" data-i18n="searchLabel">教材を検索</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" autocomplete="off"></label>
-          <label class="sort-control"><span data-i18n="sortLabel">表示順</span><select id="sort"></select></label>
+          <button type="button" id="toggleFilters" class="quiet mobile-filter-toggle" aria-expanded="false" aria-controls="advancedFilterGrid advancedFilterOptions"><span data-i18n="filterMore">絞り込み</span> <span aria-hidden="true">⌄</span></button><div id="advancedFilterOptions" class="advanced-filter-options"><label class="sort-control"><span data-i18n="sortLabel">表示順</span><select id="sort"></select></label>
           <label class="check"><input type="checkbox" id="onlyFavorites"><span data-i18n="favorites">お気に入り</span></label>
           <label class="check"><input type="checkbox" id="onlyPublished" checked><span data-i18n="onlyPublished">公開済みのみ</span></label>
-          <button type="button" class="quiet" id="resetFilters" data-i18n="clear">条件をクリア</button>
+          <button type="button" class="quiet" id="resetFilters" data-i18n="clear">条件をクリア</button></div>
         </div>
       </form>
       <div class="section-heading list-heading">
@@ -407,7 +466,7 @@
     </section>
 
     <section class="news-section container" aria-labelledby="newsTitle">
-      <h2 id="newsTitle" data-i18n="news">新着・アップデート</h2>
+      <h2 id="newsTitle" data-i18n="news">新しい教材</h2>
       <div id="newsList"></div>
     </section>
 
