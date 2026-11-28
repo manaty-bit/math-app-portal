@@ -883,6 +883,78 @@
         }
       ],
       "variants": []
+    },
+    {
+      "id": "line-pilot",
+      "title": "LINE PILOT",
+      "status": "available",
+      "url": "https://manaty-bit.github.io/line-pilot/",
+      "sourceUrl": "https://github.com/manaty-bit/line-pilot",
+      "description": {
+        "ja": "傾きと切片を操り、ターゲットを通過せよ！ 一次関数の式とグラフを学ぶゲーム。動点回避のLINE DODGEも搭載。（基礎先行版）",
+        "en": "Control slope and y-intercept to hit targets and connect linear equations with graphs. Includes the LINE DODGE survival game (basic-course preview).",
+        "zh": "操控斜率与纵截距，让直线穿过目标，学习一次函数的表达式与图像。附带 LINE DODGE 躲避游戏（基础课程预览版）。"
+      },
+      "grades": [
+        "j2"
+      ],
+      "units": [
+        "j2-linear-functions"
+      ],
+      "purposes": [
+        "intro",
+        "basics",
+        "practice",
+        "interactive",
+        "timed"
+      ],
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "thumbnail": {
+        "accent": "sky",
+        "illustration": "linepilot"
+      },
+      "details": {
+        "learning": {
+          "ja": "傾き・切片、グラフと式の相互変換。",
+          "en": "Slope, y-intercept, and translating between equations and graphs.",
+          "zh": "斜率、纵截距以及表达式与图像的相互转换。"
+        },
+        "game": {
+          "ja": "基礎5ステージ、LINE SHOT、60秒チャレンジ、自由操縦、6段階の動点回避ゲーム。標準・図形融合コースは未実装。",
+          "en": "Five basic stages, LINE SHOT, a 60-second challenge, free exploration and six levels of LINE DODGE. Standard and geometry courses are not yet implemented.",
+          "zh": "五个基础关卡、直线射击、60秒挑战、自由探索和六级躲避游戏。标准与几何拓展课程尚未实现。"
+        },
+        "classroom": {
+          "ja": "傾きと切片を別々に変更し、直線の変化を説明してから、グラフを見て式をノートに書く。",
+          "en": "Change slope and intercept separately, explain the resulting changes, then write the equation of a graph on paper.",
+          "zh": "分别调整斜率与截距，解释直线的变化，再根据图像写出表达式。"
+        },
+        "devices": {
+          "ja": "PC・スマートフォン（Chromiumの画面サイズで検証、実機は未確認）",
+          "en": "Desktop and phone-sized screens (Chromium viewport testing; physical phones unverified)",
+          "zh": "电脑与手机尺寸（已通过 Chromium 视口测试，尚未验证手机真机）"
+        },
+        "certificate": false,
+        "nameInput": false
+      },
+      "publishedAt": "2026-11-28",
+      "updatedAt": "2026-11-28",
+      "version": "0.4",
+      "history": [
+        {
+          "date": "2026-11-28",
+          "summary": {
+            "ja": "基礎先行版を掲載。直線操縦とLINE DODGEを収録。",
+            "en": "Basic-course preview with line control and LINE DODGE.",
+            "zh": "上线基础预览版，包含直线操控与 LINE DODGE。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/line-pilot/commit/f03b562f33490f3eb4a97a536d475f10ef8bca5d"
+        }
+      ],
+      "variants": []
     }
   ]
 }
