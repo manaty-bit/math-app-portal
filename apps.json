@@ -1014,7 +1014,7 @@
       },
       "publishedAt": "2026-11-28",
       "updatedAt": "2026-11-28",
-      "version": "1.3 RC",
+      "version": "1.3.1 RC",
       "history": [
         {
           "date": "2026-11-28",
@@ -1051,6 +1051,15 @@
             "zh": "v1.3 RC：简化关卡选择界面，并使方程组大括号随方程行数调整。"
           },
           "sourceUrl": "https://github.com/manaty-bit/twin-cipher/commit/738fdbb1c6cd855e3c6aee7351681f11bfd5463e"
+        },
+        {
+          "date": "2026-11-28",
+          "summary": {
+            "ja": "v1.3.1 RC：代入法・3元連立のアイコンを数学的に自然な表記へ修正。",
+            "en": "v1.3.1 RC: corrected substitution and three-variable stage icons.",
+            "zh": "v1.3.1 RC：修正代入法和三元方程组关卡图标。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/twin-cipher/commit/3a649c03f2d5ac72c82e277f587ed740138337f0"
         }
       ],
       "variants": [],
