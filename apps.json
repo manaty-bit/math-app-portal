@@ -955,6 +955,72 @@
         }
       ],
       "variants": []
+    },
+    {
+      "id": "twin-cipher",
+      "title": "TWIN CIPHER",
+      "status": "coming",
+      "url": null,
+      "sourceUrl": null,
+      "description": {
+        "ja": "式を操り、謎を解き明かせ！ 加減法・代入法からA＝B＝C型、三元一次連立方程式まで、解法を選びながら学ぼう。",
+        "en": "Crack the cipher by transforming equations! Choose your approach, from elimination and substitution to chained equalities and three-variable systems.",
+        "zh": "操作方程，破解谜题！自主选择解法，从加减消元法、代入消元法到连等式与三元一次方程组。"
+      },
+      "grades": [
+        "j2"
+      ],
+      "units": [
+        "j2-simultaneous-equations"
+      ],
+      "purposes": [
+        "intro",
+        "basics",
+        "practice",
+        "inquiry",
+        "advanced"
+      ],
+      "languages": [
+        "ja"
+      ],
+      "thumbnail": {
+        "accent": "violet",
+        "illustration": "blocks"
+      },
+      "details": {
+        "learning": {
+          "ja": "等式の性質を使い、文字の消去と代入によって連立方程式を解く。発展では等式の分け方や消去する文字も選ぶ。",
+          "en": "Solve systems using equivalent transformations, elimination and substitution. In advanced stages, choose how to split chained equalities and which variable to eliminate.",
+          "zh": "利用等式的性质，通过消元与代入解方程组；在拓展关卡中选择连等式的拆分方式与消元对象。"
+        },
+        "game": {
+          "ja": "式全体の倍率を選択し、加減や代入を操作して暗号を解く。",
+          "en": "Choose multipliers and manipulate equations by adding, subtracting and substituting to solve the cipher.",
+          "zh": "选择倍数，通过加减和代入操作方程来破解密码。"
+        },
+        "stage": {
+          "ja": "全9ステージ（発展2ステージを含む公開候補版）",
+          "en": "Nine stages in the release candidate, including two advanced stages.",
+          "zh": "候选发布版共9个关卡，其中包括2个拓展关卡。"
+        },
+        "classroom": {
+          "ja": "操作と同じ途中式をノートに書き、なぜその文字を消すか説明する。",
+          "en": "Record the same algebraic steps on paper and explain why a variable was chosen for elimination.",
+          "zh": "在纸上记录相同的变形过程，并解释选择消去某个未知数的原因。"
+        },
+        "certificate": false,
+        "nameInput": false
+      },
+      "publishedAt": null,
+      "updatedAt": null,
+      "version": "0.23 RC",
+      "history": [],
+      "variants": [],
+      "keywords": {
+        "ja": "ツインサイファー 加減法 代入法 二元一次 三元一次 連等式",
+        "en": "twin cipher elimination substitution simultaneous linear equations",
+        "zh": "消元法 代入法 三元一次 连等式"
+      }
     }
   ]
 }
