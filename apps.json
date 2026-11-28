@@ -959,9 +959,9 @@
     {
       "id": "twin-cipher",
       "title": "TWIN CIPHER",
-      "status": "coming",
-      "url": null,
-      "sourceUrl": null,
+      "status": "available",
+      "url": "https://manaty-bit.github.io/twin-cipher/",
+      "sourceUrl": "https://github.com/manaty-bit/twin-cipher",
       "description": {
         "ja": "式を操り、謎を解き明かせ！ 加減法・代入法からA＝B＝C型、三元一次連立方程式まで、解法を選びながら学ぼう。",
         "en": "Crack the cipher by transforming equations! Choose your approach, from elimination and substitution to chained equalities and three-variable systems.",
@@ -978,7 +978,8 @@
         "basics",
         "practice",
         "inquiry",
-        "advanced"
+        "advanced",
+        "timed"
       ],
       "languages": [
         "ja"
@@ -994,9 +995,9 @@
           "zh": "利用等式的性质，通过消元与代入解方程组；在拓展关卡中选择连等式的拆分方式与消元对象。"
         },
         "game": {
-          "ja": "式全体の倍率・加減・代入を操作して暗号を解く。60秒チャレンジ、FUN／SIMPLEモードも実装した公開候補版。",
-          "en": "Transform equations to crack the cipher. The release candidate also includes a 60-second challenge and FUN/SIMPLE modes.",
-          "zh": "通过倍乘、加减与代入变形破解密码。候选发布版还包含60秒挑战及FUN／SIMPLE模式。"
+          "ja": "倍率・加減・代入を操作して暗号を解く。全9ステージ、60秒チャレンジ、FUN／SIMPLE、認定証。英語・中国語切替は試験対応。",
+          "en": "Transform equations across nine stages, with a 60-second challenge, FUN/SIMPLE modes and certificates. English and Chinese interfaces are experimental.",
+          "zh": "通过方程变形挑战9个关卡，并提供60秒挑战、FUN／SIMPLE模式与学习证书。英文与中文界面为试验版。"
         },
         "stage": {
           "ja": "全9ステージ（発展2ステージを含む）",
@@ -1007,12 +1008,24 @@
           "ja": "操作と同じ途中式をノートに書き、なぜその文字を消すか説明する。",
           "en": "Record the same algebraic steps on paper and explain why a variable was chosen for elimination.",
           "zh": "在纸上记录相同的变形过程，并解释选择消去某个未知数的原因。"
-        }
+        },
+        "certificate": true,
+        "nameInput": true
       },
-      "publishedAt": null,
-      "updatedAt": null,
+      "publishedAt": "2026-11-28",
+      "updatedAt": "2026-11-28",
       "version": "1.0 RC",
-      "history": [],
+      "history": [
+        {
+          "date": "2026-11-28",
+          "summary": {
+            "ja": "v1.0 RC 初回配信。解法選択を含む全9ステージ、認定証、60秒チャレンジ。",
+            "en": "Initial v1.0 RC deployment: nine stages with strategy selection, certificates and a 60-second challenge.",
+            "zh": "v1.0 RC首次发布：9个关卡、解法选择、学习证书和60秒挑战。"
+          },
+          "sourceUrl": "https://github.com/manaty-bit/twin-cipher/commit/fec95062ea316b9fbfdb5a566f63b368cbeebf14"
+        }
+      ],
       "variants": [],
       "keywords": {
         "ja": "ツインサイファー 加減法 代入法 二元一次 三元一次 連等式",
