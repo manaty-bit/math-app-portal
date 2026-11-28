@@ -24,7 +24,7 @@ python3 -m http.server 8000
 | `grades`, `units`, `purposes` | 複数指定可能。単元と目的の参照先は同じJSONにあります。単元の学年も `grades` に含めます。 |
 | `status`, `url`, `sourceUrl` | 教員の承認後、公開先で起動を確認してから `available` と公開HTTPS URLを登録します。準備中は `coming`、URLはいずれも `null` です。 |
 | `languages`, `description` | 対応確認済み言語のみ `ja`、`en`、`zh` で登録。未確認の言語一覧は空配列。紹介文は3言語分を登録します。 |
-| `thumbnail` | `accent` は mint / violet / peach / sky / yellow、`illustration` は mole / detective / blocks / trig / log / numberline。 |
+| `thumbnail` | `accent` は mint / violet / peach / sky / yellow、`illustration` は mole / detective / blocks / trig / log / numberline / linepilot / twincipher。 |
 | `details` | `learning` は必須。任意で `game`、`stage`、`devices`、`duration`、`classroom` の3言語文、`certificate`・`nameInput` の真偽値を設定します。未確認の項目は省略できます。 |
 | `publishedAt`, `updatedAt`, `version` | 確認できる資料に基づいて登録。日付は `YYYY-MM-DD`、不明は `null`。日付のない教材は新着欄に表示しません。 |
 | `history`, `variants` | 履歴は `date`、3言語の `summary`、任意の `sourceUrl`。公開済み派生版は3言語の `label` と `url`。該当なしは空配列です。 |
